@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_neyu_google_nyu.WebServiceUtil</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>WebServiceUtil</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var WebServiceUtil = Class.create();
+WebServiceUtil.prototype = {
+    initialize: function() {
+        this.mid = gs.getProperty("x_neyu_google_nyu.spoke.midserver");
+        this.debug = true;
+    },
+
+    /**
+     * Generalized method to call a REST Message.
+     *
+     * @param restMessage {string} - the name of the RESTMessage to call
+     * @param restMethod {string} - the HTTP Method name to call
+     * @param attrs {object} - object with key:value pairs denoting the stringParameterName
+     *                      and stringParameterValue to be passed into the RESTMessage
+     * @param attrsNoEscape {object} - object with key:value pairs denoting the stringParameterName
+     *                      and stringParameterValue to be passed into the RESTMessage but not escaped
+     * @return the response parsed as a JSON object
+     */
+    rest: function(
+        restMessage,
+        restMethod,
+        attrs = {},
+        attrsNoEscape = {}
+    ) {
+        if (gs.nil(restMessage) || gs.nil(restMethod)) {
+            gs.error("restMessage and restMethod are required");
+            return {
+                error: true,
+                errorMessage: "restMessage and restMethod are required"
+            };
+        }
+        if (this.debug) {
+            gs.info("Calling {0} {1}\nattrs: {2}\nattrsNoEscape:{3}",
+                restMessage,
+                restMethod,
+                (!gs.nil(attrs) ? this.json.encode(attrs) : "{}"),
+                (!gs.nil(attrsNoEscape) ? this.json.encode(attrsNoEscape) : "{}"));
+        }
+
+        if (this.debug) {
+            var msg = "Calling :" +
+                "\nrestMessage: " + restMessage +
+                "\nrestMethod: " + restMethod +
+                "\nParams: ";
+
+            Object.keys(attrs).forEach(function(key) {
+                msg += "\nkey: " + key + ", value: " + attrs[key];
+            });
+            msg += "\nParams No Escape: ";
+            Object.keys(attrsNoEscape).forEach(function(key) {
+                msg += "\nkey: " + key + ", value: " + attrsNoEscape[key];
+            });
+            gs.info(msg);
+        }
+
+        var requestBody,
+            responseBody,
+            response,
+            status,
+            jObj;
+
+        try {
+            rest = new sn_ws.RESTMessageV2(restMessage, restMethod);
+
+            // set string parameters
+            Object.keys(attrs).forEach((k) =>
+                !gs.nil(attrs[k]) ?
+                rest.setStringParameter(k, attrs[k]) :
+                null);
+            // set non-escaped string parameters
+            Object.keys(attrs).forEach((k) =>
+                !gs.nil(attrsNoEscape[k]) ?
+                rest
+                .setStringParameterNoEscape(k, attrsNoEscape[k]) :
+                null);
+
+            if (!gs.nil(this.mid)) {
+                rest.setMIDServer(this.mid);
+            }
+
+            response = this._execute(rest);
+            responseBody = response.getBody();
+            status = response.getStatusCode();
+            jObj = this.json.decode(responseBody);
+        } catch (ex) {
+            var err = "There was an internal error when attempting to contact ";
+            err += "The Google Spoke Service: " + restMessage + ":" + restMethod;
+            err += "\nError: " + ex;
+            err += "\nError Exception: " + ex;
+            if (!gs.nil(response)) {
+                err += "\nREST Error Code: " + response.getErrorCode();
+                err += "\nREST Error msg: " + response.getErrorMessage();
+            }
+            gs.error(err);
+            responseBody = !gs.nil(ex) ? ex :
+                response.getErrorMessage();
+            return {
+                error: true,
+                errorMessage: responseBody
+            };
+        } finally {
+            requestBody = rest ? rest.getRequestBody() : "";
+        }
+
+        if (this.debug) {
+            gs.info("Google REST Message Response:" +
+                "\nMessage: " + restMessage +
+                "\nFunction: " + restMethod +
+                "\nStatus: " + status +
+                "\nRequestBody: " + requestBody +
+                "\nResponseBody: " + responseBody);
+        }
+
+        return {
+            error: (status != "200"),
+            errorMessage: (status == "200" ? "" : responseBody),
+            status: status,
+            result: jObj
+        };
+    },
+
+    /**
+     * Internal method to enable unit testing
+     */
+    _execute: function(request) {
+        return request.execute();
+    },
+
+    type: 'WebServiceUtil'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2025-03-11 21:51:56</sys_created_on>
+        <sys_id>5d24d0a02b18aa108a69f0dcce91bfc6</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>WebServiceUtil</sys_name>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name>sys_script_include_5d24d0a02b18aa108a69f0dcce91bfc6</sys_update_name>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2025-03-11 21:53:39</sys_updated_on>
+    </sys_script_include>
+</record_update>

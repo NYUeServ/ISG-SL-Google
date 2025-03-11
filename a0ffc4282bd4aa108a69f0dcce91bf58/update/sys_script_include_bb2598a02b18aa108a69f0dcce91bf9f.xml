@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_neyu_google_nyu.GoogleSheetsAPI</api_name>
+        <caller_access>1</caller_access>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>GoogleSheetsAPI</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var GoogleSheetsAPI = Class.create();
+GoogleSheetsAPI.CONSTANTS = {
+    API: {
+        ADD_ROW: {
+            name: "Google Sheets",
+            method: "Add Row"
+        },
+        GET_CELL_VALUES: {
+            name: "Google Sheets",
+            method: "Get Cell Values"
+        }
+    }
+};
+GoogleSheetsAPI.prototype = {
+    initialize: function() {
+        this.debug = true;
+        this.wsUtil = new WebServiceUtil();
+    },
+
+    type: 'GoogleSheetsAPI'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2025-03-11 21:55:33</sys_created_on>
+        <sys_id>bb2598a02b18aa108a69f0dcce91bf9f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>GoogleSheetsAPI</sys_name>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name>sys_script_include_bb2598a02b18aa108a69f0dcce91bf9f</sys_update_name>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2025-03-11 21:58:02</sys_updated_on>
+    </sys_script_include>
+</record_update>

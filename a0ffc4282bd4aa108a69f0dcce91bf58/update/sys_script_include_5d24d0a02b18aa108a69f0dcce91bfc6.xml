@@ -14,6 +14,7 @@ WebServiceUtil.prototype = {
     initialize: function() {
         this.mid = gs.getProperty("x_neyu_google_nyu.spoke.midserver");
         this.debug = true;
+        this.json = new global.JSON();
     },
 
     /**
@@ -22,6 +23,8 @@ WebServiceUtil.prototype = {
      * @param restMessage {string} - the name of the RESTMessage to call
      * @param restMethod {string} - the HTTP Method name to call
      * @param version {string} - the API version to use
+	 * @param authType {string} - 'basic' or 'oauth2'
+	 * @param authProfile {string} - sys_id of the Authentication Profile to use
      * @param attrs {object} - object with key:value pairs denoting the stringParameterName
      *                      and stringParameterValue to be passed into the RESTMessage
      * @param attrsNoEscape {object} - object with key:value pairs denoting the stringParameterName
@@ -33,6 +36,8 @@ WebServiceUtil.prototype = {
         restMessage,
         restMethod,
         version,
+		authType,
+		authProfile,
         attrs = {},
         attrsNoEscape = {},
         queryParams = {}
@@ -104,6 +109,9 @@ WebServiceUtil.prototype = {
                 rest.setMIDServer(this.mid);
             }
 
+			// set auth Profile
+			rest.setAuthenticationProfile(authType, authProfile);
+
             // set the version
             rest.setStringParameter("version", version);
 
@@ -161,13 +169,13 @@ WebServiceUtil.prototype = {
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2025-03-11 21:51:56</sys_created_on>
         <sys_id>5d24d0a02b18aa108a69f0dcce91bfc6</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>WebServiceUtil</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_script_include_5d24d0a02b18aa108a69f0dcce91bfc6</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2025-03-11 22:25:04</sys_updated_on>
+        <sys_updated_on>2025-03-12 21:15:04</sys_updated_on>
     </sys_script_include>
 </record_update>

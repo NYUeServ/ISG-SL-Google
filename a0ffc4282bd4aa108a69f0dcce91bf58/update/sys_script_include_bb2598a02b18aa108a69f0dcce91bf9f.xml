@@ -41,10 +41,19 @@ GoogleSheetsAPI.prototype = {
         this.debug = true;
         this.version = gs.getProperty("x_neyu_google_nyu.spreadsheets.version");
         this.wsUtil = new WebServiceUtil();
+        this.authType = "oauth2"; // or basic
+        this.authProfile = "a6961d7c2bdc22108a69f0dcce91bfa3";
     },
 
-    appendRow: function(spreadsheetId, range, payload, valueInputOption = null,
-        insertDataOption = null, includeValuesInResponse = false) {
+    appendRow: function(spreadsheetId,
+        range,
+        payload,
+        authProfileType = this.authType,
+        authProfile = this.authProfile,
+        valueInputOption = null,
+        insertDataOption = null,
+        includeValuesInResponse = false
+    ) {
 
         const attrs = new Object();
         attrs["spreadsheetId"] = spreadsheetId;
@@ -60,6 +69,8 @@ GoogleSheetsAPI.prototype = {
             GoogleSheetsAPI.CONSTANTS.API.ADD_ROW.name,
             GoogleSheetsAPI.CONSTANTS.API.ADD_ROW.method,
             this.version,
+            this.authType,
+            this.authProfile,
             attrs, {}, // attrsNoEscape
             queryParams
         );
@@ -71,7 +82,12 @@ GoogleSheetsAPI.prototype = {
         return response;
     },
 
-    getCellValues: function(spreadsheetId, range, majorDimension = null) {
+    getCellValues: function(spreadsheetId,
+        range,
+        authProfileType = this.authType,
+        authProfile = this.authProfile,
+        majorDimension = null
+    ) {
         const attrs = new Object();
         attrs["spreadsheetId"] = spreadsheetId;
         attrs['range'] = range;
@@ -83,6 +99,8 @@ GoogleSheetsAPI.prototype = {
             GoogleSheetsAPI.CONSTANTS.API.GET_CELL_VALUES.name,
             GoogleSheetsAPI.CONSTANTS.API.GET_CELL_VALUES.method,
             this.version,
+            this.authType,
+            this.authProfile,
             attrs, {}, // attrsNoEscape
             queryParams
         );
@@ -100,13 +118,13 @@ GoogleSheetsAPI.prototype = {
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2025-03-11 21:55:33</sys_created_on>
         <sys_id>bb2598a02b18aa108a69f0dcce91bf9f</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>GoogleSheetsAPI</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_script_include_bb2598a02b18aa108a69f0dcce91bf9f</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2025-03-11 22:35:48</sys_updated_on>
+        <sys_updated_on>2025-03-12 21:20:50</sys_updated_on>
     </sys_script_include>
 </record_update>

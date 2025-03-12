@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message">
     <sys_rest_message action="INSERT_OR_UPDATE">
         <access>package_private</access>
-        <authentication_type>no_authentication</authentication_type>
+        <authentication_type>oauth2</authentication_type>
         <basic_auth_password/>
-        <basic_auth_profile/>
+        <basic_auth_profile display_value="Google Basic Auth - Sheets">a0f7b8702b5c22108a69f0dcce91bfa8</basic_auth_profile>
         <basic_auth_user/>
         <description>REST Message for interacting with the Google Sheets API</description>
         <name>Google Sheets</name>
-        <oauth2_profile/>
+        <oauth2_profile display_value="Google Sheets Client default_profile">a6961d7c2bdc22108a69f0dcce91bfa3</oauth2_profile>
         <protocol_name/>
         <rest_endpoint>https://sheets.googleapis.com/${version}/spreadsheets</rest_endpoint>
         <sys_class_name>sys_rest_message</sys_class_name>
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2025-03-11 21:36:23</sys_created_on>
         <sys_id>c180942c2bd4aa108a69f0dcce91bf39</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Google Sheets</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_rest_message_c180942c2bd4aa108a69f0dcce91bf39</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2025-03-11 21:37:39</sys_updated_on>
+        <sys_updated_on>2025-03-12 21:22:20</sys_updated_on>
         <use_basic_auth>false</use_basic_auth>
         <use_mutual_auth>false</use_mutual_auth>
     </sys_rest_message>

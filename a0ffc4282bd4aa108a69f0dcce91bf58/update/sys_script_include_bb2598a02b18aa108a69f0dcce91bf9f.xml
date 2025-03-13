@@ -58,7 +58,9 @@ GoogleSheetsAPI.prototype = {
         const attrs = new Object();
         attrs["spreadsheetId"] = spreadsheetId;
         attrs['range'] = range;
-        attrs['payload'] = payload;
+
+		const attrsNoEscape = new Object();
+        // attrsNoEscape['payload'] = payload;
 
         const queryParams = new Object();
         queryParams["valueInputOption"] = valueInputOption;
@@ -71,12 +73,14 @@ GoogleSheetsAPI.prototype = {
             this.version,
             this.authType,
             this.authProfile,
-            attrs, {}, // attrsNoEscape
+            attrs,
+			attrsNoEscape,
+			payload,
             queryParams
         );
 
         if (response.error) {
-            gs.error("NYU Google Spoke return an error.\nError: {0}", error.errorMessage);
+            gs.error("NYU Google Spoke return an error.\nError: {0}", response.errorMessage);
         }
 
         return response;
@@ -106,10 +110,22 @@ GoogleSheetsAPI.prototype = {
         );
 
         if (response.error) {
-            gs.error("NYU Google Spoke return an error.\nError: {0}", error.errorMessage);
+            gs.error("NYU Google Spoke return an error.\nError: {0}", response.errorMessage);
         }
 
         return response;
+    },
+
+    getProfileType: function(auth_profile) {
+        const basicAuth = new GlideRecord("sys_auth_profile_basic");
+        if (basicAuth.get(auth_profile)) {
+            return "basic";
+        }
+        const oauth2 = new GlideRecord("oauth_entity_profile");
+        if (oauth2.get(auth_profile)) {
+            return "oauth2";
+        }
+        throw "Invalid Authentication Profile";
     },
 
     type: 'GoogleSheetsAPI'
@@ -118,13 +134,13 @@ GoogleSheetsAPI.prototype = {
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2025-03-11 21:55:33</sys_created_on>
         <sys_id>bb2598a02b18aa108a69f0dcce91bf9f</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>GoogleSheetsAPI</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_script_include_bb2598a02b18aa108a69f0dcce91bf9f</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2025-03-12 21:20:50</sys_updated_on>
+        <sys_updated_on>2025-03-13 19:25:21</sys_updated_on>
     </sys_script_include>
 </record_update>

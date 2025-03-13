@@ -31,7 +31,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>198cd18deb5822105c06fcffcad0cd46</sys_id>
-        <sys_mod_count>49</sys_mod_count>
+        <sys_mod_count>54</sys_mod_count>
         <sys_name>Add Row</sys_name>
         <sys_overrides/>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
@@ -39,7 +39,7 @@
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_198cd18deb5822105c06fcffcad0cd46</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2025-03-13 19:27:41</sys_updated_on>
+        <sys_updated_on>2025-03-13 19:38:46</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -1647,10 +1647,10 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2025-03-13 16:38:15</sys_created_on>
         <sys_id>e4df5181eb9822105c06fcffcad0cd0c</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2025-03-13 19:15:05</sys_updated_on>
+        <sys_updated_on>2025-03-13 19:38:35</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=e4df5181eb9822105c06fcffcad0cd0c"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -1661,9 +1661,9 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2025-03-13 16:38:16</sys_created_on>
         <sys_id>acdf5181eb9822105c06fcffcad0cd3a</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2025-03-13 19:15:05</sys_updated_on>
+        <sys_updated_on>2025-03-13 19:38:35</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
     &#13;
     if (!inputs.spreadsheet || inputs.spreadsheet.trim() == "") {&#13;
@@ -1689,7 +1689,7 @@
             "x_neyu_google_nyu.get_cell_values", action_inputs&#13;
         );&#13;
 &#13;
-        gs.info("action_outputs: " + JSON.stringify(action_outputs));&#13;
+        // gs.info("action_outputs: " + JSON.stringify(action_outputs));&#13;
 &#13;
         var headers = action_outputs['values'];&#13;
         var status = action_outputs['status'];&#13;
@@ -1700,7 +1700,7 @@
 &#13;
         if (status == "Success") {&#13;
             var values = inputs.values.split('^');&#13;
-            gs.info("values: " + JSON.stringify(values));&#13;
+            // gs.info("values: " + JSON.stringify(values));&#13;
             var payload = {&#13;
                 values: [&#13;
                     []&#13;
@@ -1711,13 +1711,13 @@
                 var key_value = values[i].split('=');&#13;
                 values_dict[key_value[0]] = key_value[1];&#13;
             }&#13;
-            gs.info("values_dict: " + JSON.stringify(values_dict));&#13;
+            // gs.info("values_dict: " + JSON.stringify(values_dict));&#13;
             var header_values = JSON.parse(headers[0]);&#13;
-            gs.info("header_values: " + JSON.stringify(header_values));&#13;
+            // gs.info("header_values: " + JSON.stringify(header_values));&#13;
             for (var i = 0; i &lt; header_values.length &amp;&amp; i &lt; values.length; i++) {&#13;
                 payload.values[0].push(values_dict[header_values[i]]);&#13;
             }&#13;
-            gs.info("Payload: " + JSON.stringify(payload));&#13;
+            // gs.info("Payload: " + JSON.stringify(payload));&#13;
             outputs.payload = JSON.stringify(payload);&#13;
         }&#13;
     } catch (ex) {&#13;
@@ -3028,9 +3028,9 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2025-03-13 18:32:25</sys_created_on>
         <sys_id>34f93941eb1c22105c06fcffcad0cd83</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2025-03-13 19:27:35</sys_updated_on>
+        <sys_updated_on>2025-03-13 19:38:40</sys_updated_on>
     </sys_hub_action_input_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=34f93941eb1c22105c06fcffcad0cd83"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -3655,14 +3655,14 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2025-03-13 16:24:40</sys_created_on>
         <sys_id>adbcd58deb5822105c06fcffcad0cd3d</sys_id>
-        <sys_mod_count>57</sys_mod_count>
+        <sys_mod_count>61</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name/>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2025-03-13 19:27:36</sys_updated_on>
+        <sys_updated_on>2025-03-13 19:38:41</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -4058,17 +4058,17 @@
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="Add Row">198cd18deb5822105c06fcffcad0cd46</action_id>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"740425c5eb9822105c06fcffcad0cdbb","name":"plan","plan_signature":null}}</plan>
-        <snapshot>969646c1eb5c22105c06fcffcad0cd0c</snapshot>
+        <snapshot>7c294e85eb5c22105c06fcffcad0cda3</snapshot>
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2025-03-13 16:56:35</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>740425c5eb9822105c06fcffcad0cdbb</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2025-03-13 19:27:43</sys_updated_on>
+        <sys_updated_on>2025-03-13 19:38:48</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -5714,10 +5714,10 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2025-03-13 16:56:29</sys_created_on>
         <sys_id>e3f3e1c5eb9822105c06fcffcad0cd37</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2025-03-13 19:27:40</sys_updated_on>
+        <sys_updated_on>2025-03-13 19:38:45</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=e3f3e1c5eb9822105c06fcffcad0cd37"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -5742,9 +5742,9 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2025-03-13 16:56:30</sys_created_on>
         <sys_id>fbf3e1c5eb9822105c06fcffcad0cd6f</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2025-03-13 19:27:40</sys_updated_on>
+        <sys_updated_on>2025-03-13 19:38:45</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
     &#13;
     if (!inputs.spreadsheet || inputs.spreadsheet.trim() == "") {&#13;
@@ -5770,7 +5770,7 @@
             "x_neyu_google_nyu.get_cell_values", action_inputs&#13;
         );&#13;
 &#13;
-        gs.info("action_outputs: " + JSON.stringify(action_outputs));&#13;
+        // gs.info("action_outputs: " + JSON.stringify(action_outputs));&#13;
 &#13;
         var headers = action_outputs['values'];&#13;
         var status = action_outputs['status'];&#13;
@@ -5781,7 +5781,7 @@
 &#13;
         if (status == "Success") {&#13;
             var values = inputs.values.split('^');&#13;
-            gs.info("values: " + JSON.stringify(values));&#13;
+            // gs.info("values: " + JSON.stringify(values));&#13;
             var payload = {&#13;
                 values: [&#13;
                     []&#13;
@@ -5792,13 +5792,13 @@
                 var key_value = values[i].split('=');&#13;
                 values_dict[key_value[0]] = key_value[1];&#13;
             }&#13;
-            gs.info("values_dict: " + JSON.stringify(values_dict));&#13;
+            // gs.info("values_dict: " + JSON.stringify(values_dict));&#13;
             var header_values = JSON.parse(headers[0]);&#13;
-            gs.info("header_values: " + JSON.stringify(header_values));&#13;
+            // gs.info("header_values: " + JSON.stringify(header_values));&#13;
             for (var i = 0; i &lt; header_values.length &amp;&amp; i &lt; values.length; i++) {&#13;
                 payload.values[0].push(values_dict[header_values[i]]);&#13;
             }&#13;
-            gs.info("Payload: " + JSON.stringify(payload));&#13;
+            // gs.info("Payload: " + JSON.stringify(payload));&#13;
             outputs.payload = JSON.stringify(payload);&#13;
         }&#13;
     } catch (ex) {&#13;
@@ -7095,9 +7095,9 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2025-03-13 19:27:39</sys_created_on>
         <sys_id>829606c1eb5c22105c06fcffcad0cd7e</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2025-03-13 19:27:39</sys_updated_on>
+        <sys_updated_on>2025-03-13 19:38:44</sys_updated_on>
     </sys_hub_action_input_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=829606c1eb5c22105c06fcffcad0cd7e"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -7548,14 +7548,14 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2025-03-13 16:56:32</sys_created_on>
         <sys_id>500425c5eb9822105c06fcffcad0cd31</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name/>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2025-03-13 19:27:41</sys_updated_on>
+        <sys_updated_on>2025-03-13 19:38:46</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

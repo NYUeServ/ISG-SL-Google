@@ -29,6 +29,7 @@ WebServiceUtil.prototype = {
      *                      and stringParameterValue to be passed into the RESTMessage
      * @param attrsNoEscape {object} - object with key:value pairs denoting the stringParameterName
      *                      and stringParameterValue to be passed into the RESTMessage but not escaped
+	 * @param payload {string} - Optional String payload when doing POST requests
      * @param queryParams {object} - object with key:value pairs that should be added to the RESTMessage
      * @return the response parsed as a JSON object
      */
@@ -174,13 +175,13 @@ WebServiceUtil.prototype = {
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2025-03-11 21:51:56</sys_created_on>
         <sys_id>5d24d0a02b18aa108a69f0dcce91bfc6</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>WebServiceUtil</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_script_include_5d24d0a02b18aa108a69f0dcce91bfc6</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2025-03-13 19:24:37</sys_updated_on>
+        <sys_updated_on>2025-03-13 19:32:26</sys_updated_on>
     </sys_script_include>
 </record_update>

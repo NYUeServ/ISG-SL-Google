@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_auth_profile_oauth2">
+    <sys_auth_profile_oauth2 action="INSERT_OR_UPDATE">
+        <name>Google Sheets OAuth2 Profile</name>
+        <oauth_profile/>
+        <password>﷞﷟﷒ab42a59a1bd41110350efe261a4bcb92﷬﷔1﷬﷭o3pGQLeYAdiOiEsnVInNnw==b9JJXLJsYdQGWcMYkO_C0CP0xtRF3WpbCIM91bJzcK8=﷮﷯</password>
+        <sys_class_name>sys_auth_profile_oauth2</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2025-03-12 21:00:58</sys_created_on>
+        <sys_id>8f4259f42bdc22108a69f0dcce91bfbf</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Google Sheets OAuth2 Profile</sys_name>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name>sys_auth_profile_oauth2_8f4259f42bdc22108a69f0dcce91bfbf</sys_update_name>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2025-03-12 21:01:47</sys_updated_on>
+        <username>nyu10007</username>
+    </sys_auth_profile_oauth2>
+</record_update>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_neyu_google_nyu.GoogleSheetsAPI</api_name>
+        <caller_access>1</caller_access>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>GoogleSheetsAPI</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var GoogleSheetsAPI = Class.create();
+GoogleSheetsAPI.CONSTANTS = {
+    API: {
+        ADD_ROW: {
+            name: "Google Sheets",
+            method: "Add Row"
+        },
+        GET_CELL_VALUES: {
+            name: "Google Sheets",
+            method: "Get Cell Values"
+        }
+    },
+    QUERY_PARAMS: {
+        MAJOR_DIMENSION: {
+            ROWS: "ROWS",
+            COLUMNS: "COLUMNS"
+        },
+        VALUE_INPUT_OPTION: {
+            RAW: "RAW",
+            USER_ENTERED: "USER_ENTERED"
+        },
+        INSERT_DATA_OPTION: {
+            OVERWRITE: "OVERWRITE",
+            INSERT_ROWS: "INSERT_ROWS"
+        }
+    }
+};
+GoogleSheetsAPI.prototype = {
+    initialize: function() {
+        this.debug = true;
+        this.version = gs.getProperty("x_neyu_google_nyu.spreadsheets.version");
+        this.wsUtil = new WebServiceUtil();
+        this.authType = "oauth2"; // or basic
+        this.authProfile = "a6961d7c2bdc22108a69f0dcce91bfa3";
+    },
+
+    appendRow: function(spreadsheetId,
+        range,
+        payload,
+        authProfileType = this.authType,
+        authProfile = this.authProfile,
+        valueInputOption = null,
+        insertDataOption = null,
+        includeValuesInResponse = false
+    ) {
+
+        const attrs = new Object();
+        attrs["spreadsheetId"] = spreadsheetId;
+        attrs['range'] = range;
+
+		const attrsNoEscape = new Object();
+        // attrsNoEscape['payload'] = payload;
+
+        const queryParams = new Object();
+        queryParams["valueInputOption"] = valueInputOption;
+        queryParams["insertDataOption"] = insertDataOption;
+        queryParams["includeValuesInResponse"] = includeValuesInResponse;
+
+        const response = this.wsUtil.rest(
+            GoogleSheetsAPI.CONSTANTS.API.ADD_ROW.name,
+            GoogleSheetsAPI.CONSTANTS.API.ADD_ROW.method,
+            this.version,
+            this.authType,
+            this.authProfile,
+            attrs,
+			attrsNoEscape,
+			payload,
+            queryParams
+        );
+
+        if (response.error) {
+            gs.error("NYU Google Spoke return an error.\nError: {0}", response.errorMessage);
+        }
+
+        return response;
+    },
+
+    getCellValues: function(spreadsheetId,
+        range,
+        authProfileType = this.authType,
+        authProfile = this.authProfile,
+        majorDimension = null
+    ) {
+        const attrs = new Object();
+        attrs["spreadsheetId"] = spreadsheetId;
+        attrs['range'] = range;
+
+        const queryParams = new Object();
+        queryParams["majorDimension"] = majorDimension;
+
+        const response = this.wsUtil.rest(
+            GoogleSheetsAPI.CONSTANTS.API.GET_CELL_VALUES.name,
+            GoogleSheetsAPI.CONSTANTS.API.GET_CELL_VALUES.method,
+            this.version,
+            this.authType,
+            this.authProfile,
+            attrs, {}, // attrsNoEscape
+			null, // payload
+            queryParams
+        );
+
+        if (response.error) {
+            gs.error("NYU Google Spoke return an error.\nError: {0}", response.errorMessage);
+        }
+
+        return response;
+    },
+
+    getProfileType: function(auth_profile) {
+        const basicAuth = new GlideRecord("sys_auth_profile_basic");
+        if (basicAuth.get(auth_profile)) {
+            return "basic";
+        }
+        const oauth2 = new GlideRecord("oauth_entity_profile");
+        if (oauth2.get(auth_profile)) {
+            return "oauth2";
+        }
+        throw "Invalid Authentication Profile";
+    },
+
+    type: 'GoogleSheetsAPI'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2025-03-11 21:55:33</sys_created_on>
+        <sys_id>bb2598a02b18aa108a69f0dcce91bf9f</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name>GoogleSheetsAPI</sys_name>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name>sys_script_include_bb2598a02b18aa108a69f0dcce91bf9f</sys_update_name>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2025-03-13 21:36:27</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_neyu_google_nyu.LicenseAPI</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>LicenseAPI</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var LicenseAPI = Class.create();
+LicenseAPI.CONSTANTS = {
+    INT_MAP: {
+        GET: {
+            path: "/apps/licensing/v1/product/${productId}/sku/${skuId}/user/${userId}",
+            httpMethod: "GET",
+            pathParams: ["productId", "skuId", "userId"],
+            aliasId: "150209ddeb87ba105c06fcffcad0cd42"
+        }
+    }
+};
+LicenseAPI.prototype = {
+    initialize: function() {},
+
+    ensureToken: function() {
+        const context = "x_neyu_rest_utils_oauth_credentials";
+        const requestor = gs.getProperty("x_neyu_google_nyu.license.api.credential.id");
+        (new global.OAuthTokenGetter()).processJWT(
+            requestor,
+            context,
+            "8491b701ebcf7a105c06fcffcad0cda8", // Google Licensing API
+            "3b683f45ebcf7a105c06fcffcad0cd99" // Google Licensing API default_profile
+        );
+    },
+
+    get: function(productId, skuId, userId) {
+        if (!productId || !skuId || !userId) {
+            return {
+                error: true,
+                errorMessage: "There were missing parameters"
+            };
+        }
+
+        this.ensureToken();
+
+        const pathParams = {
+            productId: productId,
+            skuId: skuId,
+            userId: userId
+        };
+        const config = LicenseAPI.CONSTANTS.INT_MAP.GET;
+        const requestConfig = {
+            ...config,
+            pathParams
+        };
+
+        const builder = new x_neyu_rest_utils.RequestBuilder(requestConfig);
+        const api = new x_neyu_rest_utils.WebServiceUtil();
+
+        let response;
+        try {
+            response = api.executeRestMessage(builder.build());
+        } catch (ex) {
+            gs.error("[get] there was an internal error building and executing" +
+                " the RestMessage.\nError: " + ex);
+            return {
+                error: true,
+                errorMessage: ex + ""
+            };
+        }
+
+        if (response.error) {
+            gs.error("[get] There was an error returned from the Google API." +
+                "\nError: " + response.errorMessage);
+        }
+
+        // gs.info("[get] Response: " + JSON.stringify(response));
+        return {
+            ...response,
+            error: response.status != 200,
+            errorMessage: (
+                response.status != 200 ?
+                response.responseBody : response.errorMessage
+            )
+        };
+    },
+
+    type: 'LicenseAPI'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-12 22:54:43</sys_created_on>
+        <sys_id>2e4b8dd9ebc7ba105c06fcffcad0cd9b</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>LicenseAPI</sys_name>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name>sys_script_include_2e4b8dd9ebc7ba105c06fcffcad0cd9b</sys_update_name>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-12 23:18:37</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -17,6 +17,35 @@ LicenseAPI.CONSTANTS = {
             httpMethod: "GET",
             pathParams: ["productId", "skuId", "userId"],
             aliasId: "150209ddeb87ba105c06fcffcad0cd42"
+        },
+        INSERT: {
+            path: "/apps/licensing/v1/product/${productId}/sku/${skuId}/user",
+            httpMethod: "POST",
+            pathParams: ["productId", "skuId"],
+            content: {
+                "userId": ""
+            },
+            aliasId: "150209ddeb87ba105c06fcffcad0cd42"
+        },
+        DELETE: {
+            path: "/apps/licensing/v1/product/${productId}/sku/${skuId}/user/${userId}",
+            httpMethod: "DELETE",
+            pathParams: ["productId", "skuId", "userId"],
+            aliasId: "150209ddeb87ba105c06fcffcad0cd42"
+        },
+        LIST_FOR_PRODUCT: {
+            path: "/apps/licensing/v1/product/${productId}/users",
+            httpMethod: "GET",
+            pathParams: ["productId"],
+            queryParams: ["customerId"],
+            aliasId: "150209ddeb87ba105c06fcffcad0cd42"
+        },
+        LIST_FOR_PRODUCT_AND_SKU: {
+            path: "/apps/licensing/v1/product/${productId}/sku/${skuId}/users",
+            httpMethod: "GET",
+            pathParams: ["productId", "skuId"],
+            queryParams: ["customerId"],
+            aliasId: "150209ddeb87ba105c06fcffcad0cd42"
         }
     }
 };
@@ -86,19 +115,233 @@ LicenseAPI.prototype = {
         };
     },
 
+    insert: function(productId, skuId, userId) {
+        if (!productId || !skuId || !userId) {
+            return {
+                error: true,
+                errorMessage: "There are missing parameters"
+            };
+        }
+
+        this.ensureToken();
+
+        const config = LicenseAPI.CONSTANTS.INT_MAP.INSERT;
+        const content = {
+            userId: userId
+        };
+		const pathParams = {
+			productId: productId,
+			skuId: skuId
+		};
+        const requestConfig = {
+            ...config,
+			pathParams,
+            content: JSON.stringify(content)
+        };
+
+        const builder = new x_neyu_rest_utils.RequestBuilder(requestConfig);
+        const api = new x_neyu_rest_utils.WebServiceUtil();
+
+        let response;
+        try {
+            response = api.executeRestMessage(builder.build());
+        } catch (ex) {
+            gs.error("[insert] There wasn an error building and executing the " +
+                " RESTMessage object.\nError: " + ex);
+            return {
+                error: true,
+                errorMessage: ("There was an internal error when trying to contact Google." +
+                    " Please contact your system administrator.")
+            };
+        }
+
+        if (response.error) {
+            gs.error("[insert] An error response was received from Google License API." +
+                "\nResponse: " + JSON.stringify(response));
+        }
+
+        return {
+            ...response,
+            error: response.status != 201,
+            errorMessage: (
+                response.status != 201 ?
+                response.responseBody : response.errorMessage
+            )
+        };
+    },
+
+    delete: function(productId, skuId, userId) {
+        if (!productId || !skuId || !userId) {
+            return {
+                error: true,
+                errorMessage: "There were missing parameters"
+            };
+        }
+
+        this.ensureToken();
+
+        const pathParams = {
+            productId: productId,
+            skuId: skuId,
+            userId: userId
+        };
+        const config = LicenseAPI.CONSTANTS.INT_MAP.DELETE;
+        const requestConfig = {
+            ...config,
+            pathParams
+        };
+
+        const builder = new x_neyu_rest_utils.RequestBuilder(requestConfig);
+        const api = new x_neyu_rest_utils.WebServiceUtil();
+
+        let response;
+        try {
+            response = api.executeRestMessage(builder.build());
+        } catch (ex) {
+            gs.error("[delete] there was an internal error building and executing" +
+                " the RestMessage.\nError: " + ex);
+            return {
+                error: true,
+                errorMessage: ex + ""
+            };
+        }
+
+        if (response.error) {
+            gs.error("[delete] There was an error returned from the Google API." +
+                "\nError: " + response.errorMessage);
+        }
+
+        // gs.info("[get] Response: " + JSON.stringify(response));
+        return {
+            ...response,
+            error: response.status != 200,
+            errorMessage: (
+                response.status != 200 ?
+                response.responseBody : response.errorMessage
+            )
+        };
+    },
+
+    listForProduct: function(productId, customerId) {
+        if (!productId || !customerId) {
+            return {
+                error: true,
+                errorMessage: "There are missing required parameters"
+            };
+        }
+
+        this.ensureToken();
+
+        const pathParams = {
+            productId: productId
+        };
+        const queryParams = {
+            customerId: customerId
+        };
+        const config = LicenseAPI.CONSTANTS.INT_MAP.LIST_FOR_PRODUCT;
+        const requestConfig = {
+            ...config,
+            pathParams,
+            queryParams
+        };
+
+        const builder = new x_neyu_rest_utils.RequestBuilder(requestConfig);
+        const api = new x_neyu_rest_utils.WebServiceUtil();
+
+        let response;
+        try {
+            response = api.executeRestMessage(builder.build());
+        } catch (ex) {
+            gs.error("[listForProduct] There was an error building and executing " +
+                " the RESTMessage.\nError: " + ex);
+            return {
+                error: true,
+                errorMessage: "There was an internal error connecting to Google. Please contact your system administrator"
+            };
+        }
+
+        if (response.error) {
+            gs.error("[listForProduct] There wasn an error returned from google." +
+                "\nResponse: " + JSON.stringify(response));
+        }
+
+        return {
+            ...response,
+            error: response.status != 200,
+            errorMessage: (
+                response.status != 200 ?
+                response.responseBody : response.errorMessage
+            )
+        };
+    },
+
+    listForProductAndSku: function(productId, customerId, skuId) {
+        if (!productId || !customerId || !skuId) {
+            return {
+                error: true,
+                errorMessage: "There are missing required parameters"
+            };
+        }
+
+        this.ensureToken();
+
+        const pathParams = {
+            productId: productId,
+            skuId: skuId
+        };
+        const queryParams = {
+            customerId: customerId
+        };
+        const config = LicenseAPI.CONSTANTS.INT_MAP.LIST_FOR_PRODUCT_AND_SKU;
+        const requestConfig = {
+            ...config,
+            pathParams,
+            queryParams
+        };
+
+        const builder = new x_neyu_rest_utils.RequestBuilder(requestConfig);
+        const api = new x_neyu_rest_utils.WebServiceUtil();
+
+        let response;
+        try {
+            response = api.executeRestMessage(builder.build());
+        } catch (ex) {
+            gs.error("[listForProductAndSku] There was an error building and executing " +
+                " the RESTMessage.\nError: " + ex);
+            return {
+                error: true,
+                errorMessage: "There was an internal error connecting to Google. Please contact your system administrator"
+            };
+        }
+
+        if (response.error) {
+            gs.error("[listForProductAndSku] There wasn an error returned from google." +
+                "\nResponse: " + JSON.stringify(response));
+        }
+
+        return {
+            ...response,
+            error: response.status != 200,
+            errorMessage: (
+                response.status != 200 ?
+                response.responseBody : response.errorMessage
+            )
+        };
+    },
+
     type: 'LicenseAPI'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-02-12 22:54:43</sys_created_on>
         <sys_id>2e4b8dd9ebc7ba105c06fcffcad0cd9b</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>LicenseAPI</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_script_include_2e4b8dd9ebc7ba105c06fcffcad0cd9b</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:18:37</sys_updated_on>
+        <sys_updated_on>2026-02-13 20:30:27</sys_updated_on>
     </sys_script_include>
 </record_update>

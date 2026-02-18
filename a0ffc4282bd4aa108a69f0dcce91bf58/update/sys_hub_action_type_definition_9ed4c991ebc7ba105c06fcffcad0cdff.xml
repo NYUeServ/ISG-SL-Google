@@ -16,7 +16,7 @@
         <flow_priority/>
         <ih_action>false</ih_action>
         <internal_name>google_license__get</internal_name>
-        <label_cache>[{"name":"{{action.connection_credential_alias}}","label":"action➛Connection &amp; Credential Alias","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.alias}}","label":"action➛Connection &amp; Credential Alias","type":"action","ref":"","reference_display":"Connection &amp; Credential Aliases","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.product_id}}","label":"action➛Product ID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.sku_id}}","label":"action➛SKU ID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.user}}","label":"action➛User","type":"action","ref":"","reference_display":"User","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.user.email}}","label":"action➛User➛Email","type":"action","ref":"","reference_display":"Email","base_type":"email","parent_table_name":"sys_user","column_name":"email","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error}}","label":"step➛Call API➛Error","type":"step","ref":"","reference_display":"","base_type":"boolean","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"boolean","uiUniqueId":"354ddbd5-6aed-4dbf-8b35-9322c8867c9b"}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__.code}}","label":"step➛Call API➛Step Status➛Code","type":"step","ref":"","reference_display":"","base_type":"integer","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__.message}}","label":"step➛Call API➛Step Status➛Message","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result}}","label":"step➛Call API➛result","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"2d7b4987-2be7-42e2-8fb0-ae2f12bba80f"}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_message}}","label":"step➛Call API➛Error Message","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"5c2082dc-6eae-4ba6-95f0-135d4342fded"}}]</label_cache>
+        <label_cache>[{"name":"{{action.connection_credential_alias}}","label":"action➛Connection &amp; Credential Alias","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.alias}}","label":"action➛Connection &amp; Credential Alias","type":"action","ref":"","reference_display":"Connection &amp; Credential Aliases","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.product_id}}","label":"action➛Product ID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.sku_id}}","label":"action➛SKU ID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.user}}","label":"action➛User","type":"action","ref":"","reference_display":"User","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.user.email}}","label":"action➛User➛Email","type":"action","ref":"","reference_display":"Email","base_type":"email","parent_table_name":"sys_user","column_name":"email","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error}}","label":"step➛Call API➛Error","type":"step","ref":"","reference_display":"","base_type":"boolean","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"boolean","uiUniqueId":"354ddbd5-6aed-4dbf-8b35-9322c8867c9b"}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__.code}}","label":"step➛Call API➛Step Status➛Code","type":"step","ref":"","reference_display":"","base_type":"integer","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__.message}}","label":"step➛Call API➛Step Status➛Message","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result}}","label":"step➛Call API➛result","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","sourceUiUniqueId":"","sourceType":"","uiType":"string","uiUniqueId":"2d7b4987-2be7-42e2-8fb0-ae2f12bba80f"}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_message}}","label":"step➛Call API➛Error Message","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"5c2082dc-6eae-4ba6-95f0-135d4342fded"}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__}}","label":"step➛Call API➛Step Status","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result.kind}}","label":"step➛Call API➛result➛kind","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result.etags}}","label":"step➛Call API➛result➛etags","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result.productId}}","label":"step➛Call API➛result➛productId","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result.userId}}","label":"step➛Call API➛result➛userId","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result.selfLink}}","label":"step➛Call API➛result➛selfLink","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result.skuId}}","label":"step➛Call API➛result➛skuId","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result.skuName}}","label":"step➛Call API➛result➛skuName","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result.productName}}","label":"step➛Call API➛result➛productName","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error}}","label":"step➛Call API➛Error Result➛error","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error.code}}","label":"step➛Call API➛Error Result➛error➛code","type":"step","ref":"","reference_display":"","base_type":"integer","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error.message}}","label":"step➛Call API➛Error Result➛error➛message","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error.errors}}","label":"step➛Call API➛Error Result➛error➛errors","type":"step","ref":"","reference_display":"","base_type":"array.object","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
         <master_snapshot>6bd781d5ebc7ba105c06fcffcad0cda7</master_snapshot>
         <master_snapshot_digest/>
         <name>License - Get</name>
@@ -31,7 +31,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>9ed4c991ebc7ba105c06fcffcad0cdff</sys_id>
-        <sys_mod_count>25</sys_mod_count>
+        <sys_mod_count>54</sys_mod_count>
         <sys_name>License - Get</sys_name>
         <sys_overrides/>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
@@ -39,7 +39,7 @@
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_9ed4c991ebc7ba105c06fcffcad0cdff</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-13 20:07:39</sys_updated_on>
+        <sys_updated_on>2026-02-18 21:13:49</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -48,16 +48,16 @@
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>sys_hub_action_type_definition</document>
         <document_key>9ed4c991ebc7ba105c06fcffcad0cdff</document_key>
-        <order>2</order>
+        <order>3</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 22:24:09</sys_created_on>
-        <sys_id>572509d1ebc7ba105c06fcffcad0cd98</sys_id>
+        <sys_created_on>2026-02-18 19:41:52</sys_created_on>
+        <sys_id>ac991b4feb87f2505c06fcffcad0cd9f</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 22:24:09</sys_updated_on>
+        <sys_updated_on>2026-02-18 19:41:52</sys_updated_on>
         <value>0</value>
-        <variable display_value="Don't Treat as Error">d32509d1ebc7ba105c06fcffcad0cd8a</variable>
+        <variable display_value="Don't Treat as Error">50991b4feb87f2505c06fcffcad0cd6a</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>sys_hub_action_type_definition</document>
@@ -65,13 +65,13 @@
         <order>2</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 23:26:18</sys_created_on>
-        <sys_id>e563d995eb0bba105c06fcffcad0cd0b</sys_id>
+        <sys_created_on>2026-02-18 19:41:52</sys_created_on>
+        <sys_id>a4991b4feb87f2505c06fcffcad0cda0</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:26:18</sys_updated_on>
-        <value>0</value>
-        <variable display_value="Error">69639995eb0bba105c06fcffcad0cdcc</variable>
+        <sys_updated_on>2026-02-18 19:41:52</sys_updated_on>
+        <value>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"794bc342-9c9d-444b-a3f2-dd4b6a5a0173\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</value>
+        <variable display_value="Action Status">10991b4feb87f2505c06fcffcad0cd65</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>sys_hub_action_type_definition</document>
@@ -79,13 +79,27 @@
         <order>1</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 22:24:09</sys_created_on>
-        <sys_id>9f2509d1ebc7ba105c06fcffcad0cd98</sys_id>
+        <sys_created_on>2026-02-18 19:41:52</sys_created_on>
+        <sys_id>68991b4feb87f2505c06fcffcad0cd9f</sys_id>
         <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-13 20:07:34</sys_updated_on>
-        <value>{"version":"1.0","serializationFormat":"JSON","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"794bc342-9c9d-444b-a3f2-dd4b6a5a0173\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}}}</value>
-        <variable display_value="Action Status">df2509d1ebc7ba105c06fcffcad0cd76</variable>
+        <sys_updated_on>2026-02-18 19:44:48</sys_updated_on>
+        <value/>
+        <variable display_value="License">1c991b4feb87f2505c06fcffcad0cd52</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_definition</document>
+        <document_key>9ed4c991ebc7ba105c06fcffcad0cdff</document_key>
+        <order>5</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 21:13:42</sys_created_on>
+        <sys_id>f59ee3cbeb0bf2505c06fcffcad0cd52</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 21:13:42</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Internal Failure">3d9ee3cbeb0bf2505c06fcffcad0cd38</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=9ed4c991ebc7ba105c06fcffcad0cdff"/>
     <sys_element_mapping action="INSERT_OR_UPDATE">
@@ -113,16 +127,88 @@
         <value>{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_message}}</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>error_response</field>
+        <id>9ed4c991ebc7ba105c06fcffcad0cdff</id>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 19:29:16</sys_created_on>
+        <sys_id>84b6d74beb87f2505c06fcffcad0cdf5</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 19:46:12</sys_updated_on>
+        <table>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</table>
+        <value>{"version":"1.0","complexObject":{"error":{"name$":"error","code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}},"errors":{"$cv":{"$c":"java.lang.String","$v":""}}}},"complexObjectSchema":{"FlowDesigner:FD5b3a978f0387f250e441a8bdc2a90281":{"error":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"choiceOption\":\"\",\"mapped\":\"{\\\"error.code\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error.code}}\\\"}\",\"default_value\":\"\",\"label\":\"code\",\"mandatory\":\"true\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"af59c729-db77-4fd2-879f-77627982a497\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"error.message\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error.message}}\\\"}\",\"default_value\":\"\",\"label\":\"message\",\"mandatory\":\"true\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"e1ff7202-617d-45d6-9fcb-e3b8f9322261\"}"},"errors":[{"errors":{"reason":"String","reason.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"reason\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"118180ff-6bf4-42d7-b1de-1606047e5629\"}"},"domain":"String","domain.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"domain\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"cb2e421e-460f-4198-b957-f99f792ab860\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"message\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"6ea9b557-1cb3-4046-a9b7-fb32837dbcbe\"}"}}}],"errors.$field_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"errors\",\"mandatory\":\"false\",\"child_name\":\"error_item\",\"uiUniqueId\":\"2d7c860a-dd9d-4ce8-95c3-4ef14cbeb304\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"error_item\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"mapped\":\"{\\\"error.errors\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error.errors}}\\\"}\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"3\",\"max_length\":\"0\",\"child_uiUniqueId\":\"b8db218f-8d69-4f50-ba85-c347b1cfdafe\"}"}},"error.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"error\",\"mandatory\":\"true\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"3d9efd60-77d2-440b-b056-477ac0e41c8d\"}"}},"FlowDesigner:FD5b3a978f0387f250e441a8bdc2a90281.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Error Response\",\"mandatory\":\"false\",\"uiUniqueId\":\"1651380f-68df-4181-9e23-ef9f364d5061\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD5b3a978f0387f250e441a8bdc2a90281\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"4\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>failed</field>
+        <id>9ed4c991ebc7ba105c06fcffcad0cdff</id>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 19:50:14</sys_created_on>
+        <sys_id>8b7b1703ebc7f2505c06fcffcad0cda7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 19:50:14</sys_updated_on>
+        <table>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</table>
+        <value>{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>failure_message</field>
+        <id>9ed4c991ebc7ba105c06fcffcad0cdff</id>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 19:48:41</sys_created_on>
+        <sys_id>e42b5fcfeb87f2505c06fcffcad0cd3d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 19:48:41</sys_updated_on>
+        <table>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</table>
+        <value>{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_message}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>internal_failure</field>
+        <id>9ed4c991ebc7ba105c06fcffcad0cdff</id>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 21:13:42</sys_created_on>
+        <sys_id>359ee3cbeb0bf2505c06fcffcad0cd52</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 21:13:42</sys_updated_on>
+        <table>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</table>
+        <value>{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>license</field>
+        <id>9ed4c991ebc7ba105c06fcffcad0cdff</id>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 19:41:52</sys_created_on>
+        <sys_id>60991b4feb87f2505c06fcffcad0cd9f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 19:46:12</sys_updated_on>
+        <table>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</table>
+        <value>{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>license_assignment</field>
+        <id>9ed4c991ebc7ba105c06fcffcad0cdff</id>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 19:29:16</sys_created_on>
+        <sys_id>8cb6d74beb87f2505c06fcffcad0cdf4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 19:31:13</sys_updated_on>
+        <table>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</table>
+        <value>{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>response</field>
         <id>9ed4c991ebc7ba105c06fcffcad0cdff</id>
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-02-12 22:28:27</sys_created_on>
         <sys_id>56260d15ebc7ba105c06fcffcad0cdfe</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:26:18</sys_updated_on>
+        <sys_updated_on>2026-02-18 19:15:07</sys_updated_on>
         <table>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</table>
-        <value>{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result}}</value>
+        <value/>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>__action_status__</field>
@@ -166,10 +252,10 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-02-12 23:22:57</sys_created_on>
         <sys_id>6ca29955eb0bba105c06fcffcad0cd4a</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:25:10</sys_updated_on>
+        <sys_updated_on>2026-02-18 20:10:24</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=6ca29955eb0bba105c06fcffcad0cd4a"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -194,9 +280,9 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-02-12 23:22:57</sys_created_on>
         <sys_id>e8a29955eb0bba105c06fcffcad0cd71</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:25:10</sys_updated_on>
+        <sys_updated_on>2026-02-18 20:10:24</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
     &#13;
     const api = new x_neyu_google_nyu.LicenseAPI();&#13;
@@ -207,9 +293,14 @@
     );&#13;
 &#13;
     outputs.error = response.error;&#13;
-    outputs.error_message = response.errorMessage;&#13;
-    if (!response.error) {&#13;
-        outputs.result = response.responseBody;&#13;
+&#13;
+    if (response.error) {&#13;
+        outputs.error = true;&#13;
+        outputs.error_message = response.errorMessage;&#13;
+    } else if (response.status == 200) {&#13;
+        outputs.result = JSON.parse(response.responseBody);&#13;
+    } else {&#13;
+        outputs.error_result = JSON.parse(response.responseBody);&#13;
     }&#13;
 &#13;
 })(inputs, outputs);&#13;
@@ -530,7 +621,7 @@
         <write_roles/>
         <xml_view>false</xml_view>
     </sys_hub_step_ext_input>
-    <sys_hub_step_ext_output action="delete_multiple" query="model=6ca29955eb0bba105c06fcffcad0cd4a^sys_idNOT IN2ef25195eb0bba105c06fcffcad0cda6,62f25195eb0bba105c06fcffcad0cdc4,a6f25195eb0bba105c06fcffcad0cda1"/>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=6ca29955eb0bba105c06fcffcad0cd4a^sys_idNOT IN2ef25195eb0bba105c06fcffcad0cda6,62f25195eb0bba105c06fcffcad0cdc4,73345b87eb87f2505c06fcffcad0cdc0,a6f25195eb0bba105c06fcffcad0cda1"/>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
@@ -614,11 +705,34 @@
         <write_roles/>
         <xml_view>false</xml_view>
     </sys_hub_step_ext_output>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FD64739b475887f2509f911ad4f0704916</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>a0ffc4282bd4aa108a69f0dcce91bf58</scope_name>
+        <serialized_content>{"FlowDesigner:FD64739b475887f2509f911ad4f0704916":{"skuName":"String","skuName.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"skuName\",\"mandatory\":\"true\",\"order\":\"7\",\"max_length\":\"0\",\"uiUniqueId\":\"cbd01b35-58f9-4814-bb2a-b98385b44442\"}"},"productId":"String","productId.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"productId\",\"mandatory\":\"true\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"d2f5ac43-82a3-4558-a434-ec999ffbf59e\"}"},"kind":"String","kind.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"kind\",\"mandatory\":\"true\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"4517ec46-c077-4e52-87a6-b92b635162e7\"}"},"etags":"String","etags.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"etags\",\"mandatory\":\"true\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"dea3f217-37ef-4847-86d3-f1c3186eb7ad\"}"},"userId":"String","userId.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"userId\",\"mandatory\":\"true\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"00aac503-a876-47de-907a-893c00cee944\"}"},"productName":"String","productName.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"productName\",\"mandatory\":\"true\",\"order\":\"8\",\"max_length\":\"0\",\"uiUniqueId\":\"ec2b8670-93c0-4ecb-ac6f-3e9c923bb156\"}"},"skuId":"String","skuId.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"skuId\",\"mandatory\":\"true\",\"order\":\"6\",\"max_length\":\"0\",\"uiUniqueId\":\"806e4f2f-03d0-4347-a39b-6920a8719101\"}"},"selfLink":"String","selfLink.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"selfLink\",\"mandatory\":\"true\",\"order\":\"5\",\"max_length\":\"0\",\"uiUniqueId\":\"ab8744f7-5fee-4a95-8b0a-6ef8902de873\"}"}},"FlowDesigner:FD64739b475887f2509f911ad4f0704916.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"result\",\"mandatory\":\"false\",\"uiUniqueId\":\"2d7b4987-2be7-42e2-8fb0-ae2f12bba80f\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD64739b475887f2509f911ad4f0704916\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"3\",\"max_length\":\"65000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 19:15:07</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>78739b47eb87f2505c06fcffcad0cd16</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 21:13:46</sys_updated_on>
+        <type>complex_object_schema</type>
+    </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=2d7b4987-2be7-42e2-8fb0-ae2f12bba80f</attributes>
+        <attributes>co_type_name=FD64739b475887f2509f911ad4f0704916,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=2d7b4987-2be7-42e2-8fb0-ae2f12bba80f</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -653,7 +767,7 @@
         <internal_type display_value="String">string</internal_type>
         <label>result</label>
         <mandatory>false</mandatory>
-        <max_length>8000</max_length>
+        <max_length>65000</max_length>
         <model display_value="Call API">6ca29955eb0bba105c06fcffcad0cd4a</model>
         <model_id>6ca29955eb0bba105c06fcffcad0cd4a</model_id>
         <model_table>sys_hub_step_instance</model_table>
@@ -677,14 +791,120 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-02-12 23:24:27</sys_created_on>
         <sys_id>62f25195eb0bba105c06fcffcad0cdc4</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name/>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:24:27</sys_updated_on>
+        <sys_updated_on>2026-02-18 19:15:07</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FD9139534f1387f25086a25a481847e94e</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>a0ffc4282bd4aa108a69f0dcce91bf58</scope_name>
+        <serialized_content>{"FlowDesigner:FD9139534f1387f25086a25a481847e94e":{"error":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"code\",\"mandatory\":\"true\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"af59c729-db77-4fd2-879f-77627982a497\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"message\",\"mandatory\":\"true\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"e1ff7202-617d-45d6-9fcb-e3b8f9322261\"}"},"errors":[{"$0_errors":{"reason":"String","reason.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"reason\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"118180ff-6bf4-42d7-b1de-1606047e5629\"}"},"domain":"String","domain.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"domain\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"cb2e421e-460f-4198-b957-f99f792ab860\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"message\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"6ea9b557-1cb3-4046-a9b7-fb32837dbcbe\"}"}}}],"errors.$field_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"errors\",\"mandatory\":\"false\",\"child_name\":\"error_item\",\"uiUniqueId\":\"2d7c860a-dd9d-4ce8-95c3-4ef14cbeb304\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"error_item\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"3\",\"max_length\":\"0\",\"child_uiUniqueId\":\"b8db218f-8d69-4f50-ba85-c347b1cfdafe\"}"}},"error.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"error\",\"mandatory\":\"true\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"3d9efd60-77d2-440b-b056-477ac0e41c8d\"}"}},"FlowDesigner:FD9139534f1387f25086a25a481847e94e.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Error Result\",\"mandatory\":\"false\",\"uiUniqueId\":\"48eca6a6-b42b-49aa-b760-af25605b79b8\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD9139534f1387f25086a25a481847e94e\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"4\",\"max_length\":\"65000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 19:40:16</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5539534feb87f2505c06fcffcad0cd4e</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 21:13:46</sys_updated_on>
+        <type>complex_object_schema</type>
+    </sys_complex_object>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>co_type_name=FD9139534f1387f25086a25a481847e94e,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=48eca6a6-b42b-49aa-b760-af25605b79b8</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>error_result</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Error Result</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Call API">6ca29955eb0bba105c06fcffcad0cd4a</model>
+        <model_id>6ca29955eb0bba105c06fcffcad0cd4a</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_6ca29955eb0bba105c06fcffcad0cd4a</name>
+        <next_element/>
+        <order>4</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 19:18:36</sys_created_on>
+        <sys_id>73345b87eb87f2505c06fcffcad0cdc0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 19:40:16</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -781,6 +1001,29 @@
         <xml_view>false</xml_view>
     </sys_hub_step_ext_output>
     <sys_hub_input_scripts action="delete_multiple" query="instance=6ca29955eb0bba105c06fcffcad0cd4a"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>error_result</element>
+        <help/>
+        <hint/>
+        <label>Error Result</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_6ca29955eb0bba105c06fcffcad0cd4a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 19:18:36</sys_created_on>
+        <sys_id>3b345b87eb87f2505c06fcffcad0cdc3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 19:18:36</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>error</element>
         <help/>
@@ -1103,360 +1346,12 @@
         <xml_view>false</xml_view>
     </sys_hub_action_input>
     <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=c72509d1ebc7ba105c06fcffcad0cd2b"/>
-    <sys_hub_action_output action="delete_multiple" query="model=9ed4c991ebc7ba105c06fcffcad0cdff^sys_idNOT IN16260d15ebc7ba105c06fcffcad0cdce,25639995eb0bba105c06fcffcad0cdd5,69639995eb0bba105c06fcffcad0cdcc,d32509d1ebc7ba105c06fcffcad0cd8a,df2509d1ebc7ba105c06fcffcad0cd76"/>
+    <sys_hub_action_output action="delete_multiple" query="model=9ed4c991ebc7ba105c06fcffcad0cdff^sys_idNOT IN10991b4feb87f2505c06fcffcad0cd65,1c991b4feb87f2505c06fcffcad0cd52,1f3a978feb87f2505c06fcffcad0cd8a,3d9ee3cbeb0bf2505c06fcffcad0cd38,50991b4feb87f2505c06fcffcad0cd6a,982b5fcfeb87f2505c06fcffcad0cd1a"/>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=dc763fdc-e0f8-4222-9284-b527ef9a301c</attributes>
-        <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
-        <choice_field/>
-        <choice_table/>
-        <column_label/>
-        <comments/>
-        <create_roles/>
-        <default_value/>
-        <defaultsort/>
-        <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
-        <display>false</display>
-        <dynamic_creation>false</dynamic_creation>
-        <dynamic_creation_script/>
-        <dynamic_default_value/>
-        <dynamic_ref_qual/>
-        <element>response</element>
-        <element_prototype/>
-        <element_reference>false</element_reference>
-        <foreign_database/>
-        <formula/>
-        <function_definition/>
-        <function_field>false</function_field>
-        <help/>
-        <hint/>
-        <internal_link/>
-        <internal_type display_value="String">string</internal_type>
-        <label>Result</label>
-        <mandatory>false</mandatory>
-        <max_length>8000</max_length>
-        <model display_value="License - Get">9ed4c991ebc7ba105c06fcffcad0cdff</model>
-        <model_id>9ed4c991ebc7ba105c06fcffcad0cdff</model_id>
-        <model_table>sys_hub_action_type_definition</model_table>
-        <name>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</name>
-        <next_element/>
-        <order>1</order>
-        <primary>false</primary>
-        <read_only>false</read_only>
-        <read_roles/>
-        <reference/>
-        <reference_cascade_rule/>
-        <reference_floats>false</reference_floats>
-        <reference_key/>
-        <reference_qual/>
-        <reference_qual_condition/>
-        <reference_type/>
-        <sizeclass/>
-        <spell_check>false</spell_check>
-        <staged>false</staged>
-        <sys_class_name>sys_hub_action_output</sys_class_name>
-        <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 22:28:27</sys_created_on>
-        <sys_id>16260d15ebc7ba105c06fcffcad0cdce</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name/>
-        <sys_package/>
-        <sys_policy>read</sys_policy>
-        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:26:17</sys_updated_on>
-        <table_reference>false</table_reference>
-        <text_index>false</text_index>
-        <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
-        <virtual_type>script</virtual_type>
-        <widget/>
-        <write_roles/>
-        <xml_view>false</xml_view>
-    </sys_hub_action_output>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=16260d15ebc7ba105c06fcffcad0cdce"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=16260d15ebc7ba105c06fcffcad0cdce"/>
-    <sys_hub_action_output action="INSERT_OR_UPDATE">
-        <active>true</active>
-        <array>false</array>
-        <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=b4b22cbc-be06-4c5a-9a7b-9cfa1bc283a3</attributes>
-        <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
-        <choice_field/>
-        <choice_table/>
-        <column_label/>
-        <comments/>
-        <create_roles/>
-        <default_value/>
-        <defaultsort/>
-        <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
-        <display>false</display>
-        <dynamic_creation>false</dynamic_creation>
-        <dynamic_creation_script/>
-        <dynamic_default_value/>
-        <dynamic_ref_qual/>
-        <element>error_message</element>
-        <element_prototype/>
-        <element_reference>false</element_reference>
-        <foreign_database/>
-        <formula/>
-        <function_definition/>
-        <function_field>false</function_field>
-        <help/>
-        <hint/>
-        <internal_link/>
-        <internal_type display_value="String">string</internal_type>
-        <label>Error Message</label>
-        <mandatory>false</mandatory>
-        <max_length>8000</max_length>
-        <model display_value="License - Get">9ed4c991ebc7ba105c06fcffcad0cdff</model>
-        <model_id>9ed4c991ebc7ba105c06fcffcad0cdff</model_id>
-        <model_table>sys_hub_action_type_definition</model_table>
-        <name>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</name>
-        <next_element/>
-        <order>4</order>
-        <primary>false</primary>
-        <read_only>false</read_only>
-        <read_roles/>
-        <reference/>
-        <reference_cascade_rule/>
-        <reference_floats>false</reference_floats>
-        <reference_key/>
-        <reference_qual/>
-        <reference_qual_condition/>
-        <reference_type/>
-        <sizeclass/>
-        <spell_check>false</spell_check>
-        <staged>false</staged>
-        <sys_class_name>sys_hub_action_output</sys_class_name>
-        <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 23:26:18</sys_created_on>
-        <sys_id>25639995eb0bba105c06fcffcad0cdd5</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
-        <sys_package/>
-        <sys_policy>read</sys_policy>
-        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:26:18</sys_updated_on>
-        <table_reference>false</table_reference>
-        <text_index>false</text_index>
-        <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
-        <virtual_type>script</virtual_type>
-        <widget/>
-        <write_roles/>
-        <xml_view>false</xml_view>
-    </sys_hub_action_output>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=25639995eb0bba105c06fcffcad0cdd5"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=25639995eb0bba105c06fcffcad0cdd5"/>
-    <sys_hub_action_output action="INSERT_OR_UPDATE">
-        <active>true</active>
-        <array>false</array>
-        <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=fefea503-8a50-452e-8f8f-b52fa0578eb2</attributes>
-        <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
-        <choice_field/>
-        <choice_table/>
-        <column_label/>
-        <comments/>
-        <create_roles/>
-        <default_value/>
-        <defaultsort/>
-        <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
-        <display>false</display>
-        <dynamic_creation>false</dynamic_creation>
-        <dynamic_creation_script/>
-        <dynamic_default_value/>
-        <dynamic_ref_qual/>
-        <element>error</element>
-        <element_prototype/>
-        <element_reference>false</element_reference>
-        <foreign_database/>
-        <formula/>
-        <function_definition/>
-        <function_field>false</function_field>
-        <help/>
-        <hint/>
-        <internal_link/>
-        <internal_type display_value="">boolean</internal_type>
-        <label>Error</label>
-        <mandatory>true</mandatory>
-        <max_length>40</max_length>
-        <model display_value="License - Get">9ed4c991ebc7ba105c06fcffcad0cdff</model>
-        <model_id>9ed4c991ebc7ba105c06fcffcad0cdff</model_id>
-        <model_table>sys_hub_action_type_definition</model_table>
-        <name>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</name>
-        <next_element/>
-        <order>2</order>
-        <primary>false</primary>
-        <read_only>false</read_only>
-        <read_roles/>
-        <reference/>
-        <reference_cascade_rule/>
-        <reference_floats>false</reference_floats>
-        <reference_key/>
-        <reference_qual/>
-        <reference_qual_condition/>
-        <reference_type/>
-        <sizeclass/>
-        <spell_check>false</spell_check>
-        <staged>false</staged>
-        <sys_class_name>sys_hub_action_output</sys_class_name>
-        <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 23:26:17</sys_created_on>
-        <sys_id>69639995eb0bba105c06fcffcad0cdcc</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
-        <sys_package/>
-        <sys_policy>read</sys_policy>
-        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:26:17</sys_updated_on>
-        <table_reference>false</table_reference>
-        <text_index>false</text_index>
-        <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
-        <virtual_type>script</virtual_type>
-        <widget/>
-        <write_roles/>
-        <xml_view>false</xml_view>
-    </sys_hub_action_output>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=69639995eb0bba105c06fcffcad0cdcc"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=69639995eb0bba105c06fcffcad0cdcc"/>
-    <sys_hub_action_output action="INSERT_OR_UPDATE">
-        <active>true</active>
-        <array>false</array>
-        <array_denormalized>false</array_denormalized>
-        <attributes>action_error_output=true,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=7533faca-94c4-4d08-bdaf-1a58f7396f45,visible_in_ui=false</attributes>
-        <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
-        <choice_field/>
-        <choice_table/>
-        <column_label/>
-        <comments/>
-        <create_roles/>
-        <default_value>true</default_value>
-        <defaultsort/>
-        <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
-        <display>false</display>
-        <dynamic_creation>false</dynamic_creation>
-        <dynamic_creation_script/>
-        <dynamic_default_value/>
-        <dynamic_ref_qual/>
-        <element>__dont_treat_as_error__</element>
-        <element_prototype/>
-        <element_reference>false</element_reference>
-        <foreign_database/>
-        <formula/>
-        <function_definition/>
-        <function_field>false</function_field>
-        <help/>
-        <hint/>
-        <internal_link/>
-        <internal_type display_value="">boolean</internal_type>
-        <label>Don't Treat as Error</label>
-        <mandatory>false</mandatory>
-        <max_length>40</max_length>
-        <model display_value="License - Get">9ed4c991ebc7ba105c06fcffcad0cdff</model>
-        <model_id>9ed4c991ebc7ba105c06fcffcad0cdff</model_id>
-        <model_table>sys_hub_action_type_definition</model_table>
-        <name>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</name>
-        <next_element/>
-        <order>5</order>
-        <primary>false</primary>
-        <read_only>false</read_only>
-        <read_roles/>
-        <reference/>
-        <reference_cascade_rule/>
-        <reference_floats>false</reference_floats>
-        <reference_key/>
-        <reference_qual/>
-        <reference_qual_condition/>
-        <reference_type/>
-        <sizeclass/>
-        <spell_check>false</spell_check>
-        <staged>false</staged>
-        <sys_class_name>sys_hub_action_output</sys_class_name>
-        <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 22:24:09</sys_created_on>
-        <sys_id>d32509d1ebc7ba105c06fcffcad0cd8a</sys_id>
-        <sys_mod_count>23</sys_mod_count>
-        <sys_name/>
-        <sys_package/>
-        <sys_policy>read</sys_policy>
-        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-13 20:07:37</sys_updated_on>
-        <table_reference>false</table_reference>
-        <text_index>false</text_index>
-        <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
-        <virtual_type>script</virtual_type>
-        <widget/>
-        <write_roles/>
-        <xml_view>false</xml_view>
-    </sys_hub_action_output>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=d32509d1ebc7ba105c06fcffcad0cd8a"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=d32509d1ebc7ba105c06fcffcad0cd8a"/>
-    <sys_hub_action_output action="INSERT_OR_UPDATE">
-        <active>true</active>
-        <array>false</array>
-        <array_denormalized>false</array_denormalized>
-        <attributes>action_error_output=true,co_type_name=FDACTIONSTATUS,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=a28161e5-e7e5-4957-860c-401607bce592</attributes>
+        <attributes>action_error_output=true,co_type_name=FDACTIONSTATUS,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=8cc10e79-6311-4e9a-b992-dfa31ebae51c</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -1499,6 +1394,400 @@
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</name>
         <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 19:41:51</sys_created_on>
+        <sys_id>10991b4feb87f2505c06fcffcad0cd65</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 19:41:51</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=10991b4feb87f2505c06fcffcad0cd65"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=10991b4feb87f2505c06fcffcad0cd65"/>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FD1c991b4fc587f25028d3002005614e50</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>a0ffc4282bd4aa108a69f0dcce91bf58</scope_name>
+        <serialized_content>{"FlowDesigner:FD1c991b4fc587f25028d3002005614e50":{"skuName":"String","skuName.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"skuName\",\"mandatory\":\"true\",\"order\":\"7\",\"max_length\":\"0\",\"uiUniqueId\":\"cbd01b35-58f9-4814-bb2a-b98385b44442\"}"},"productId":"String","productId.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"productId\",\"mandatory\":\"true\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"d2f5ac43-82a3-4558-a434-ec999ffbf59e\"}"},"kind":"String","kind.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"kind\",\"mandatory\":\"true\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"4517ec46-c077-4e52-87a6-b92b635162e7\"}"},"etags":"String","etags.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"etags\",\"mandatory\":\"true\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"dea3f217-37ef-4847-86d3-f1c3186eb7ad\"}"},"userId":"String","userId.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"userId\",\"mandatory\":\"true\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"00aac503-a876-47de-907a-893c00cee944\"}"},"productName":"String","productName.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"productName\",\"mandatory\":\"true\",\"order\":\"8\",\"max_length\":\"0\",\"uiUniqueId\":\"ec2b8670-93c0-4ecb-ac6f-3e9c923bb156\"}"},"skuId":"String","skuId.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"skuId\",\"mandatory\":\"true\",\"order\":\"6\",\"max_length\":\"0\",\"uiUniqueId\":\"806e4f2f-03d0-4347-a39b-6920a8719101\"}"},"selfLink":"String","selfLink.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"selfLink\",\"mandatory\":\"true\",\"order\":\"5\",\"max_length\":\"0\",\"uiUniqueId\":\"ab8744f7-5fee-4a95-8b0a-6ef8902de873\"}"}},"FlowDesigner:FD1c991b4fc587f25028d3002005614e50.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"3d16cc4b-35eb-4de6-8440-a54485a2b63a\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"License\",\"mandatory\":\"false\",\"uiUniqueId\":\"bf604dad-1a41-4952-b552-5ada7086f0c7\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD1c991b4fc587f25028d3002005614e50\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceType\":\"step\",\"sourceUiUniqueId\":\"2d7b4987-2be7-42e2-8fb0-ae2f12bba80f\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 19:41:51</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>dc991b4feb87f2505c06fcffcad0cd50</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 21:13:46</sys_updated_on>
+        <type>complex_object_schema</type>
+    </sys_complex_object>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>co_type_name=FD1c991b4fc587f25028d3002005614e50,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,sourceId=3d16cc4b-35eb-4de6-8440-a54485a2b63a,sourceType=step,sourceUiUniqueId=2d7b4987-2be7-42e2-8fb0-ae2f12bba80f,uiType=object,uiTypeLabel=Object,uiUniqueId=bf604dad-1a41-4952-b552-5ada7086f0c7</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>license</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>License</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="License - Get">9ed4c991ebc7ba105c06fcffcad0cdff</model>
+        <model_id>9ed4c991ebc7ba105c06fcffcad0cdff</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 19:41:51</sys_created_on>
+        <sys_id>1c991b4feb87f2505c06fcffcad0cd52</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 19:46:12</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=1c991b4feb87f2505c06fcffcad0cd52"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=1c991b4feb87f2505c06fcffcad0cd52"/>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FD5b3a978f0387f250e441a8bdc2a90281</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>a0ffc4282bd4aa108a69f0dcce91bf58</scope_name>
+        <serialized_content>{"FlowDesigner:FD5b3a978f0387f250e441a8bdc2a90281":{"error":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"choiceOption\":\"\",\"mapped\":\"{\\\"error.code\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error.code}}\\\"}\",\"default_value\":\"\",\"label\":\"code\",\"mandatory\":\"true\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"af59c729-db77-4fd2-879f-77627982a497\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"error.message\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error.message}}\\\"}\",\"default_value\":\"\",\"label\":\"message\",\"mandatory\":\"true\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"e1ff7202-617d-45d6-9fcb-e3b8f9322261\"}"},"errors":[{"$0_errors":{"reason":"String","reason.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"reason\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"118180ff-6bf4-42d7-b1de-1606047e5629\"}"},"domain":"String","domain.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"domain\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"cb2e421e-460f-4198-b957-f99f792ab860\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"message\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"6ea9b557-1cb3-4046-a9b7-fb32837dbcbe\"}"}}}],"errors.$field_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"errors\",\"mandatory\":\"false\",\"child_name\":\"error_item\",\"uiUniqueId\":\"2d7c860a-dd9d-4ce8-95c3-4ef14cbeb304\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"error_item\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"mapped\":\"{\\\"error.errors\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error.errors}}\\\"}\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"3\",\"max_length\":\"0\",\"child_uiUniqueId\":\"b8db218f-8d69-4f50-ba85-c347b1cfdafe\"}"}},"error.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"error\",\"mandatory\":\"true\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"3d9efd60-77d2-440b-b056-477ac0e41c8d\"}"}},"FlowDesigner:FD5b3a978f0387f250e441a8bdc2a90281.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Error Response\",\"mandatory\":\"false\",\"uiUniqueId\":\"1651380f-68df-4181-9e23-ef9f364d5061\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD5b3a978f0387f250e441a8bdc2a90281\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"4\",\"max_length\":\"65000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 19:44:47</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1f3a978feb87f2505c06fcffcad0cd81</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 21:13:46</sys_updated_on>
+        <type>complex_object_schema</type>
+    </sys_complex_object>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>co_type_name=FD5b3a978f0387f250e441a8bdc2a90281,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=1651380f-68df-4181-9e23-ef9f364d5061</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>error_response</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Error Response</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="License - Get">9ed4c991ebc7ba105c06fcffcad0cdff</model>
+        <model_id>9ed4c991ebc7ba105c06fcffcad0cdff</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</name>
+        <next_element/>
+        <order>4</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 19:44:47</sys_created_on>
+        <sys_id>1f3a978feb87f2505c06fcffcad0cd8a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 19:44:47</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=1f3a978feb87f2505c06fcffcad0cd8a"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=1f3a978feb87f2505c06fcffcad0cd8a"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=119b2fc6-9968-4bf9-a692-af85dd810743</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>internal_failure</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Internal Failure</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="License - Get">9ed4c991ebc7ba105c06fcffcad0cdff</model>
+        <model_id>9ed4c991ebc7ba105c06fcffcad0cdff</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</name>
+        <next_element/>
+        <order>5</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 21:13:42</sys_created_on>
+        <sys_id>3d9ee3cbeb0bf2505c06fcffcad0cd38</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 21:13:42</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=3d9ee3cbeb0bf2505c06fcffcad0cd38"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=3d9ee3cbeb0bf2505c06fcffcad0cd38"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>action_error_output=true,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=0302ccd8-279b-4ec0-9548-170ccecd3db7,visible_in_ui=false</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>true</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__dont_treat_as_error__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Don't Treat as Error</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="License - Get">9ed4c991ebc7ba105c06fcffcad0cdff</model>
+        <model_id>9ed4c991ebc7ba105c06fcffcad0cdff</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</name>
+        <next_element/>
         <order>3</order>
         <primary>false</primary>
         <read_only>false</read_only>
@@ -1515,16 +1804,16 @@
         <staged>false</staged>
         <sys_class_name>sys_hub_action_output</sys_class_name>
         <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 22:24:09</sys_created_on>
-        <sys_id>df2509d1ebc7ba105c06fcffcad0cd76</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_created_on>2026-02-18 19:41:51</sys_created_on>
+        <sys_id>50991b4feb87f2505c06fcffcad0cd6a</sys_id>
+        <sys_mod_count>23</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name/>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:26:18</sys_updated_on>
+        <sys_updated_on>2026-02-18 21:13:47</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1537,8 +1826,95 @@
         <write_roles/>
         <xml_view>false</xml_view>
     </sys_hub_action_output>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=df2509d1ebc7ba105c06fcffcad0cd76"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=df2509d1ebc7ba105c06fcffcad0cd76"/>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=50991b4feb87f2505c06fcffcad0cd6a"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=50991b4feb87f2505c06fcffcad0cd6a"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=2bf83a83-4843-4383-8c77-6939e940256d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>failure_message</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Failure Message</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="License - Get">9ed4c991ebc7ba105c06fcffcad0cdff</model>
+        <model_id>9ed4c991ebc7ba105c06fcffcad0cdff</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</name>
+        <next_element/>
+        <order>6</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 19:48:41</sys_created_on>
+        <sys_id>982b5fcfeb87f2505c06fcffcad0cd1a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 21:13:42</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=982b5fcfeb87f2505c06fcffcad0cd1a"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=982b5fcfeb87f2505c06fcffcad0cd1a"/>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=9ed4c991ebc7ba105c06fcffcad0cdff"/>
     <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=9ed4c991ebc7ba105c06fcffcad0cdff^sys_idNOT IN972509d1ebc7ba105c06fcffcad0cd9a"/>
     <sys_hub_action_status_metadata action="INSERT_OR_UPDATE">
@@ -1550,20 +1926,20 @@
         <sys_updated_by>ab7289</sys_updated_by>
         <sys_updated_on>2026-02-12 22:24:09</sys_updated_on>
     </sys_hub_action_status_metadata>
-    <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=972509d1ebc7ba105c06fcffcad0cd9a^sys_idNOT INa843d595eb0bba105c06fcffcad0cdd6"/>
+    <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=972509d1ebc7ba105c06fcffcad0cd9a^sys_idNOT IN6bcb1f03ebc7f2505c06fcffcad0cd42"/>
     <sys_hub_status_condition action="INSERT_OR_UPDATE">
         <action_status_metadata_id display_value="Created 2026-02-12 17:24:09">972509d1ebc7ba105c06fcffcad0cd9a</action_status_metadata_id>
-        <condition>{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error}}=true</condition>
+        <condition>{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__.code}}!=0</condition>
         <dont_treat_as_error>true</dont_treat_as_error>
-        <label>API Failed</label>
+        <label>Action Status is not Success</label>
         <order>1</order>
-        <status>{"version":"1.0","serializationFormat":"JSON","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{\\\"code\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__.code}}\\\"}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{\\\"message\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__.message}}\\\"}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"794bc342-9c9d-444b-a3f2-dd4b6a5a0173\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}}}</status>
+        <status>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{\\\"code\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__.code}}\\\"}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{\\\"message\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__.message}}\\\"}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"794bc342-9c9d-444b-a3f2-dd4b6a5a0173\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</status>
         <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 23:25:40</sys_created_on>
-        <sys_id>a843d595eb0bba105c06fcffcad0cdd6</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_created_on>2026-02-18 19:51:37</sys_created_on>
+        <sys_id>6bcb1f03ebc7f2505c06fcffcad0cd42</sys_id>
+        <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-13 20:07:34</sys_updated_on>
+        <sys_updated_on>2026-02-18 19:51:37</sys_updated_on>
     </sys_hub_status_condition>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>sku_id</element>
@@ -1636,6 +2012,75 @@
     </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_9ed4c991ebc7ba105c06fcffcad0cdff"/>
     <sys_documentation action="INSERT_OR_UPDATE">
+        <element>failure_message</element>
+        <help/>
+        <hint/>
+        <label>Failure Message</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 19:48:41</sys_created_on>
+        <sys_id>142b5fcfeb87f2505c06fcffcad0cd37</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 19:48:41</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>error_response</element>
+        <help/>
+        <hint/>
+        <label>Error Response</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 19:44:47</sys_created_on>
+        <sys_id>2b3a978feb87f2505c06fcffcad0cd8e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 19:44:47</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>license</element>
+        <help/>
+        <hint/>
+        <label>License</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 19:41:51</sys_created_on>
+        <sys_id>5c991b4feb87f2505c06fcffcad0cd63</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 19:41:51</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
         <element>__dont_treat_as_error__</element>
         <help/>
         <hint/>
@@ -1645,8 +2090,8 @@
         <plural/>
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 22:24:09</sys_created_on>
-        <sys_id>532509d1ebc7ba105c06fcffcad0cd92</sys_id>
+        <sys_created_on>2026-02-18 19:41:51</sys_created_on>
+        <sys_id>68991b4feb87f2505c06fcffcad0cd70</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
@@ -1654,30 +2099,7 @@
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name/>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 22:24:09</sys_updated_on>
-        <url/>
-        <url_target/>
-    </sys_documentation>
-    <sys_documentation action="INSERT_OR_UPDATE">
-        <element>response</element>
-        <help/>
-        <hint/>
-        <label>Result</label>
-        <language>en</language>
-        <name>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</name>
-        <plural/>
-        <sys_class_name>sys_documentation</sys_class_name>
-        <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 22:28:27</sys_created_on>
-        <sys_id>5e260d15ebc7ba105c06fcffcad0cdd2</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_name/>
-        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
-        <sys_policy/>
-        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:26:17</sys_updated_on>
+        <sys_updated_on>2026-02-18 19:41:51</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
@@ -1691,8 +2113,8 @@
         <plural/>
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 22:24:09</sys_created_on>
-        <sys_id>5f2509d1ebc7ba105c06fcffcad0cd88</sys_id>
+        <sys_created_on>2026-02-18 19:41:51</sys_created_on>
+        <sys_id>9c991b4feb87f2505c06fcffcad0cd68</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
@@ -1700,22 +2122,22 @@
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name/>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 22:24:09</sys_updated_on>
+        <sys_updated_on>2026-02-18 19:41:51</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
     <sys_documentation action="INSERT_OR_UPDATE">
-        <element>error</element>
+        <element>internal_failure</element>
         <help/>
         <hint/>
-        <label>Error</label>
+        <label>Internal Failure</label>
         <language>en</language>
         <name>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</name>
         <plural/>
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 23:26:18</sys_created_on>
-        <sys_id>6d639995eb0bba105c06fcffcad0cdd0</sys_id>
+        <sys_created_on>2026-02-18 21:13:42</sys_created_on>
+        <sys_id>f59ee3cbeb0bf2505c06fcffcad0cd3c</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
@@ -1723,30 +2145,7 @@
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name/>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:26:18</sys_updated_on>
-        <url/>
-        <url_target/>
-    </sys_documentation>
-    <sys_documentation action="INSERT_OR_UPDATE">
-        <element>error_message</element>
-        <help/>
-        <hint/>
-        <label>Error Message</label>
-        <language>en</language>
-        <name>var__m_sys_hub_action_output_9ed4c991ebc7ba105c06fcffcad0cdff</name>
-        <plural/>
-        <sys_class_name>sys_documentation</sys_class_name>
-        <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 23:26:18</sys_created_on>
-        <sys_id>e1639995eb0bba105c06fcffcad0cdf2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
-        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
-        <sys_policy/>
-        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:26:18</sys_updated_on>
+        <sys_updated_on>2026-02-18 21:13:42</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
@@ -1755,17 +2154,17 @@
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="License - Get">9ed4c991ebc7ba105c06fcffcad0cdff</action_id>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"c4e7c1d5ebc7ba105c06fcffcad0cd55","name":"plan","plan_signature":null}}</plan>
-        <snapshot>fd8fad612b47be508a69f0dcce91bf53</snapshot>
+        <snapshot>ef9e27cbeb0bf2505c06fcffcad0cda9</snapshot>
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-02-12 22:35:57</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c4e7c1d5ebc7ba105c06fcffcad0cd55</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-13 20:07:40</sys_updated_on>
+        <sys_updated_on>2026-02-18 21:13:51</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -1782,7 +2181,7 @@
         <description/>
         <flow_priority/>
         <internal_name>google_license__get</internal_name>
-        <label_cache>[{"name":"{{action.connection_credential_alias}}","label":"action➛Connection &amp; Credential Alias","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.alias}}","label":"action➛Connection &amp; Credential Alias","type":"action","ref":"","reference_display":"Connection &amp; Credential Aliases","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.product_id}}","label":"action➛Product ID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.sku_id}}","label":"action➛SKU ID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.user}}","label":"action➛User","type":"action","ref":"","reference_display":"User","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.user.email}}","label":"action➛User➛Email","type":"action","ref":"","reference_display":"Email","base_type":"email","parent_table_name":"sys_user","column_name":"email","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error}}","label":"step➛Call API➛Error","type":"step","ref":"","reference_display":"","base_type":"boolean","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"boolean","uiUniqueId":"354ddbd5-6aed-4dbf-8b35-9322c8867c9b"}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__.code}}","label":"step➛Call API➛Step Status➛Code","type":"step","ref":"","reference_display":"","base_type":"integer","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__.message}}","label":"step➛Call API➛Step Status➛Message","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result}}","label":"step➛Call API➛result","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"2d7b4987-2be7-42e2-8fb0-ae2f12bba80f"}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_message}}","label":"step➛Call API➛Error Message","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"5c2082dc-6eae-4ba6-95f0-135d4342fded"}}]</label_cache>
+        <label_cache>[{"name":"{{action.connection_credential_alias}}","label":"action➛Connection &amp; Credential Alias","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.alias}}","label":"action➛Connection &amp; Credential Alias","type":"action","ref":"","reference_display":"Connection &amp; Credential Aliases","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.product_id}}","label":"action➛Product ID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.sku_id}}","label":"action➛SKU ID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.user}}","label":"action➛User","type":"action","ref":"","reference_display":"User","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.user.email}}","label":"action➛User➛Email","type":"action","ref":"","reference_display":"Email","base_type":"email","parent_table_name":"sys_user","column_name":"email","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error}}","label":"step➛Call API➛Error","type":"step","ref":"","reference_display":"","base_type":"boolean","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"boolean","uiUniqueId":"354ddbd5-6aed-4dbf-8b35-9322c8867c9b"}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__.code}}","label":"step➛Call API➛Step Status➛Code","type":"step","ref":"","reference_display":"","base_type":"integer","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__.message}}","label":"step➛Call API➛Step Status➛Message","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result}}","label":"step➛Call API➛result","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","sourceUiUniqueId":"","sourceType":"","uiType":"string","uiUniqueId":"2d7b4987-2be7-42e2-8fb0-ae2f12bba80f"}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_message}}","label":"step➛Call API➛Error Message","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"5c2082dc-6eae-4ba6-95f0-135d4342fded"}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__}}","label":"step➛Call API➛Step Status","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result.kind}}","label":"step➛Call API➛result➛kind","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result.etags}}","label":"step➛Call API➛result➛etags","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result.productId}}","label":"step➛Call API➛result➛productId","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result.userId}}","label":"step➛Call API➛result➛userId","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result.selfLink}}","label":"step➛Call API➛result➛selfLink","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result.skuId}}","label":"step➛Call API➛result➛skuId","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result.skuName}}","label":"step➛Call API➛result➛skuName","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result.productName}}","label":"step➛Call API➛result➛productName","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error}}","label":"step➛Call API➛Error Result➛error","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error.code}}","label":"step➛Call API➛Error Result➛error➛code","type":"step","ref":"","reference_display":"","base_type":"integer","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error.message}}","label":"step➛Call API➛Error Result➛error➛message","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error.errors}}","label":"step➛Call API➛Error Result➛error➛errors","type":"step","ref":"","reference_display":"","base_type":"array.object","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
         <master>true</master>
         <name>License - Get</name>
         <natlang/>
@@ -1795,7 +2194,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>6bd781d5ebc7ba105c06fcffcad0cda7</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -1803,7 +2202,7 @@
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name/>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-13 20:07:38</sys_updated_on>
+        <sys_updated_on>2026-02-18 20:21:09</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_snapshot>
@@ -1831,25 +2230,25 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-02-12 22:35:56</sys_created_on>
         <sys_id>fbd7c1d5ebc7ba105c06fcffcad0cd18</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-13 20:07:39</sys_updated_on>
-        <value>{"version":"1.0","serializationFormat":"JSON","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"794bc342-9c9d-444b-a3f2-dd4b6a5a0173\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}}}</value>
+        <sys_updated_on>2026-02-18 20:21:11</sys_updated_on>
+        <value>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"794bc342-9c9d-444b-a3f2-dd4b6a5a0173\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</value>
         <variable display_value="Action Status">fbd781d5ebc7ba105c06fcffcad0cdf6</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>sys_hub_action_type_snapshot</document>
         <document_key>6bd781d5ebc7ba105c06fcffcad0cda7</document_key>
-        <order>2</order>
+        <order>5</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 23:27:10</sys_created_on>
-        <sys_id>da9391d5eb0bba105c06fcffcad0cd21</sys_id>
+        <sys_created_on>2026-02-18 21:13:49</sys_created_on>
+        <sys_id>ab9e27cbeb0bf2505c06fcffcad0cd9a</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:27:10</sys_updated_on>
+        <sys_updated_on>2026-02-18 21:13:49</sys_updated_on>
         <value>0</value>
-        <variable display_value="Error">5a9351d5eb0bba105c06fcffcad0cde2</variable>
+        <variable display_value="Internal Failure">e39e27cbeb0bf2505c06fcffcad0cd75</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=6bd781d5ebc7ba105c06fcffcad0cda7"/>
     <sys_element_mapping action="INSERT_OR_UPDATE">
@@ -1875,6 +2274,66 @@
         <sys_updated_on>2026-02-12 23:27:10</sys_updated_on>
         <table>var__m_sys_hub_action_output_6bd781d5ebc7ba105c06fcffcad0cda7</table>
         <value>{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_message}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>error_response</field>
+        <id>6bd781d5ebc7ba105c06fcffcad0cda7</id>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 20:21:11</sys_created_on>
+        <sys_id>a8922bcbebc7f2505c06fcffcad0cd5d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 20:21:11</sys_updated_on>
+        <table>var__m_sys_hub_action_output_6bd781d5ebc7ba105c06fcffcad0cda7</table>
+        <value>{"version":"1.0","complexObject":{"error":{"name$":"error","code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}},"errors":{"$cv":{"$c":"java.lang.String","$v":""}}}},"complexObjectSchema":{"FlowDesigner:FD1092e7cb0dc7f250843b7b5556c77ada":{"error":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"choiceOption\":\"\",\"mapped\":\"{\\\"error.code\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error.code}}\\\"}\",\"default_value\":\"\",\"label\":\"code\",\"mandatory\":\"true\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"af59c729-db77-4fd2-879f-77627982a497\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"error.message\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error.message}}\\\"}\",\"default_value\":\"\",\"label\":\"message\",\"mandatory\":\"true\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"e1ff7202-617d-45d6-9fcb-e3b8f9322261\"}"},"errors":[{"errors":{"reason":"String","reason.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"reason\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"118180ff-6bf4-42d7-b1de-1606047e5629\"}"},"domain":"String","domain.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"domain\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"cb2e421e-460f-4198-b957-f99f792ab860\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"message\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"6ea9b557-1cb3-4046-a9b7-fb32837dbcbe\"}"}}}],"errors.$field_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"errors\",\"mandatory\":\"false\",\"child_name\":\"error_item\",\"uiUniqueId\":\"2d7c860a-dd9d-4ce8-95c3-4ef14cbeb304\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"error_item\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"mapped\":\"{\\\"error.errors\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error.errors}}\\\"}\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"3\",\"max_length\":\"0\",\"child_uiUniqueId\":\"b8db218f-8d69-4f50-ba85-c347b1cfdafe\"}"}},"error.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"error\",\"mandatory\":\"true\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"3d9efd60-77d2-440b-b056-477ac0e41c8d\"}"}},"FlowDesigner:FD1092e7cb0dc7f250843b7b5556c77ada.$type_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Error Response\",\"mandatory\":\"false\",\"uiUniqueId\":\"1651380f-68df-4181-9e23-ef9f364d5061\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD1092e7cb0dc7f250843b7b5556c77ada\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"4\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>failed</field>
+        <id>6bd781d5ebc7ba105c06fcffcad0cda7</id>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 20:21:11</sys_created_on>
+        <sys_id>a0922bcbebc7f2505c06fcffcad0cd5e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 20:21:11</sys_updated_on>
+        <table>var__m_sys_hub_action_output_6bd781d5ebc7ba105c06fcffcad0cda7</table>
+        <value>{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>failure_message</field>
+        <id>6bd781d5ebc7ba105c06fcffcad0cda7</id>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 20:21:11</sys_created_on>
+        <sys_id>ac922bcbebc7f2505c06fcffcad0cd5d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 20:21:11</sys_updated_on>
+        <table>var__m_sys_hub_action_output_6bd781d5ebc7ba105c06fcffcad0cda7</table>
+        <value>{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_message}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>internal_failure</field>
+        <id>6bd781d5ebc7ba105c06fcffcad0cda7</id>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 21:13:49</sys_created_on>
+        <sys_id>e79e27cbeb0bf2505c06fcffcad0cd9a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 21:13:49</sys_updated_on>
+        <table>var__m_sys_hub_action_output_6bd781d5ebc7ba105c06fcffcad0cda7</table>
+        <value>{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>license</field>
+        <id>6bd781d5ebc7ba105c06fcffcad0cda7</id>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 20:21:11</sys_created_on>
+        <sys_id>a4922bcbebc7f2505c06fcffcad0cd5d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 20:21:11</sys_updated_on>
+        <table>var__m_sys_hub_action_output_6bd781d5ebc7ba105c06fcffcad0cda7</table>
+        <value>{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].result}}</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>response</field>
@@ -1930,10 +2389,10 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-02-12 23:27:08</sys_created_on>
         <sys_id>029351d5eb0bba105c06fcffcad0cd70</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:27:09</sys_updated_on>
+        <sys_updated_on>2026-02-18 20:21:10</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=029351d5eb0bba105c06fcffcad0cd70"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -1958,9 +2417,9 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-02-12 23:27:09</sys_created_on>
         <sys_id>ca9351d5eb0bba105c06fcffcad0cdb8</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:27:09</sys_updated_on>
+        <sys_updated_on>2026-02-18 20:21:10</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
     &#13;
     const api = new x_neyu_google_nyu.LicenseAPI();&#13;
@@ -1971,9 +2430,14 @@
     );&#13;
 &#13;
     outputs.error = response.error;&#13;
-    outputs.error_message = response.errorMessage;&#13;
-    if (!response.error) {&#13;
-        outputs.result = response.responseBody;&#13;
+&#13;
+    if (response.error) {&#13;
+        outputs.error = true;&#13;
+        outputs.error_message = response.errorMessage;&#13;
+    } else if (response.status == 200) {&#13;
+        outputs.result = JSON.parse(response.responseBody);&#13;
+    } else {&#13;
+        outputs.error_result = JSON.parse(response.responseBody);&#13;
     }&#13;
 &#13;
 })(inputs, outputs);&#13;
@@ -2294,7 +2758,7 @@
         <write_roles/>
         <xml_view>false</xml_view>
     </sys_hub_step_ext_input>
-    <sys_hub_step_ext_output action="delete_multiple" query="model=029351d5eb0bba105c06fcffcad0cd70^sys_idNOT IN0e9351d5eb0bba105c06fcffcad0cd9d,4a9351d5eb0bba105c06fcffcad0cda1,c69351d5eb0bba105c06fcffcad0cd99"/>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=029351d5eb0bba105c06fcffcad0cd70^sys_idNOT IN0e9351d5eb0bba105c06fcffcad0cd9d,4a9351d5eb0bba105c06fcffcad0cda1,9c92e7cbebc7f2505c06fcffcad0cdbe,c69351d5eb0bba105c06fcffcad0cd99"/>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
@@ -2378,11 +2842,34 @@
         <write_roles/>
         <xml_view>false</xml_view>
     </sys_hub_step_ext_output>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FD0c92e7cb79c7f250050dc42655c5e8b7</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>a0ffc4282bd4aa108a69f0dcce91bf58</scope_name>
+        <serialized_content>{"FlowDesigner:FD0c92e7cb79c7f250050dc42655c5e8b7":{"skuName":"String","skuName.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"skuName\",\"mandatory\":\"true\",\"order\":\"7\",\"max_length\":\"0\",\"uiUniqueId\":\"cbd01b35-58f9-4814-bb2a-b98385b44442\"}"},"productId":"String","productId.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"productId\",\"mandatory\":\"true\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"d2f5ac43-82a3-4558-a434-ec999ffbf59e\"}"},"kind":"String","kind.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"kind\",\"mandatory\":\"true\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"4517ec46-c077-4e52-87a6-b92b635162e7\"}"},"etags":"String","etags.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"etags\",\"mandatory\":\"true\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"dea3f217-37ef-4847-86d3-f1c3186eb7ad\"}"},"userId":"String","userId.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"userId\",\"mandatory\":\"true\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"00aac503-a876-47de-907a-893c00cee944\"}"},"productName":"String","productName.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"productName\",\"mandatory\":\"true\",\"order\":\"8\",\"max_length\":\"0\",\"uiUniqueId\":\"ec2b8670-93c0-4ecb-ac6f-3e9c923bb156\"}"},"skuId":"String","skuId.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"skuId\",\"mandatory\":\"true\",\"order\":\"6\",\"max_length\":\"0\",\"uiUniqueId\":\"806e4f2f-03d0-4347-a39b-6920a8719101\"}"},"selfLink":"String","selfLink.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"selfLink\",\"mandatory\":\"true\",\"order\":\"5\",\"max_length\":\"0\",\"uiUniqueId\":\"ab8744f7-5fee-4a95-8b0a-6ef8902de873\"}"}},"FlowDesigner:FD0c92e7cb79c7f250050dc42655c5e8b7.$type_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"result\",\"mandatory\":\"false\",\"uiUniqueId\":\"2d7b4987-2be7-42e2-8fb0-ae2f12bba80f\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD0c92e7cb79c7f250050dc42655c5e8b7\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"3\",\"max_length\":\"65000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 20:21:10</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>cc92e7cbebc7f2505c06fcffcad0cdb7</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 21:13:48</sys_updated_on>
+        <type>complex_object_schema</type>
+    </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=2d7b4987-2be7-42e2-8fb0-ae2f12bba80f</attributes>
+        <attributes>co_type_name=FD0c92e7cb79c7f250050dc42655c5e8b7,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=2d7b4987-2be7-42e2-8fb0-ae2f12bba80f</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -2417,7 +2904,7 @@
         <internal_type display_value="String">string</internal_type>
         <label>result</label>
         <mandatory>false</mandatory>
-        <max_length>8000</max_length>
+        <max_length>65000</max_length>
         <model display_value="Call API">029351d5eb0bba105c06fcffcad0cd70</model>
         <model_id>029351d5eb0bba105c06fcffcad0cd70</model_id>
         <model_table>sys_hub_step_instance</model_table>
@@ -2441,6 +2928,112 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-02-12 23:27:09</sys_created_on>
         <sys_id>4a9351d5eb0bba105c06fcffcad0cda1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 20:21:10</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FD4892e7cb4ec7f25054b752c4c33c7db8</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>a0ffc4282bd4aa108a69f0dcce91bf58</scope_name>
+        <serialized_content>{"FlowDesigner:FD4892e7cb4ec7f25054b752c4c33c7db8":{"error":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"code\",\"mandatory\":\"true\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"af59c729-db77-4fd2-879f-77627982a497\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"message\",\"mandatory\":\"true\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"e1ff7202-617d-45d6-9fcb-e3b8f9322261\"}"},"errors":[{"$0_errors":{"reason":"String","reason.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"reason\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"118180ff-6bf4-42d7-b1de-1606047e5629\"}"},"domain":"String","domain.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"domain\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"cb2e421e-460f-4198-b957-f99f792ab860\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"message\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"6ea9b557-1cb3-4046-a9b7-fb32837dbcbe\"}"}}}],"errors.$field_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"errors\",\"mandatory\":\"false\",\"child_name\":\"error_item\",\"uiUniqueId\":\"2d7c860a-dd9d-4ce8-95c3-4ef14cbeb304\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"error_item\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"3\",\"max_length\":\"0\",\"child_uiUniqueId\":\"b8db218f-8d69-4f50-ba85-c347b1cfdafe\"}"}},"error.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"error\",\"mandatory\":\"true\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"3d9efd60-77d2-440b-b056-477ac0e41c8d\"}"}},"FlowDesigner:FD4892e7cb4ec7f25054b752c4c33c7db8.$type_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Error Result\",\"mandatory\":\"false\",\"uiUniqueId\":\"48eca6a6-b42b-49aa-b760-af25605b79b8\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD4892e7cb4ec7f25054b752c4c33c7db8\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"4\",\"max_length\":\"65000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 20:21:10</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0c92e7cbebc7f2505c06fcffcad0cdb8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 21:13:49</sys_updated_on>
+        <type>complex_object_schema</type>
+    </sys_complex_object>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>co_type_name=FD4892e7cb4ec7f25054b752c4c33c7db8,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=48eca6a6-b42b-49aa-b760-af25605b79b8</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>error_result</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Error Result</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Call API">029351d5eb0bba105c06fcffcad0cd70</model>
+        <model_id>029351d5eb0bba105c06fcffcad0cd70</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_029351d5eb0bba105c06fcffcad0cd70</name>
+        <next_element/>
+        <order>4</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 20:21:10</sys_created_on>
+        <sys_id>9c92e7cbebc7f2505c06fcffcad0cdbe</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package/>
@@ -2448,7 +3041,7 @@
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name/>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:27:09</sys_updated_on>
+        <sys_updated_on>2026-02-18 20:21:10</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -2545,6 +3138,29 @@
         <xml_view>false</xml_view>
     </sys_hub_step_ext_output>
     <sys_hub_input_scripts action="delete_multiple" query="instance=029351d5eb0bba105c06fcffcad0cd70"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>error_result</element>
+        <help/>
+        <hint/>
+        <label>Error Result</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_029351d5eb0bba105c06fcffcad0cd70</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 20:21:10</sys_created_on>
+        <sys_id>1c92e7cbebc7f2505c06fcffcad0cdc1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 20:21:10</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>error</element>
         <help/>
@@ -2867,12 +3483,12 @@
         <xml_view>false</xml_view>
     </sys_hub_action_input>
     <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=afd781d5ebc7ba105c06fcffcad0cdba"/>
-    <sys_hub_action_output action="delete_multiple" query="model=6bd781d5ebc7ba105c06fcffcad0cda7^sys_idNOT IN5a9351d5eb0bba105c06fcffcad0cde2,9a9351d5eb0bba105c06fcffcad0cdea,b7d781d5ebc7ba105c06fcffcad0cdf1,bbd781d5ebc7ba105c06fcffcad0cdfb,fbd781d5ebc7ba105c06fcffcad0cdf6"/>
+    <sys_hub_action_output action="delete_multiple" query="model=6bd781d5ebc7ba105c06fcffcad0cda7^sys_idNOT IN5892e7cbebc7f2505c06fcffcad0cdfc,bbd781d5ebc7ba105c06fcffcad0cdfb,d092e7cbebc7f2505c06fcffcad0cddb,d892e7cbebc7f2505c06fcffcad0cdf7,e39e27cbeb0bf2505c06fcffcad0cd75,fbd781d5ebc7ba105c06fcffcad0cdf6"/>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=fefea503-8a50-452e-8f8f-b52fa0578eb2</attributes>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=2bf83a83-4843-4383-8c77-6939e940256d</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -2896,94 +3512,7 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>error</element>
-        <element_prototype/>
-        <element_reference>false</element_reference>
-        <foreign_database/>
-        <formula/>
-        <function_definition/>
-        <function_field>false</function_field>
-        <help/>
-        <hint/>
-        <internal_link/>
-        <internal_type display_value="">boolean</internal_type>
-        <label>Error</label>
-        <mandatory>true</mandatory>
-        <max_length>40</max_length>
-        <model display_value="License - Get">6bd781d5ebc7ba105c06fcffcad0cda7</model>
-        <model_id>6bd781d5ebc7ba105c06fcffcad0cda7</model_id>
-        <model_table>sys_hub_action_type_snapshot</model_table>
-        <name>var__m_sys_hub_action_output_6bd781d5ebc7ba105c06fcffcad0cda7</name>
-        <next_element/>
-        <order>2</order>
-        <primary>false</primary>
-        <read_only>false</read_only>
-        <read_roles/>
-        <reference/>
-        <reference_cascade_rule/>
-        <reference_floats>false</reference_floats>
-        <reference_key/>
-        <reference_qual/>
-        <reference_qual_condition/>
-        <reference_type/>
-        <sizeclass/>
-        <spell_check>false</spell_check>
-        <staged>false</staged>
-        <sys_class_name>sys_hub_action_output</sys_class_name>
-        <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 23:27:09</sys_created_on>
-        <sys_id>5a9351d5eb0bba105c06fcffcad0cde2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
-        <sys_package/>
-        <sys_policy>read</sys_policy>
-        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:27:09</sys_updated_on>
-        <table_reference>false</table_reference>
-        <text_index>false</text_index>
-        <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
-        <virtual_type>script</virtual_type>
-        <widget/>
-        <write_roles/>
-        <xml_view>false</xml_view>
-    </sys_hub_action_output>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=5a9351d5eb0bba105c06fcffcad0cde2"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=5a9351d5eb0bba105c06fcffcad0cde2"/>
-    <sys_hub_action_output action="INSERT_OR_UPDATE">
-        <active>true</active>
-        <array>false</array>
-        <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=b4b22cbc-be06-4c5a-9a7b-9cfa1bc283a3</attributes>
-        <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
-        <choice_field/>
-        <choice_table/>
-        <column_label/>
-        <comments/>
-        <create_roles/>
-        <default_value/>
-        <defaultsort/>
-        <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
-        <display>false</display>
-        <dynamic_creation>false</dynamic_creation>
-        <dynamic_creation_script/>
-        <dynamic_default_value/>
-        <dynamic_ref_qual/>
-        <element>error_message</element>
+        <element>failure_message</element>
         <element_prototype/>
         <element_reference>false</element_reference>
         <foreign_database/>
@@ -2994,7 +3523,7 @@
         <hint/>
         <internal_link/>
         <internal_type display_value="String">string</internal_type>
-        <label>Error Message</label>
+        <label>Failure Message</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
         <model display_value="License - Get">6bd781d5ebc7ba105c06fcffcad0cda7</model>
@@ -3002,7 +3531,7 @@
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_output_6bd781d5ebc7ba105c06fcffcad0cda7</name>
         <next_element/>
-        <order>4</order>
+        <order>6</order>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
@@ -3018,16 +3547,16 @@
         <staged>false</staged>
         <sys_class_name>sys_hub_action_output</sys_class_name>
         <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 23:27:10</sys_created_on>
-        <sys_id>9a9351d5eb0bba105c06fcffcad0cdea</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_created_on>2026-02-18 20:21:10</sys_created_on>
+        <sys_id>5892e7cbebc7f2505c06fcffcad0cdfc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name/>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:27:10</sys_updated_on>
+        <sys_updated_on>2026-02-18 21:13:49</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -3040,100 +3569,13 @@
         <write_roles/>
         <xml_view>false</xml_view>
     </sys_hub_action_output>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=9a9351d5eb0bba105c06fcffcad0cdea"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=9a9351d5eb0bba105c06fcffcad0cdea"/>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=5892e7cbebc7f2505c06fcffcad0cdfc"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=5892e7cbebc7f2505c06fcffcad0cdfc"/>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=dc763fdc-e0f8-4222-9284-b527ef9a301c</attributes>
-        <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
-        <choice_field/>
-        <choice_table/>
-        <column_label/>
-        <comments/>
-        <create_roles/>
-        <default_value/>
-        <defaultsort/>
-        <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
-        <display>false</display>
-        <dynamic_creation>false</dynamic_creation>
-        <dynamic_creation_script/>
-        <dynamic_default_value/>
-        <dynamic_ref_qual/>
-        <element>response</element>
-        <element_prototype/>
-        <element_reference>false</element_reference>
-        <foreign_database/>
-        <formula/>
-        <function_definition/>
-        <function_field>false</function_field>
-        <help/>
-        <hint/>
-        <internal_link/>
-        <internal_type display_value="String">string</internal_type>
-        <label>Result</label>
-        <mandatory>false</mandatory>
-        <max_length>8000</max_length>
-        <model display_value="License - Get">6bd781d5ebc7ba105c06fcffcad0cda7</model>
-        <model_id>6bd781d5ebc7ba105c06fcffcad0cda7</model_id>
-        <model_table>sys_hub_action_type_snapshot</model_table>
-        <name>var__m_sys_hub_action_output_6bd781d5ebc7ba105c06fcffcad0cda7</name>
-        <next_element/>
-        <order>1</order>
-        <primary>false</primary>
-        <read_only>false</read_only>
-        <read_roles/>
-        <reference/>
-        <reference_cascade_rule/>
-        <reference_floats>false</reference_floats>
-        <reference_key/>
-        <reference_qual/>
-        <reference_qual_condition/>
-        <reference_type/>
-        <sizeclass/>
-        <spell_check>false</spell_check>
-        <staged>false</staged>
-        <sys_class_name>sys_hub_action_output</sys_class_name>
-        <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 22:35:55</sys_created_on>
-        <sys_id>b7d781d5ebc7ba105c06fcffcad0cdf1</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name/>
-        <sys_package/>
-        <sys_policy/>
-        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:27:09</sys_updated_on>
-        <table_reference>false</table_reference>
-        <text_index>false</text_index>
-        <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
-        <virtual_type>script</virtual_type>
-        <widget/>
-        <write_roles/>
-        <xml_view>false</xml_view>
-    </sys_hub_action_output>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=b7d781d5ebc7ba105c06fcffcad0cdf1"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=b7d781d5ebc7ba105c06fcffcad0cdf1"/>
-    <sys_hub_action_output action="INSERT_OR_UPDATE">
-        <active>true</active>
-        <array>false</array>
-        <array_denormalized>false</array_denormalized>
-        <attributes>action_error_output=true,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=7533faca-94c4-4d08-bdaf-1a58f7396f45,visible_in_ui=false</attributes>
+        <attributes>action_error_output=true,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=0302ccd8-279b-4ec0-9548-170ccecd3db7,visible_in_ui=false</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -3176,7 +3618,7 @@
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_output_6bd781d5ebc7ba105c06fcffcad0cda7</name>
         <next_element/>
-        <order>5</order>
+        <order>3</order>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
@@ -3194,14 +3636,14 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-02-12 22:35:56</sys_created_on>
         <sys_id>bbd781d5ebc7ba105c06fcffcad0cdfb</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name/>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-13 20:07:39</sys_updated_on>
+        <sys_updated_on>2026-02-18 21:13:49</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -3216,11 +3658,318 @@
     </sys_hub_action_output>
     <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=bbd781d5ebc7ba105c06fcffcad0cdfb"/>
     <sys_hub_input_scripts action="delete_multiple" query="instance=bbd781d5ebc7ba105c06fcffcad0cdfb"/>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FDd092e7cb3cc7f25050f783b4c8d701d9</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>a0ffc4282bd4aa108a69f0dcce91bf58</scope_name>
+        <serialized_content>{"FlowDesigner:FDd092e7cb3cc7f25050f783b4c8d701d9":{"skuName":"String","skuName.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"skuName\",\"mandatory\":\"true\",\"order\":\"7\",\"max_length\":\"0\",\"uiUniqueId\":\"cbd01b35-58f9-4814-bb2a-b98385b44442\"}"},"productId":"String","productId.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"productId\",\"mandatory\":\"true\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"d2f5ac43-82a3-4558-a434-ec999ffbf59e\"}"},"kind":"String","kind.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"kind\",\"mandatory\":\"true\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"4517ec46-c077-4e52-87a6-b92b635162e7\"}"},"etags":"String","etags.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"etags\",\"mandatory\":\"true\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"dea3f217-37ef-4847-86d3-f1c3186eb7ad\"}"},"userId":"String","userId.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"userId\",\"mandatory\":\"true\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"00aac503-a876-47de-907a-893c00cee944\"}"},"productName":"String","productName.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"productName\",\"mandatory\":\"true\",\"order\":\"8\",\"max_length\":\"0\",\"uiUniqueId\":\"ec2b8670-93c0-4ecb-ac6f-3e9c923bb156\"}"},"skuId":"String","skuId.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"skuId\",\"mandatory\":\"true\",\"order\":\"6\",\"max_length\":\"0\",\"uiUniqueId\":\"806e4f2f-03d0-4347-a39b-6920a8719101\"}"},"selfLink":"String","selfLink.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"selfLink\",\"mandatory\":\"true\",\"order\":\"5\",\"max_length\":\"0\",\"uiUniqueId\":\"ab8744f7-5fee-4a95-8b0a-6ef8902de873\"}"}},"FlowDesigner:FDd092e7cb3cc7f25050f783b4c8d701d9.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"3d16cc4b-35eb-4de6-8440-a54485a2b63a\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"License\",\"mandatory\":\"false\",\"uiUniqueId\":\"bf604dad-1a41-4952-b552-5ada7086f0c7\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDd092e7cb3cc7f25050f783b4c8d701d9\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceType\":\"step\",\"sourceUiUniqueId\":\"2d7b4987-2be7-42e2-8fb0-ae2f12bba80f\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 20:21:10</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9492e7cbebc7f2505c06fcffcad0cdd9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 21:13:49</sys_updated_on>
+        <type>complex_object_schema</type>
+    </sys_complex_object>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>action_error_output=true,co_type_name=FDACTIONSTATUS,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=a28161e5-e7e5-4957-860c-401607bce592</attributes>
+        <attributes>co_type_name=FDd092e7cb3cc7f25050f783b4c8d701d9,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,sourceId=3d16cc4b-35eb-4de6-8440-a54485a2b63a,sourceType=step,sourceUiUniqueId=2d7b4987-2be7-42e2-8fb0-ae2f12bba80f,uiType=object,uiTypeLabel=Object,uiUniqueId=bf604dad-1a41-4952-b552-5ada7086f0c7</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>license</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>License</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="License - Get">6bd781d5ebc7ba105c06fcffcad0cda7</model>
+        <model_id>6bd781d5ebc7ba105c06fcffcad0cda7</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_6bd781d5ebc7ba105c06fcffcad0cda7</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 20:21:10</sys_created_on>
+        <sys_id>d092e7cbebc7f2505c06fcffcad0cddb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 20:21:10</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=d092e7cbebc7f2505c06fcffcad0cddb"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=d092e7cbebc7f2505c06fcffcad0cddb"/>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FD1092e7cb0dc7f250843b7b5556c77ada</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>a0ffc4282bd4aa108a69f0dcce91bf58</scope_name>
+        <serialized_content>{"FlowDesigner:FD1092e7cb0dc7f250843b7b5556c77ada":{"error":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"choiceOption\":\"\",\"mapped\":\"{\\\"error.code\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error.code}}\\\"}\",\"default_value\":\"\",\"label\":\"code\",\"mandatory\":\"true\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"af59c729-db77-4fd2-879f-77627982a497\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"error.message\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error.message}}\\\"}\",\"default_value\":\"\",\"label\":\"message\",\"mandatory\":\"true\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"e1ff7202-617d-45d6-9fcb-e3b8f9322261\"}"},"errors":[{"$0_errors":{"reason":"String","reason.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"reason\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"118180ff-6bf4-42d7-b1de-1606047e5629\"}"},"domain":"String","domain.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"domain\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"cb2e421e-460f-4198-b957-f99f792ab860\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"message\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"6ea9b557-1cb3-4046-a9b7-fb32837dbcbe\"}"}}}],"errors.$field_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"errors\",\"mandatory\":\"false\",\"child_name\":\"error_item\",\"uiUniqueId\":\"2d7c860a-dd9d-4ce8-95c3-4ef14cbeb304\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"error_item\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"mapped\":\"{\\\"error.errors\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error_result.error.errors}}\\\"}\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"3\",\"max_length\":\"0\",\"child_uiUniqueId\":\"b8db218f-8d69-4f50-ba85-c347b1cfdafe\"}"}},"error.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"error\",\"mandatory\":\"true\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"3d9efd60-77d2-440b-b056-477ac0e41c8d\"}"}},"FlowDesigner:FD1092e7cb0dc7f250843b7b5556c77ada.$type_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Error Response\",\"mandatory\":\"false\",\"uiUniqueId\":\"1651380f-68df-4181-9e23-ef9f364d5061\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD1092e7cb0dc7f250843b7b5556c77ada\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"4\",\"max_length\":\"65000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 20:21:10</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d092e7cbebc7f2505c06fcffcad0cdda</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 21:13:49</sys_updated_on>
+        <type>complex_object_schema</type>
+    </sys_complex_object>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>co_type_name=FD1092e7cb0dc7f250843b7b5556c77ada,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=1651380f-68df-4181-9e23-ef9f364d5061</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>error_response</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Error Response</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="License - Get">6bd781d5ebc7ba105c06fcffcad0cda7</model>
+        <model_id>6bd781d5ebc7ba105c06fcffcad0cda7</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_6bd781d5ebc7ba105c06fcffcad0cda7</name>
+        <next_element/>
+        <order>4</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 20:21:10</sys_created_on>
+        <sys_id>d892e7cbebc7f2505c06fcffcad0cdf7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 20:21:10</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=d892e7cbebc7f2505c06fcffcad0cdf7"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=d892e7cbebc7f2505c06fcffcad0cdf7"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=119b2fc6-9968-4bf9-a692-af85dd810743</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>internal_failure</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Internal Failure</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="License - Get">6bd781d5ebc7ba105c06fcffcad0cda7</model>
+        <model_id>6bd781d5ebc7ba105c06fcffcad0cda7</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_6bd781d5ebc7ba105c06fcffcad0cda7</name>
+        <next_element/>
+        <order>5</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 21:13:49</sys_created_on>
+        <sys_id>e39e27cbeb0bf2505c06fcffcad0cd75</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 21:13:49</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=e39e27cbeb0bf2505c06fcffcad0cd75"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=e39e27cbeb0bf2505c06fcffcad0cd75"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>action_error_output=true,co_type_name=FDACTIONSTATUS,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=8cc10e79-6311-4e9a-b992-dfa31ebae51c</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -3263,7 +4012,7 @@
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_output_6bd781d5ebc7ba105c06fcffcad0cda7</name>
         <next_element/>
-        <order>3</order>
+        <order>2</order>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
@@ -3281,14 +4030,14 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-02-12 22:35:55</sys_created_on>
         <sys_id>fbd781d5ebc7ba105c06fcffcad0cdf6</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name/>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:27:09</sys_updated_on>
+        <sys_updated_on>2026-02-18 20:21:10</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -3314,20 +4063,20 @@
         <sys_updated_by>ab7289</sys_updated_by>
         <sys_updated_on>2026-02-12 22:35:56</sys_updated_on>
     </sys_hub_action_status_metadata>
-    <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=ffd7c1d5ebc7ba105c06fcffcad0cd19^sys_idNOT INf58fad612b47be508a69f0dcce91bf53"/>
+    <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=ffd7c1d5ebc7ba105c06fcffcad0cd19^sys_idNOT IN2b9e27cbeb0bf2505c06fcffcad0cda9"/>
     <sys_hub_status_condition action="INSERT_OR_UPDATE">
         <action_status_metadata_id display_value="Created 2026-02-12 17:35:56">ffd7c1d5ebc7ba105c06fcffcad0cd19</action_status_metadata_id>
-        <condition>{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].error}}=true</condition>
+        <condition>{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__.code}}!=0</condition>
         <dont_treat_as_error>true</dont_treat_as_error>
-        <label>API Failed</label>
+        <label>Action Status is not Success</label>
         <order>1</order>
-        <status>{"version":"1.0","serializationFormat":"JSON","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{\\\"code\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__.code}}\\\"}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{\\\"message\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__.message}}\\\"}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"794bc342-9c9d-444b-a3f2-dd4b6a5a0173\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}}}</status>
+        <status>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{\\\"code\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__.code}}\\\"}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{\\\"message\\\":\\\"{{step[3d16cc4b-35eb-4de6-8440-a54485a2b63a].__step_status__.message}}\\\"}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"794bc342-9c9d-444b-a3f2-dd4b6a5a0173\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</status>
         <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-13 20:07:39</sys_created_on>
-        <sys_id>f58fad612b47be508a69f0dcce91bf53</sys_id>
+        <sys_created_on>2026-02-18 21:13:49</sys_created_on>
+        <sys_id>2b9e27cbeb0bf2505c06fcffcad0cda9</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-13 20:07:39</sys_updated_on>
+        <sys_updated_on>2026-02-18 21:13:49</sys_updated_on>
     </sys_hub_status_condition>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>user</element>
@@ -3400,40 +4149,17 @@
     </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_6bd781d5ebc7ba105c06fcffcad0cda7"/>
     <sys_documentation action="INSERT_OR_UPDATE">
-        <element>response</element>
+        <element>failure_message</element>
         <help/>
         <hint/>
-        <label>Result</label>
+        <label>Failure Message</label>
         <language>en</language>
         <name>var__m_sys_hub_action_output_6bd781d5ebc7ba105c06fcffcad0cda7</name>
         <plural/>
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 22:35:55</sys_created_on>
-        <sys_id>3bd781d5ebc7ba105c06fcffcad0cdf5</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_name/>
-        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
-        <sys_policy/>
-        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:27:09</sys_updated_on>
-        <url/>
-        <url_target/>
-    </sys_documentation>
-    <sys_documentation action="INSERT_OR_UPDATE">
-        <element>error</element>
-        <help/>
-        <hint/>
-        <label>Error</label>
-        <language>en</language>
-        <name>var__m_sys_hub_action_output_6bd781d5ebc7ba105c06fcffcad0cda7</name>
-        <plural/>
-        <sys_class_name>sys_documentation</sys_class_name>
-        <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 23:27:09</sys_created_on>
-        <sys_id>929351d5eb0bba105c06fcffcad0cde6</sys_id>
+        <sys_created_on>2026-02-18 20:21:11</sys_created_on>
+        <sys_id>14922bcbebc7f2505c06fcffcad0cd00</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
@@ -3441,22 +4167,22 @@
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name/>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:27:09</sys_updated_on>
+        <sys_updated_on>2026-02-18 20:21:11</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
     <sys_documentation action="INSERT_OR_UPDATE">
-        <element>error_message</element>
+        <element>license</element>
         <help/>
         <hint/>
-        <label>Error Message</label>
+        <label>License</label>
         <language>en</language>
         <name>var__m_sys_hub_action_output_6bd781d5ebc7ba105c06fcffcad0cda7</name>
         <plural/>
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-02-12 23:27:10</sys_created_on>
-        <sys_id>929391d5eb0bba105c06fcffcad0cd07</sys_id>
+        <sys_created_on>2026-02-18 20:21:10</sys_created_on>
+        <sys_id>5892e7cbebc7f2505c06fcffcad0cddf</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
@@ -3464,7 +4190,53 @@
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name/>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-02-12 23:27:10</sys_updated_on>
+        <sys_updated_on>2026-02-18 20:21:10</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>error_response</element>
+        <help/>
+        <hint/>
+        <label>Error Response</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_6bd781d5ebc7ba105c06fcffcad0cda7</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 20:21:10</sys_created_on>
+        <sys_id>9492e7cbebc7f2505c06fcffcad0cdfb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 20:21:10</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>internal_failure</element>
+        <help/>
+        <hint/>
+        <label>Internal Failure</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_6bd781d5ebc7ba105c06fcffcad0cda7</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-02-18 21:13:49</sys_created_on>
+        <sys_id>a79e27cbeb0bf2505c06fcffcad0cd85</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-02-18 21:13:49</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>

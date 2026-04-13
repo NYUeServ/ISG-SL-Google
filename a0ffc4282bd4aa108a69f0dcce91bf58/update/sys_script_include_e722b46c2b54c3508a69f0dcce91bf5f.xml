@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_neyu_google_nyu.DirectoryMemberAPI</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Reference: https://developers.google.com/workspace/admin/directory/reference/rest/v1/members</description>
+        <mobile_callable>false</mobile_callable>
+        <name>DirectoryMemberAPI</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var DirectoryMemberAPI = Class.create();
+DirectoryMemberAPI.CONSTANTS = {
+    API_CONFIG: {
+        GET_MEMBER_DETAILS: {
+            path: "/admin/directory/v1/groups/${groupKey}/members/${memberKey}",
+            httpMethod: "GET",
+            pathParams: ["memberKey", "userKey"]
+        },
+        LIST_MEMBERS: {
+            path: "/admin/directory/v1/groups/${groupKey}/members",
+            httpMethod: "GET",
+            pathParams: ["memberKey"]
+        },
+        INSERT: {
+            path: "/admin/directory/v1/groups/${groupKey}/members",
+            httpMethod: "POST",
+            pathParams: ["groupKey"],
+            content: {
+                kind: {
+                    type: "string",
+                    required: true,
+                    defaultValue: "admin#directory#member"
+                },
+                email: {
+                    type: "string",
+                    required: true
+                },
+                role: {
+                    type: "string",
+                    required: true,
+                    enum: ["MANAGER", "MEMBER", "OWNER"]
+                },
+                type: {
+                    type: "string",
+                    required: true,
+                    enum: ["CUSTOMER", "EXTERNAL", "GROUP", "USER"]
+                },
+                delivery_settings: {
+                    type: "string",
+                    required: true,
+                    enum: ["ALL_MAIL", "DAILY", "DIGEST", "DISABLED", "NONE"]
+                }
+            }
+        }
+    }
+};
+DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.AuthUtil(), {
+    initialize: function() {
+        this.oauthProvider = "8491b701ebcf7a105c06fcffcad0cda8";
+        this.providerProfile = "3b683f45ebcf7a105c06fcffcad0cd99";
+        this.credential = gs.getProperty("x_neyu_google_nyu.directory.api.credential.id");
+        this.aliasId = "1249fca42b94c3508a69f0dcce91bf0f";
+    },
+
+
+    /**
+     * Retrieves a group member's properties
+     * 
+     * @param groupKey {string} - unique identifier for the group
+     * @param memberKey {string} - unique identifier for the user
+     */
+    getMemberDetails: function(groupKey, memberKey) {
+        gs.info("[getMemberDetails]\nGroup Key: {0}\nMemberKey: {1}",
+            groupKey, memberKey);
+
+        if (!groupKey || !memberKey) {
+            return {
+                error: true,
+                errorMessage: "groupKey and memberKey are required"
+            };
+        }
+
+        this.ensureToken(this.credential, this.oauthProvider, this.providerProfile);
+
+        const pathParams = {
+            groupKey: groupKey,
+            memberKey: memberKey
+        };
+        const config = DirectoryMemberAPI.CONSTANTS.API_CONFIG.GET_MEMBER_DETAILS;
+        const requestConfig = {
+            ...config,
+            pathParams,
+            aliasId: this.aliasId
+        };
+
+        const builder = new x_neyu_rest_utils.RequestBuilder(requestConfig);
+        const api = new x_neyu_rest_utils.WebServiceUtil();
+
+        let response;
+        try {
+            response = api.executeRestMessage(builder.build());
+        } catch (ex) {
+            gs.error("[getMemberDetails] There was an internal error building " +
+                "and executing the RestMessage.\nError: " + ex);
+            return {
+                error: true,
+                errorMessage: ex + ""
+            };
+        }
+
+        if (response.error) {
+            gs.error("[getMemberDetails] There was an error returned from the " +
+                "Google Directories API. \nError: " + response.errorMessage);
+        }
+
+        return {
+            ...response
+        };
+    },
+
+    /**
+     * Retrieves the list of members for a group
+     * 
+     * @param groupKey {string} - unique identifier for the group
+     */
+    listMembers: function(groupKey) {
+        gs.info("[listMembers]\nGroup Key: {0}", groupKey);
+
+        if (!groupKey) {
+            return {
+                error: true,
+                errorMessage: "groupKey is required"
+            };
+        }
+
+        this.ensureToken(this.credential, this.oauthProvider, this.providerProfile);
+
+        const pathParams = {
+            groupKey: groupKey
+        };
+        const config = DirectoryMemberAPI.CONSTANTS.API_CONFIG.LIST_MEMBERS;
+        const requestConfig = {
+            ...config,
+            pathParams,
+            aliasId: this.aliasId
+        };
+
+        const builder = new x_neyu_rest_utils.RequestBuilder(requestConfig);
+        const api = new x_neyu_rest_utils.WebServiceUtil();
+
+        let response;
+        try {
+            response = api.executeRestMessage(builder.build());
+        } catch (ex) {
+            gs.error("[listMembers] There was an internal error building " +
+                "and executing the RestMessage.\nError: " + ex);
+            return {
+                error: true,
+                errorMessage: ex + ""
+            };
+        }
+
+        if (response.error) {
+            gs.error("[listMembers] There was an error returned from the " +
+                "Google Directories API. \nError: " + response.errorMessage);
+        }
+
+        return {
+            ...response
+        };
+    },
+
+    /**
+     * Inserts a user into a group
+     * 
+     * @param groupkey {string} - the unique ID of the group
+     * @param userId {string} - the email address or unique ID of the user
+     * @param type {string} - the type of group member, can be CUSTOMER, EXTERNAL, GROUP, or USER. Defaults to USER
+     * @param role {string} - whether the user is an owner, manager, or member. Defaults to Member
+     * @param deliverySettings {string} - how often the user should receive mail from the group, defaults to ALL_MAIL
+     */
+    insert: function(groupKey, userId, {
+        kind = "admin#directory#member",
+        type = "USER",
+        role = "MEMBER",
+        deliverySettings = "ALL_MAIL"
+    }) {
+        gs.info("[addMember]\ngroupKey: " + groupKey +
+            "\nuserId: " + userId +
+            "\nkind: " + kind +
+            "\ntype: " + type +
+            "\nrole: " + role +
+            "\ndeliverySettings: " + deliverySettings);
+
+        if (!groupKey || !userId || !kind || !type || !role || !deliverySettings) {
+            return {
+                error: true,
+                errorMessage: "There are empty required parameters"
+            };
+        }
+
+        this.ensureToken(this.credential, this.oauthProvider, this.providerProfile);
+
+        const config = DirectoryMemberAPI.CONSTANTS.API_CONFIG.INSERT;
+        const content = {
+            email: userId,
+            kind: kind,
+            type: type,
+            role: role,
+            delivery_settings: deliverySettings
+        };
+
+        // TODO validate content
+
+        const pathParams = {
+            groupKey: groupKey
+        };
+        const requestConfig = {
+            ...config,
+            pathParams,
+            content: JSON.stringify(content),
+            aliasId: this.aliasId
+        };
+    },
+
+
+    validateContent: function(spec, content) {
+        // get all the parameters in the spec that are marked as required
+        const requiredKeys = Object.entries(spec)
+            .filter(([k, v]) => v?.required)
+            .map(([k, v]) => k);
+        // check which required parameters are not present in the content
+        const missingRequiredKeys = requiredKeys.filter((k) => !Object.keys(content).includes(k));
+        // return if there are missing parameters
+        if (missingRequiredKeys.length > 0) {
+            return missingRequiredKeys;
+        }
+
+		// TODO validate that there aren't extra keys
+
+        // get all the parameters from the spec that have a defined enum
+        const restrictedInputs = Object.fromEntries(Object.entries(spec)
+            .filter(([k, v]) => v?.enum));
+		// find any key:value pairs where the value does not match any of the enum values
+        const invalidValues = Object.fromEntries(Object.entries(content)
+            .filter(([k, v]) => restrictedInputs[k] && !restrictedInputs[k]?.enum.includes(v)));
+
+        if (Object.keys(invalidValues).length > 0) {
+            return invalidValues;
+        }
+        return null;
+    },
+
+    type: 'DirectoryMemberAPI'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-04-13 16:24:30</sys_created_on>
+        <sys_id>e722b46c2b54c3508a69f0dcce91bf5f</sys_id>
+        <sys_mod_count>31</sys_mod_count>
+        <sys_name>DirectoryMemberAPI</sys_name>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name>sys_script_include_e722b46c2b54c3508a69f0dcce91bf5f</sys_update_name>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-04-13 20:34:59</sys_updated_on>
+    </sys_script_include>
+</record_update>

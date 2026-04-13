@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_neyu_google_nyu.DirectoryGroupAPI</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Reference: https://developers.google.com/workspace/admin/directory/reference/rest/v1/groups</description>
+        <mobile_callable>false</mobile_callable>
+        <name>DirectoryGroupAPI</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var DirectoryGroupAPI = Class.create();
+DirectoryGroupAPI.prototype = {
+    initialize: function() {
+    },
+
+    type: 'DirectoryGroupAPI'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-04-13 16:23:26</sys_created_on>
+        <sys_id>ec81b42c2b54c3508a69f0dcce91bfe1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>DirectoryGroupAPI</sys_name>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name>sys_script_include_ec81b42c2b54c3508a69f0dcce91bfe1</sys_update_name>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-04-13 16:23:26</sys_updated_on>
+    </sys_script_include>
+</record_update>

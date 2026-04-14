@@ -28,26 +28,21 @@ DirectoryMemberAPI.CONSTANTS = {
             pathParams: ["groupKey"],
             content: {
                 kind: {
-                    type: "string",
                     required: true,
                     defaultValue: "admin#directory#member"
                 },
                 email: {
-                    type: "string",
                     required: true
                 },
                 role: {
-                    type: "string",
                     required: true,
                     enum: ["MANAGER", "MEMBER", "OWNER"]
                 },
                 type: {
-                    type: "string",
                     required: true,
                     enum: ["CUSTOMER", "EXTERNAL", "GROUP", "USER"]
                 },
                 delivery_settings: {
-                    type: "string",
                     required: true,
                     enum: ["ALL_MAIL", "DAILY", "DIGEST", "DISABLED", "NONE"]
                 }
@@ -94,20 +89,7 @@ DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.AuthUtil(), {
             aliasId: this.aliasId
         };
 
-        const builder = new x_neyu_rest_utils.RequestBuilder(requestConfig);
-        const api = new x_neyu_rest_utils.WebServiceUtil();
-
-        let response;
-        try {
-            response = api.executeRestMessage(builder.build());
-        } catch (ex) {
-            gs.error("[getMemberDetails] There was an internal error building " +
-                "and executing the RestMessage.\nError: " + ex);
-            return {
-                error: true,
-                errorMessage: ex + ""
-            };
-        }
+        const response = this.execute(requestConfig, "getMemberDetails");
 
         if (response.error) {
             gs.error("[getMemberDetails] There was an error returned from the " +
@@ -146,24 +128,11 @@ DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.AuthUtil(), {
             aliasId: this.aliasId
         };
 
-        const builder = new x_neyu_rest_utils.RequestBuilder(requestConfig);
-        const api = new x_neyu_rest_utils.WebServiceUtil();
+        const response = this.execute(requestConfig, "listMembers");
 
-        let response;
-        try {
-            response = api.executeRestMessage(builder.build());
-        } catch (ex) {
-            gs.error("[listMembers] There was an internal error building " +
-                "and executing the RestMessage.\nError: " + ex);
-            return {
-                error: true,
-                errorMessage: ex + ""
-            };
-        }
-
-        if (response.error) {
+        if (response.error && response?.status != 500) {
             gs.error("[listMembers] There was an error returned from the " +
-                "Google Directories API. \nError: " + response.errorMessage);
+                "Google Directories API. \nResponse: " + JSON.stringify(response));
         }
 
         return {
@@ -211,7 +180,7 @@ DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.AuthUtil(), {
             delivery_settings: deliverySettings
         };
 
-        // TODO validate content
+        const errors = this.validateContent(...config.content, content);
 
         const pathParams = {
             groupKey: groupKey
@@ -222,29 +191,93 @@ DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.AuthUtil(), {
             content: JSON.stringify(content),
             aliasId: this.aliasId
         };
+
+		const response = this.execute(requestConfig, "insert");
+
+		if (response.error && response?.status != 500) {
+			gs.error(`[insert] There was an error returned from the` +
+				`Google Directories API.\nResponse: ${JSON.stringify(response)}`);
+		}
+
+		return {
+			...response
+		};
     },
 
 
+    /**
+     * Helper function to enable unit testing
+     */
+    execute: function(requestConfig, caller) {
+        const builder = new x_neyu_rest_utils.RequestBuilder(requestConfig);
+        const api = new x_neyu_rest_utils.WebServiceUtil();
+
+        try {
+            return api.executeRestMessage(builder.build());
+        } catch (ex) {
+            gs.error(`[${caller}] There was an internal error building ` +
+                "and executing the RestMessage.\nError: " + ex);
+            return {
+                error: true,
+				status: 500,
+                errorMessage: ex + ""
+            };
+        }
+    },
+
     validateContent: function(spec, content) {
         // get all the parameters in the spec that are marked as required
-        const requiredKeys = Object.entries(spec)
-            .filter(([k, v]) => v?.required)
-            .map(([k, v]) => k);
-        // check which required parameters are not present in the content
-        const missingRequiredKeys = requiredKeys.filter((k) => !Object.keys(content).includes(k));
-        // return if there are missing parameters
-        if (missingRequiredKeys.length > 0) {
+        const missingRequiredKeys = Object.fromEntries(
+            Object.entries(spec).filter(([k, v]) => v?.required)
+            .filter(([k, v]) => !Object.keys(content).includes(k))
+            .map(([k, _]) => {
+                return [
+                    k,
+                    {
+                        error: `Missing required input '${k}'`
+                    }
+                ];
+            })
+        );
+
+        if (Object.keys(missingRequiredKeys).length > 0) {
             return missingRequiredKeys;
         }
 
-		// TODO validate that there aren't extra keys
+        // validate that there aren't extra keys
+        const invalidInputs = Object.fromEntries(
+            Object.entries(content).filter(([k, v]) => !Object.keys(spec).includes(k))
+            .map(([k, v]) => {
+                return [
+                    k,
+                    {
+                        value: v,
+                        error: `Property '${k}' is not a valid input`
+                    }
+                ];
+            })
+        );
+        if (Object.keys(invalidInputs).length > 0) {
+            return invalidInputs;
+        }
 
         // get all the parameters from the spec that have a defined enum
         const restrictedInputs = Object.fromEntries(Object.entries(spec)
             .filter(([k, v]) => v?.enum));
-		// find any key:value pairs where the value does not match any of the enum values
-        const invalidValues = Object.fromEntries(Object.entries(content)
-            .filter(([k, v]) => restrictedInputs[k] && !restrictedInputs[k]?.enum.includes(v)));
+        // find any key:value pairs where the value does not match any of the enum values
+        const invalidValues = Object.fromEntries(
+            Object.entries(content)
+            .filter(([k, v]) => restrictedInputs[k] && !restrictedInputs[k]?.enum.includes(v))
+            .map(([k, v]) => {
+                return [
+                    k,
+                    {
+                        value: v,
+                        error: `Value '${v}' is not a valid input for property '${k}'`
+                    }
+                ];
+            })
+        );
 
         if (Object.keys(invalidValues).length > 0) {
             return invalidValues;
@@ -258,13 +291,13 @@ DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.AuthUtil(), {
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-04-13 16:24:30</sys_created_on>
         <sys_id>e722b46c2b54c3508a69f0dcce91bf5f</sys_id>
-        <sys_mod_count>31</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_name>DirectoryMemberAPI</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_script_include_e722b46c2b54c3508a69f0dcce91bf5f</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-04-13 20:34:59</sys_updated_on>
+        <sys_updated_on>2026-04-14 21:24:13</sys_updated_on>
     </sys_script_include>
 </record_update>

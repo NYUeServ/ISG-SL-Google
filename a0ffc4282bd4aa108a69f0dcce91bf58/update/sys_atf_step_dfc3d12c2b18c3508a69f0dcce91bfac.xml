@@ -14,14 +14,14 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-04-13 18:56:03</sys_created_on>
         <sys_id>dfc3d12c2b18c3508a69f0dcce91bfac</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_atf_step_dfc3d12c2b18c3508a69f0dcce91bfac</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-04-13 20:35:28</sys_updated_on>
+        <sys_updated_on>2026-04-14 20:51:41</sys_updated_on>
         <table/>
         <test display_value="Google - Directories API Script Include Tests">fb935de82b18c3508a69f0dcce91bffb</test>
         <timeout/>
@@ -50,9 +50,9 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-04-13 18:56:04</sys_created_on>
         <sys_id>08f4996c2b18c3508a69f0dcce91bf77</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-04-13 20:35:28</sys_updated_on>
+        <sys_updated_on>2026-04-14 20:51:41</sys_updated_on>
         <value>(function(outputs, steps, params, stepResult, assertEqual) {&#13;
 &#13;
     describe("DirectoryMemberAPI - validateContent tests", () =&gt; {&#13;
@@ -72,8 +72,8 @@
             };&#13;
             const result = api.validateContent(spec, content);&#13;
             expect(result).toBeDefined();&#13;
-            expect(result.length).toBe(1);&#13;
-            expect(result[0]).toEqual("keyA");&#13;
+            expect("keyA" in result).toBe(true);&#13;
+            expect(result["keyA"].error).toBe("Missing required input 'keyA'");&#13;
         });&#13;
 &#13;
         it("should have the hasToken method extended from AuthUtil", () =&gt; {&#13;
@@ -93,9 +93,9 @@
 &#13;
             const result = api.validateContent(spec, content);&#13;
             expect(result).toBeDefined();&#13;
-            expect(result).toEqual({&#13;
-                keyA: "c"&#13;
-            });&#13;
+            expect("keyA" in result).toBe(true);&#13;
+            expect(result["keyA"].value).toBe("c");&#13;
+            expect(result["keyA"].error).toBe("Value 'c' is not a valid input for property 'keyA'");&#13;
         });&#13;
 &#13;
         it("should return null if all conditions are satified", () =&gt; {&#13;
@@ -116,9 +116,28 @@
             expect(api.validateContent(spec, content)).toBe(null);&#13;
         });&#13;
 &#13;
-		it("should return an error if there are extra inputs.", () =&gt; {&#13;
+        it("should return an error if there are extra inputs.", () =&gt; {&#13;
+            const spec = {&#13;
+                keyA: {&#13;
+                    required: true,&#13;
+                    enum: ["a", "b"]&#13;
+                },&#13;
+                keyB: {&#13;
+                    required: false&#13;
+                }&#13;
+            };&#13;
+            const content = {&#13;
+                keyA: "a",&#13;
+                keyB: "b",&#13;
+                keyC: "c"&#13;
+            };&#13;
 &#13;
-		});&#13;
+            const result = api.validateContent(spec, content);&#13;
+            expect(result).toBeDefined();&#13;
+            expect("keyC" in result).toBe(true);&#13;
+            expect(result["keyC"].value).toBe("c");&#13;
+            expect(result["keyC"].error).toBe("Property 'keyC' is not a valid input");&#13;
+        });&#13;
 &#13;
     });&#13;
 &#13;

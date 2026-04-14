@@ -154,7 +154,7 @@ DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.AuthUtil(), {
         type = "USER",
         role = "MEMBER",
         deliverySettings = "ALL_MAIL"
-    }) {
+    } = {}) {
         gs.info("[addMember]\ngroupKey: " + groupKey +
             "\nuserId: " + userId +
             "\nkind: " + kind +
@@ -172,6 +172,10 @@ DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.AuthUtil(), {
         this.ensureToken(this.credential, this.oauthProvider, this.providerProfile);
 
         const config = DirectoryMemberAPI.CONSTANTS.API_CONFIG.INSERT;
+        // get the content specification so we can validate the inputs
+        const {
+            content: spec
+        } = config;
         const content = {
             email: userId,
             kind: kind,
@@ -180,7 +184,17 @@ DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.AuthUtil(), {
             delivery_settings: deliverySettings
         };
 
-        const errors = this.validateContent(...config.content, content);
+        // validate the inputs
+        if ((errors = this.validateContent(spec, content))) {
+            const errorMessage = Object.entries(errors)
+                .map(([k, v]) => v?.error)
+                .join("\n");
+            return {
+                error: true,
+                status: 400,
+                errorMessage: errorMessage
+            };
+        }
 
         const pathParams = {
             groupKey: groupKey
@@ -192,16 +206,16 @@ DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.AuthUtil(), {
             aliasId: this.aliasId
         };
 
-		const response = this.execute(requestConfig, "insert");
+        const response = this.execute(requestConfig, "insert");
 
-		if (response.error && response?.status != 500) {
-			gs.error(`[insert] There was an error returned from the` +
-				`Google Directories API.\nResponse: ${JSON.stringify(response)}`);
-		}
+        if (response.error && response?.status != 500) {
+            gs.error(`[insert] There was an error returned from the` +
+                `Google Directories API.\nResponse: ${JSON.stringify(response)}`);
+        }
 
-		return {
-			...response
-		};
+        return {
+            ...response
+        };
     },
 
 
@@ -219,7 +233,7 @@ DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.AuthUtil(), {
                 "and executing the RestMessage.\nError: " + ex);
             return {
                 error: true,
-				status: 500,
+                status: 500,
                 errorMessage: ex + ""
             };
         }
@@ -282,6 +296,7 @@ DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.AuthUtil(), {
         if (Object.keys(invalidValues).length > 0) {
             return invalidValues;
         }
+        // success!
         return null;
     },
 
@@ -291,13 +306,13 @@ DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.AuthUtil(), {
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-04-13 16:24:30</sys_created_on>
         <sys_id>e722b46c2b54c3508a69f0dcce91bf5f</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_name>DirectoryMemberAPI</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_script_include_e722b46c2b54c3508a69f0dcce91bf5f</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-04-14 21:24:13</sys_updated_on>
+        <sys_updated_on>2026-04-14 22:09:06</sys_updated_on>
     </sys_script_include>
 </record_update>

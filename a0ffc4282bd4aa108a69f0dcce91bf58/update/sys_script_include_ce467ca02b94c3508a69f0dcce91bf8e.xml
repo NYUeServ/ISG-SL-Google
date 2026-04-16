@@ -2,17 +2,31 @@
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>package_private</access>
         <active>true</active>
-        <api_name>x_neyu_google_nyu.AuthUtil</api_name>
+        <api_name>x_neyu_google_nyu.RestUtil</api_name>
         <caller_access/>
         <client_callable>false</client_callable>
-        <description/>
+        <description>Utility Class that API Classes can either subclass or call upon.</description>
         <mobile_callable>false</mobile_callable>
-        <name>AuthUtil</name>
+        <name>RestUtil</name>
         <sandbox_callable>false</sandbox_callable>
-        <script><![CDATA[var AuthUtil = Class.create();
-AuthUtil.prototype = {
+        <script><![CDATA[var RestUtil = Class.create();
+RestUtil.prototype = {
     initialize: function() {},
 
+    /**
+     * Ensures a valid OAuth Access Token exists for the given requestor.
+     * If a token is missing or expired, it initiates a JWT-based flow to request a new one.
+     * * @param {string} requestorID - The sys_id of the user or entity requesting the token.
+     * @param {string} oauthProvider - The sys_id of the OAuth Entity record.
+     * @param {string} providerProfile - The sys_id of the OAuth Entity Profile record.
+     * * @throws {Error} Throws an error if any of the mandatory parameters are missing.
+     * * @example
+     * try {
+     * utils.ensureToken('6816f79cc0a8016401c5a33be04be441', 'd3b1...', 'a8f2...');
+     * } catch (e) {
+     * gs.error(e.message);
+     * }
+     */
     ensureToken: function(requestorID, oauthProvider, providerProfile) {
         if (!requestorID || !oauthProvider || !providerProfile) {
             throw new Error(
@@ -28,19 +42,127 @@ AuthUtil.prototype = {
         );
     },
 
-    type: 'AuthUtil'
+    /**
+     * Helper function to enable unit testing
+     */
+    execute: function(requestConfig, caller) {
+        const builder = new x_neyu_rest_utils.RequestBuilder(requestConfig);
+        const api = new x_neyu_rest_utils.WebServiceUtil();
+
+        try {
+            return api.executeRestMessage(builder.build());
+        } catch (ex) {
+            gs.error(`[${caller}] There was an internal error building ` +
+                "and executing the RestMessage.\nError: " + ex);
+            return {
+                error: true,
+                status: 500,
+                errorMessage: ex + ""
+            };
+        }
+    },
+
+    /**
+     * Validates a content object against a defined specification object.
+     * * The validation process checks for:
+     * 1. **Required Fields:** Ensures all keys marked `required: true` in the spec exist in the content.
+     * 2. **Strict Keys:** Ensures no keys exist in the content that are not defined in the spec.
+     * 3. **Enum Values:** Ensures content values match the allowed array defined in the spec's `enum` property.
+     * * @param {Object} spec - The specification schema. Each key represents a valid property 
+     * and can contain `{ required: boolean, enum: Array }`.
+     * @param {Object} content - The input data object to be validated.
+     * * @returns {Object|null} Returns an error object keyed by the invalid property names if 
+     * validation fails; returns `null` if the content is valid.
+     * * @example
+     * const spec = { 
+     * status: { required: true, enum: ['active', 'inactive'] },
+     * type: { required: false }
+     * };
+     * * // Returns { status: { value: 'pending', error: "Value 'pending' is not a valid..." } }
+     * utils.validateContent(spec, { status: 'pending' });
+     * * // Returns null
+     * utils.validateContent(spec, { status: 'active', type: 'internal' });
+     */
+    validateContent: function(spec, content) {
+        if (gs.nil(spec) || Object.keys(spec) == 0) {
+            throw new Error("specification is required");
+        }
+        if (gs.nil(content) || Object.keys(content) == 0) {
+            throw new Error("content is required");
+        }
+        // get all the parameters in the spec that are marked as required
+        const missingRequiredKeys = Object.fromEntries(
+            Object.entries(spec).filter(([k, v]) => v?.required)
+            .filter(([k, v]) => !Object.keys(content).includes(k))
+            .map(([k, _]) => {
+                return [
+                    k,
+                    {
+                        error: `Missing required input '${k}'`
+                    }
+                ];
+            })
+        );
+
+        if (Object.keys(missingRequiredKeys).length > 0) {
+            return missingRequiredKeys;
+        }
+
+        // validate that there aren't extra keys
+        const invalidInputs = Object.fromEntries(
+            Object.entries(content).filter(([k, v]) => !Object.keys(spec).includes(k))
+            .map(([k, v]) => {
+                return [
+                    k,
+                    {
+                        value: v,
+                        error: `Property '${k}' is not a valid input`
+                    }
+                ];
+            })
+        );
+        if (Object.keys(invalidInputs).length > 0) {
+            return invalidInputs;
+        }
+
+        // get all the parameters from the spec that have a defined enum
+        const restrictedInputs = Object.fromEntries(Object.entries(spec)
+            .filter(([k, v]) => v?.enum));
+        // find any key:value pairs where the value does not match any of the enum values
+        const invalidValues = Object.fromEntries(
+            Object.entries(content)
+            .filter(([k, v]) => restrictedInputs[k] && !restrictedInputs[k]?.enum.includes(v))
+            .map(([k, v]) => {
+                return [
+                    k,
+                    {
+                        value: v,
+                        error: `Value '${v}' is not a valid input for property '${k}'`
+                    }
+                ];
+            })
+        );
+
+        if (Object.keys(invalidValues).length > 0) {
+            return invalidValues;
+        }
+        // success!
+        return null;
+    },
+
+    type: 'RestUtil'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-04-13 16:46:05</sys_created_on>
         <sys_id>ce467ca02b94c3508a69f0dcce91bf8e</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>AuthUtil</sys_name>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>RestUtil</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_script_include_ce467ca02b94c3508a69f0dcce91bf8e</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-04-13 16:46:05</sys_updated_on>
+        <sys_updated_on>2026-04-16 21:01:34</sys_updated_on>
     </sys_script_include>
 </record_update>

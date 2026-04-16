@@ -47,10 +47,15 @@ DirectoryMemberAPI.CONSTANTS = {
                     enum: ["ALL_MAIL", "DAILY", "DIGEST", "DISABLED", "NONE"]
                 }
             }
-        }
+        },
+        DELETE_MEMBER: {
+            path: "/admin/directory/v1/groups/${groupKey}/members/${memberKey}",
+            httpMethod: "DELETE",
+            pathParams: ["memberKey", "userKey"]
+        },
     }
 };
-DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.AuthUtil(), {
+DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.RestUtil(), {
     initialize: function() {
         this.oauthProvider = "8491b701ebcf7a105c06fcffcad0cda8";
         this.providerProfile = "3b683f45ebcf7a105c06fcffcad0cd99";
@@ -60,10 +65,25 @@ DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.AuthUtil(), {
 
 
     /**
-     * Retrieves a group member's properties
-     * 
-     * @param groupKey {string} - unique identifier for the group
-     * @param memberKey {string} - unique identifier for the user
+     * Retrieves details for a specific member within a Google Group.
+     * * This method validates credentials, ensures a valid OAuth token, and executes 
+     * the request via the Google Directories API.
+     * * @param {string} groupKey - The group's email address, alias, or unique group ID.
+     * @param {string} memberKey - The member's email address or unique member ID.
+     * * @returns {Object} Standardized Response Object
+     * @returns {boolean} return.error - True if a validation or API error occurred.
+     * @returns {number} return.status - The HTTP status code (e.g., 200, 404, 500).
+     * @returns {string} return.errorMessage - Description of the error (null if successful).
+     * @returns {string} return.responseBody - The raw JSON string from the API. 
+     * **Note:** Must be parsed using `JSON.parse()` before use.
+     * * @example
+     * const result = utils.getMemberDetails('hr-group@company.com', 'user@company.com');
+     * if (!result.error) {
+     * const data = JSON.parse(result.responseBody);
+     * gs.info("Member Role: " + data.role);
+     * } else {
+     * gs.error("Failed to fetch member: " + result.errorMessage);
+     * }
      */
     getMemberDetails: function(groupKey, memberKey) {
         gs.info("[getMemberDetails]\nGroup Key: {0}\nMemberKey: {1}",
@@ -102,9 +122,23 @@ DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.AuthUtil(), {
     },
 
     /**
-     * Retrieves the list of members for a group
-     * 
-     * @param groupKey {string} - unique identifier for the group
+     * Retrieves a list of all members within a specified Google Group.
+     * * This method handles the OAuth token check and executes the request against 
+     * the Google Directories API. It includes specialized logging that captures 
+     * non-500 errors for debugging.
+     * * @param {string} groupKey - The group's email address, alias, or unique group ID.
+     * * @returns {Object} Standardized Response Object
+     * @returns {boolean} return.error - True if a validation or API error occurred.
+     * @returns {number} return.status - The HTTP status code (e.g., 200, 403, 404).
+     * @returns {string} return.errorMessage - Description of the error (null if successful).
+     * @returns {string} return.responseBody - The raw JSON string containing the list of members.
+     * **Note:** Must be parsed using `JSON.parse()` before use.
+     * * @example
+     * const result = utils.listMembers('it-support@company.com');
+     * if (!result.error) {
+     * const data = JSON.parse(result.responseBody);
+     * gs.info("Total members found: " + data.members.length);
+     * }
      */
     listMembers: function(groupKey) {
         gs.info("[listMembers]\nGroup Key: {0}", groupKey);
@@ -141,13 +175,30 @@ DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.AuthUtil(), {
     },
 
     /**
-     * Inserts a user into a group
-     * 
-     * @param groupkey {string} - the unique ID of the group
-     * @param userId {string} - the email address or unique ID of the user
-     * @param type {string} - the type of group member, can be CUSTOMER, EXTERNAL, GROUP, or USER. Defaults to USER
-     * @param role {string} - whether the user is an owner, manager, or member. Defaults to Member
-     * @param deliverySettings {string} - how often the user should receive mail from the group, defaults to ALL_MAIL
+     * Adds (inserts) a new member into a specified Google Group.
+     * * This method performs pre-flight validation against a specification schema, 
+     * ensures OAuth connectivity, and maps input parameters to the Google Directory API format.
+     * * @param {string} groupKey - The group's email address, alias, or unique group ID.
+     * @param {string} userId - The email address or ID of the user to be added.
+     * @param {Object} [options={}] - Optional configuration for the new member.
+     * @param {string} [options.kind="admin#directory#member"] - The type of the resource.
+     * @param {string} [options.type="USER"] - The member type (e.g., 'USER', 'GROUP', 'CUSTOMER').
+     * @param {string} [options.role="MEMBER"] - The member's role (e.g., 'MEMBER', 'OWNER', 'MANAGER').
+     * @param {string} [options.deliverySettings="ALL_MAIL"] - Email delivery settings.
+     * * @returns {Object} Standardized Response Object
+     * @returns {boolean} return.error - True if validation fails or the API returns an error.
+     * @returns {number} return.status - The HTTP status code (e.g., 200, 400, 403).
+     * @returns {string} return.errorMessage - A concatenated string of validation errors or API errors.
+     * @returns {string} return.responseBody - The raw JSON string of the created member record. 
+     * **Note:** Must be parsed using `JSON.parse()` before use.
+     * * @example
+     * // Adding a member with default settings
+     * const result = utils.insert('support@company.com', 'new.user@company.com');
+     * * // Adding a manager with specific delivery settings
+     * const result = utils.insert('support@company.com', 'lead@company.com', {
+     * role: 'MANAGER',
+     * deliverySettings: 'DIGEST'
+     * });
      */
     insert: function(groupKey, userId, {
         kind = "admin#directory#member",
@@ -218,87 +269,62 @@ DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.AuthUtil(), {
         };
     },
 
-
     /**
-     * Helper function to enable unit testing
+     * Removes a specific member within a Google Group.
+     * * This method validates credentials, ensures a valid OAuth token, and executes 
+     * the request via the Google Directories API.
+     * * @param {string} groupKey - The group's email address, alias, or unique group ID.
+     * @param {string} memberKey - The member's email address or unique member ID.
+     * * @returns {Object} Standardized Response Object
+     * @returns {boolean} return.error - True if a validation or API error occurred.
+     * @returns {number} return.status - The HTTP status code (e.g., 200, 404, 500).
+     * @returns {string} return.errorMessage - Description of the error (null if successful).
+     * @returns {string} return.responseBody - The raw JSON string from the API. 
+     * **Note:** Must be parsed using `JSON.parse()` before use.
+     * * @example
+     * const result = utils.getMemberDetails('hr-group@company.com', 'user@company.com');
+     * if (!result.error) {
+     * gs.info("Successful status: " + result.status);
+     * } else {
+     * gs.error("Failed to fetch member: " + result.errorMessage);
+     * }
      */
-    execute: function(requestConfig, caller) {
-        const builder = new x_neyu_rest_utils.RequestBuilder(requestConfig);
-        const api = new x_neyu_rest_utils.WebServiceUtil();
+    deleteMember: function(groupKey, memberKey) {
+        gs.info("[deleteMember]\nGroup Key: {0}\nMemberKey: {1}",
+            groupKey, memberKey);
 
-        try {
-            return api.executeRestMessage(builder.build());
-        } catch (ex) {
-            gs.error(`[${caller}] There was an internal error building ` +
-                "and executing the RestMessage.\nError: " + ex);
+        if (!groupKey || !memberKey) {
             return {
                 error: true,
-                status: 500,
-                errorMessage: ex + ""
+                errorMessage: "groupKey and memberKey are required"
             };
         }
+
+        this.ensureToken(this.credential, this.oauthProvider, this.providerProfile);
+
+        const pathParams = {
+            groupKey: groupKey,
+            memberKey: memberKey
+        };
+        const config = DirectoryMemberAPI.CONSTANTS.API_CONFIG.DELETE_MEMBER;
+        const requestConfig = {
+            ...config,
+            pathParams,
+            aliasId: this.aliasId
+        };
+
+        const response = this.execute(requestConfig, "deleteMember");
+
+        if (response.error) {
+            gs.error("[deleteMember] There was an error returned from the " +
+                "Google Directories API. \nError: " + response.errorMessage);
+        }
+
+        return {
+            ...response
+        };
     },
 
-    validateContent: function(spec, content) {
-        // get all the parameters in the spec that are marked as required
-        const missingRequiredKeys = Object.fromEntries(
-            Object.entries(spec).filter(([k, v]) => v?.required)
-            .filter(([k, v]) => !Object.keys(content).includes(k))
-            .map(([k, _]) => {
-                return [
-                    k,
-                    {
-                        error: `Missing required input '${k}'`
-                    }
-                ];
-            })
-        );
-
-        if (Object.keys(missingRequiredKeys).length > 0) {
-            return missingRequiredKeys;
-        }
-
-        // validate that there aren't extra keys
-        const invalidInputs = Object.fromEntries(
-            Object.entries(content).filter(([k, v]) => !Object.keys(spec).includes(k))
-            .map(([k, v]) => {
-                return [
-                    k,
-                    {
-                        value: v,
-                        error: `Property '${k}' is not a valid input`
-                    }
-                ];
-            })
-        );
-        if (Object.keys(invalidInputs).length > 0) {
-            return invalidInputs;
-        }
-
-        // get all the parameters from the spec that have a defined enum
-        const restrictedInputs = Object.fromEntries(Object.entries(spec)
-            .filter(([k, v]) => v?.enum));
-        // find any key:value pairs where the value does not match any of the enum values
-        const invalidValues = Object.fromEntries(
-            Object.entries(content)
-            .filter(([k, v]) => restrictedInputs[k] && !restrictedInputs[k]?.enum.includes(v))
-            .map(([k, v]) => {
-                return [
-                    k,
-                    {
-                        value: v,
-                        error: `Value '${v}' is not a valid input for property '${k}'`
-                    }
-                ];
-            })
-        );
-
-        if (Object.keys(invalidValues).length > 0) {
-            return invalidValues;
-        }
-        // success!
-        return null;
-    },
 
     type: 'DirectoryMemberAPI'
 });]]></script>
@@ -306,13 +332,13 @@ DirectoryMemberAPI.prototype = Object.extend(new x_neyu_google_nyu.AuthUtil(), {
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-04-13 16:24:30</sys_created_on>
         <sys_id>e722b46c2b54c3508a69f0dcce91bf5f</sys_id>
-        <sys_mod_count>44</sys_mod_count>
+        <sys_mod_count>52</sys_mod_count>
         <sys_name>DirectoryMemberAPI</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_script_include_e722b46c2b54c3508a69f0dcce91bf5f</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-04-14 22:09:06</sys_updated_on>
+        <sys_updated_on>2026-04-16 22:40:20</sys_updated_on>
     </sys_script_include>
 </record_update>

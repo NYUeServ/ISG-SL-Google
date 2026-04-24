@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_neyu_google_nyu.DirectoryGroupAPI</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Reference: https://developers.google.com/workspace/admin/directory/reference/rest/v1/groups</description>
+        <mobile_callable>false</mobile_callable>
+        <name>DirectoryGroupAPI</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var DirectoryGroupAPI = Class.create();
+DirectoryGroupAPI.CONSTANTS = {
+    API_CONFIG: {
+        GET_USER_GROUPS: {
+            path: "/admin/directory/v1/groups",
+            httpMethod: "GET",
+            queryParams: ["userKey", "pageToken", "maxResults", "query"]
+        }
+    }
+};
+DirectoryGroupAPI.prototype = Object.extend(new x_neyu_google_nyu.RestUtil(), {
+    initialize: function() {
+        this.oauthProvider = "8491b701ebcf7a105c06fcffcad0cda8";
+        this.providerProfile = "3b683f45ebcf7a105c06fcffcad0cd99";
+        this.credential = gs.getProperty("x_neyu_google_nyu.directory.api.credential.id");
+        this.aliasId = "1249fca42b94c3508a69f0dcce91bf0f";
+    },
+
+    /**
+     * Retrieves all Google Groups that a specific user is a member of.
+     * * This method uses the `userKey` (email or unique ID) to query the Google 
+     * Directory API and returns a list of group memberships associated with that user.
+     * * @param {string} userKey - The user's primary email address, alias, or unique user ID.
+     * * @returns {Object} Standardized Response Object
+     * @returns {boolean} return.error - True if `userKey` is missing or the API request fails.
+     * @returns {number} return.status - The HTTP status code (e.g., 200, 403, 500).
+     * @returns {string} return.errorMessage - Description of the error (null if successful).
+     * @returns {string} return.responseBody - The raw JSON string containing the groups list.
+     * **Note:** Must be parsed using `JSON.parse()` before use.
+     * * @example
+     * const result = utils.getUserGroups('employee.name@company.com');
+     * if (!result.error) {
+     * const data = JSON.parse(result.responseBody);
+     * // Google API returns an object with a 'groups' array
+     * (data.groups || []).forEach(group => {
+     * gs.info("Member of: " + group.name);
+     * });
+     * }
+     */
+    getUserGroups: function({
+        userKey = null,
+        maxResults = 200,
+        pageToken = null,
+        query = null
+    } = {}) {
+        gs.info(`[getUserGroups] userKey: ${userKey}` +
+            `\nquery: ${query}` +
+            `\nmaxResults: ${maxResults}` +
+            `\npageToken: ${pageToken}`);
+
+        this.ensureToken(this.credential, this.oauthProvider, this.providerProfile);
+
+        const queryParams = {};
+        if (!gs.nil(userKey)) {
+            queryParams["userKey"] = userKey;
+        }
+        if (!gs.nil(maxResults)) {
+            queryParams["maxResults"] = maxResults;
+        }
+        if (!gs.nil(pageToken)) {
+            queryParams["pageToken"] = pageToken;
+        }
+        if (!gs.nil(query)) {
+            queryParams["query"] = query;
+        }
+
+        const config = DirectoryGroupAPI.CONSTANTS.API_CONFIG.GET_USER_GROUPS;
+        const requestConfig = {
+            ...config,
+            queryParams,
+            aliasId: this.aliasId
+        };
+
+        const response = this.execute(requestConfig, "getUserGroups");
+
+        if (response.error) {
+            gs.error("[getUserGroups] There was an error returned from " +
+                "the Google Directories API.\nResponse: " + JSON.stringify(response));
+        }
+
+        return {
+            ...response
+        };
+    },
+
+    type: 'DirectoryGroupAPI'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-04-13 16:23:26</sys_created_on>
+        <sys_id>ec81b42c2b54c3508a69f0dcce91bfe1</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>DirectoryGroupAPI</sys_name>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name>sys_script_include_ec81b42c2b54c3508a69f0dcce91bfe1</sys_update_name>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-04-17 17:08:02</sys_updated_on>
+    </sys_script_include>
+</record_update>

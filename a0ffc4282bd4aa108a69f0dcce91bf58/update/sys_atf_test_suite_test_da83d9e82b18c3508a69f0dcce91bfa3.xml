@@ -14,7 +14,7 @@
         <sys_update_name>sys_atf_test_suite_test_da83d9e82b18c3508a69f0dcce91bfa3</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
         <sys_updated_on>2026-04-13 18:50:28</sys_updated_on>
-        <test display_value="Google - Directories API Script Include Tests">fb935de82b18c3508a69f0dcce91bffb</test>
-        <test_suite display_value="Google NYU Directories API Tests">527391e82b18c3508a69f0dcce91bff3</test_suite>
+        <test display_value="Google - RestUtil Script Include Tests">fb935de82b18c3508a69f0dcce91bffb</test>
+        <test_suite display_value="Google NYU RestUtil Tests">527391e82b18c3508a69f0dcce91bff3</test_suite>
     </sys_atf_test_suite_test>
 </record_update>

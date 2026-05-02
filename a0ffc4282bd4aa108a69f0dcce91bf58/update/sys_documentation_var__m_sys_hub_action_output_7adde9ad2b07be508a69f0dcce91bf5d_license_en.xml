@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="license" label="License" language="en" table="var__m_sys_hub_action_output_7adde9ad2b07be508a69f0dcce91bf5d">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>license</element>
+            <help/>
+            <hint/>
+            <label>License</label>
+            <language>en</language>
+            <name>var__m_sys_hub_action_output_7adde9ad2b07be508a69f0dcce91bf5d</name>
+            <plural/>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>ab7289</sys_created_by>
+            <sys_created_on>2026-02-18 21:16:15</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>License</sys_name>
+            <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+            <sys_update_name>sys_documentation_var__m_sys_hub_action_output_7adde9ad2b07be508a69f0dcce91bf5d_license_en</sys_update_name>
+            <sys_updated_by>ab7289</sys_updated_by>
+            <sys_updated_on>2026-02-18 21:16:15</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

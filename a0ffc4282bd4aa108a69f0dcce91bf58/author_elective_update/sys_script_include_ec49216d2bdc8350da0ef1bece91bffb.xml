@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_neyu_google_nyu.DirectoryGroupAJAX</api_name>
+        <caller_access>2</caller_access>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>DirectoryGroupAJAX</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var DirectoryGroupAJAX = Class.create();
+DirectoryGroupAJAX.prototype = {
+    initialize: function() {
+    },
+
+    type: 'DirectoryGroupAJAX'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-04-16 22:59:10</sys_created_on>
+        <sys_id>ec49216d2bdc8350da0ef1bece91bffb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>DirectoryGroupAJAX</sys_name>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name>sys_script_include_ec49216d2bdc8350da0ef1bece91bffb</sys_update_name>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-04-16 22:59:10</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</application>
+        <file_path/>
+        <instance_id>58b11994db81b010c6e711f84896190f</instance_id>
+        <instance_name>nyudev2</instance_name>
+        <name>sys_script_include_ec49216d2bdc8350da0ef1bece91bffb</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;public&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_neyu_google_nyu.DirectoryGroupAJAX&lt;/api_name&gt;&lt;caller_access&gt;2&lt;/caller_access&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;DirectoryGroupAJAX&lt;/name&gt;&lt;sandbox_callable&gt;false&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[var DirectoryGroupAJAX = Class.create();
+DirectoryGroupAJAX.prototype = {
+    initialize: function() {
+    },
+
+    type: 'DirectoryGroupAJAX'
+};]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;ab7289&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-04-16 22:59:10&lt;/sys_created_on&gt;&lt;sys_id&gt;ec49216d2bdc8350da0ef1bece91bffb&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;DirectoryGroupAJAX&lt;/sys_name&gt;&lt;sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu"&gt;a0ffc4282bd4aa108a69f0dcce91bf58&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Google NYU Spoke"&gt;a0ffc4282bd4aa108a69f0dcce91bf58&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_ec49216d2bdc8350da0ef1bece91bffb&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;ab7289&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-04-16 22:59:10&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1564366705</payload_hash>
+        <record_name>DirectoryGroupAJAX</record_name>
+        <reverted_from/>
+        <source>d581e99e2b767e108a69f0dcce91bf2d</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-04-16 22:59:10</sys_created_on>
+        <sys_id>e25921e92bdc8350da0ef1bece91bff3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19d9885116a0000001</sys_recorded_at>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-04-16 22:59:10</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>225921e9d7dc8350e612be818b8f1ef2</update_guid>
+        <update_guid_history>225921e9d7dc8350e612be818b8f1ef2:-1564366705</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-04-16 22:59:31</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>5ce62dfef1fa4228909b81d7b1f94840</sys_id>
+        <sys_metadata>ec49216d2bdc8350da0ef1bece91bffb</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>DirectoryGroupAJAX</sys_name>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_scope_delete display_value="">5dc2e6d8616e4104bb14f06986a2ad90</sys_scope_delete>
+        <sys_update_name>sys_script_include_ec49216d2bdc8350da0ef1bece91bffb</sys_update_name>
+        <sys_update_version display_value="sys_script_include_ec49216d2bdc8350da0ef1bece91bffb">e25921e92bdc8350da0ef1bece91bff3</sys_update_version>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-04-16 22:59:31</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

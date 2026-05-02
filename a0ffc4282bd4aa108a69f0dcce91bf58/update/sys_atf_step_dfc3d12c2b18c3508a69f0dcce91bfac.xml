@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <callable_outputs/>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes>RestUtil - validateContent Tests</notes>
+        <order>1</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-04-13 18:56:03</sys_created_on>
+        <sys_id>dfc3d12c2b18c3508a69f0dcce91bfac</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name>sys_atf_step_dfc3d12c2b18c3508a69f0dcce91bfac</sys_update_name>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-04-16 21:05:13</sys_updated_on>
+        <table/>
+        <test display_value="Google - RestUtil Script Include Tests">fb935de82b18c3508a69f0dcce91bffb</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=dfc3d12c2b18c3508a69f0dcce91bfac"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>dfc3d12c2b18c3508a69f0dcce91bfac</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-04-13 18:56:04</sys_created_on>
+        <sys_id>4cf4996c2b18c3508a69f0dcce91bf76</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-04-13 18:56:04</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>dfc3d12c2b18c3508a69f0dcce91bfac</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-04-13 18:56:04</sys_created_on>
+        <sys_id>08f4996c2b18c3508a69f0dcce91bf77</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-04-16 21:05:13</sys_updated_on>
+        <value>(function(outputs, steps, params, stepResult, assertEqual) {&#13;
+&#13;
+    describe("RestUtil - validateContent tests", () =&gt; {&#13;
+        const api = new x_neyu_google_nyu.RestUtil();&#13;
+&#13;
+        it("should return an object of missing required keys", () =&gt; {&#13;
+            const spec = {&#13;
+                keyA: {&#13;
+                    required: true&#13;
+                },&#13;
+                keyB: {&#13;
+                    required: false&#13;
+                }&#13;
+            };&#13;
+            const content = {&#13;
+                keyB: "something"&#13;
+            };&#13;
+            const result = api.validateContent(spec, content);&#13;
+            expect(result).toBeDefined();&#13;
+            expect("keyA" in result).toBe(true);&#13;
+            expect(result["keyA"].error).toBe("Missing required input 'keyA'");&#13;
+        });&#13;
+&#13;
+        it("should have the hasToken method", () =&gt; {&#13;
+            expect("ensureToken" in api).toBe(true);&#13;
+        });&#13;
+&#13;
+        it("Should return an error if a input value is not in the spec's enum", () =&gt; {&#13;
+            const spec = {&#13;
+                keyA: {&#13;
+                    required: true,&#13;
+                    enum: ["a", "b"]&#13;
+                }&#13;
+            };&#13;
+            const content = {&#13;
+                keyA: "c"&#13;
+            };&#13;
+&#13;
+            const result = api.validateContent(spec, content);&#13;
+            expect(result).toBeDefined();&#13;
+            expect("keyA" in result).toBe(true);&#13;
+            expect(result["keyA"].value).toBe("c");&#13;
+            expect(result["keyA"].error).toBe("Value 'c' is not a valid input for property 'keyA'");&#13;
+        });&#13;
+&#13;
+        it("should return null if all conditions are satified", () =&gt; {&#13;
+            const spec = {&#13;
+                keyA: {&#13;
+                    required: true,&#13;
+                    enum: ["a", "b"]&#13;
+                },&#13;
+                keyB: {&#13;
+                    required: true&#13;
+                }&#13;
+            };&#13;
+            const content = {&#13;
+                keyA: "a",&#13;
+                keyB: "foo"&#13;
+            };&#13;
+&#13;
+            expect(api.validateContent(spec, content)).toBe(null);&#13;
+        });&#13;
+&#13;
+        it("should return an error if there are extra inputs.", () =&gt; {&#13;
+            const spec = {&#13;
+                keyA: {&#13;
+                    required: true,&#13;
+                    enum: ["a", "b"]&#13;
+                },&#13;
+                keyB: {&#13;
+                    required: false&#13;
+                }&#13;
+            };&#13;
+            const content = {&#13;
+                keyA: "a",&#13;
+                keyB: "b",&#13;
+                keyC: "c"&#13;
+            };&#13;
+&#13;
+            const result = api.validateContent(spec, content);&#13;
+            expect(result).toBeDefined();&#13;
+            expect("keyC" in result).toBe(true);&#13;
+            expect(result["keyC"].value).toBe("c");&#13;
+            expect(result["keyC"].error).toBe("Property 'keyC' is not a valid input");&#13;
+        });&#13;
+&#13;
+        [&#13;
+            null,&#13;
+            {}&#13;
+        ].forEach((testSpec) =&gt; {&#13;
+            it("Should throw an error if the passed in spec is null or empty", () =&gt; {&#13;
+                expect(() =&gt; {&#13;
+                    api.validateContent(testSpec, {&#13;
+                        key: "value"&#13;
+                    });&#13;
+                }).toThrowError("specification is required");&#13;
+            });&#13;
+        });&#13;
+&#13;
+        [&#13;
+            null,&#13;
+            {}&#13;
+        ].forEach((testContent) =&gt; {&#13;
+            it("Should throw an error if the passed in content is null or empty", () =&gt; {&#13;
+                expect(() =&gt; {&#13;
+                    api.validateContent({&#13;
+                        "key": {}&#13;
+                    }, testContent);&#13;
+                }).toThrowError("content is required");&#13;
+            });&#13;
+        });&#13;
+&#13;
+    });&#13;
+&#13;
+})(outputs, steps, params, stepResult, assertEqual);&#13;
+// uncomment the next line to execute this script as a jasmine test&#13;
+jasmine.getEnv().execute();</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+</record_update>

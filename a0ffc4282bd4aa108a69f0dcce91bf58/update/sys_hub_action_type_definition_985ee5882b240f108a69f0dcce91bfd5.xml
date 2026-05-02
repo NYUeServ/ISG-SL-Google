@@ -31,7 +31,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>985ee5882b240f108a69f0dcce91bfd5</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name>DirectoryAPI - Delete Group Member</sys_name>
         <sys_overrides/>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
@@ -39,7 +39,7 @@
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_985ee5882b240f108a69f0dcce91bfd5</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-04-24 19:46:53</sys_updated_on>
+        <sys_updated_on>2026-05-02 19:38:48</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -205,18 +205,6 @@
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=4310b94c2b240f108a69f0dcce91bf47"/>
     <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>application</field>
-        <id>4310b94c2b240f108a69f0dcce91bf47</id>
-        <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-04-24 17:53:31</sys_created_on>
-        <sys_id>1f10b94c2b240f108a69f0dcce91bf8c</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-04-24 17:53:31</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>groupKey</field>
         <id>4310b94c2b240f108a69f0dcce91bf47</id>
         <sys_created_by>ab7289</sys_created_by>
@@ -227,18 +215,6 @@
         <sys_updated_on>2026-04-24 17:53:31</sys_updated_on>
         <table>var__m_sys_hub_step_ext_input_4310b94c2b240f108a69f0dcce91bf47</table>
         <value>{{action.group_key}}</value>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>script</field>
-        <id>4310b94c2b240f108a69f0dcce91bf47</id>
-        <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-04-24 17:53:31</sys_created_on>
-        <sys_id>1310b94c2b240f108a69f0dcce91bf8d</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-04-24 17:53:31</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>userKey</field>
@@ -603,11 +579,11 @@
         <sys_created_on>2026-04-24 17:53:31</sys_created_on>
         <sys_id>5310b94c2b240f108a69f0dcce91bf77</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Result</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_step_ext_output_4310b94c2b240f108a69f0dcce91bf47_result_en</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
         <sys_updated_on>2026-04-24 17:53:31</sys_updated_on>
         <url/>
@@ -626,11 +602,11 @@
         <sys_created_on>2026-04-24 17:53:31</sys_created_on>
         <sys_id>9b10b94c2b240f108a69f0dcce91bf72</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Error</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_step_ext_output_4310b94c2b240f108a69f0dcce91bf47_error_en</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
         <sys_updated_on>2026-04-24 17:53:31</sys_updated_on>
         <url/>
@@ -1193,11 +1169,11 @@
         <sys_created_on>2026-04-24 17:46:18</sys_created_on>
         <sys_id>217e21c82b240f108a69f0dcce91bf71</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>User Key</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_input_985ee5882b240f108a69f0dcce91bfd5_user_key_en</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
         <sys_updated_on>2026-04-24 17:46:18</sys_updated_on>
         <url/>
@@ -1216,11 +1192,11 @@
         <sys_created_on>2026-04-24 17:46:18</sys_created_on>
         <sys_id>e57e21c82b240f108a69f0dcce91bf76</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Group Key</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_input_985ee5882b240f108a69f0dcce91bfd5_group_key_en</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
         <sys_updated_on>2026-04-24 17:46:18</sys_updated_on>
         <url/>
@@ -1240,11 +1216,11 @@
         <sys_created_on>2026-04-24 17:54:59</sys_created_on>
         <sys_id>2c70f18c2b240f108a69f0dcce91bf44</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Result</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_985ee5882b240f108a69f0dcce91bfd5_result_en</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
         <sys_updated_on>2026-04-24 17:54:59</sys_updated_on>
         <url/>
@@ -1263,11 +1239,11 @@
         <sys_created_on>2026-04-24 17:54:58</sys_created_on>
         <sys_id>6070f18c2b240f108a69f0dcce91bf3c</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Error</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_985ee5882b240f108a69f0dcce91bfd5_error_en</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
         <sys_updated_on>2026-04-24 17:54:58</sys_updated_on>
         <url/>
@@ -1286,11 +1262,11 @@
         <sys_created_on>2026-04-24 17:46:19</sys_created_on>
         <sys_id>bd7e21c82b240f108a69f0dcce91bfaa</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Action Status</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_985ee5882b240f108a69f0dcce91bfd5___action_status___en</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
         <sys_updated_on>2026-04-24 17:46:19</sys_updated_on>
         <url/>
@@ -1309,11 +1285,11 @@
         <sys_created_on>2026-04-24 17:46:19</sys_created_on>
         <sys_id>f97e21c82b240f108a69f0dcce91bfb3</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Don't Treat as Error</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_985ee5882b240f108a69f0dcce91bfd5___dont_treat_as_error___en</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
         <sys_updated_on>2026-04-24 17:46:19</sys_updated_on>
         <url/>
@@ -1538,18 +1514,6 @@
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=e970358c2b240f108a69f0dcce91bfa2"/>
     <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>application</field>
-        <id>e970358c2b240f108a69f0dcce91bfa2</id>
-        <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-04-24 17:55:03</sys_created_on>
-        <sys_id>b570358c2b240f108a69f0dcce91bfca</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-04-24 17:55:03</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>groupKey</field>
         <id>e970358c2b240f108a69f0dcce91bfa2</id>
         <sys_created_by>ab7289</sys_created_by>
@@ -1560,18 +1524,6 @@
         <sys_updated_on>2026-04-24 17:55:03</sys_updated_on>
         <table>var__m_sys_hub_step_ext_input_e970358c2b240f108a69f0dcce91bfa2</table>
         <value>{{action.group_key}}</value>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>script</field>
-        <id>e970358c2b240f108a69f0dcce91bfa2</id>
-        <sys_created_by>ab7289</sys_created_by>
-        <sys_created_on>2026-04-24 17:55:03</sys_created_on>
-        <sys_id>b970358c2b240f108a69f0dcce91bfca</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-04-24 17:55:03</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>userKey</field>
@@ -1936,7 +1888,7 @@
         <sys_created_on>2026-04-24 17:55:03</sys_created_on>
         <sys_id>3570358c2b240f108a69f0dcce91bfbf</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Error</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
@@ -1959,7 +1911,7 @@
         <sys_created_on>2026-04-24 17:55:03</sys_created_on>
         <sys_id>b170358c2b240f108a69f0dcce91bfc3</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Result</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
@@ -2526,7 +2478,7 @@
         <sys_created_on>2026-04-24 17:55:02</sys_created_on>
         <sys_id>2170358c2b240f108a69f0dcce91bf9c</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Group Key</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
@@ -2549,7 +2501,7 @@
         <sys_created_on>2026-04-24 17:55:02</sys_created_on>
         <sys_id>ad70358c2b240f108a69f0dcce91bf96</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>User Key</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
@@ -2573,7 +2525,7 @@
         <sys_created_on>2026-04-24 17:55:03</sys_created_on>
         <sys_id>7970358c2b240f108a69f0dcce91bff1</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Action Status</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
@@ -2596,7 +2548,7 @@
         <sys_created_on>2026-04-24 17:55:03</sys_created_on>
         <sys_id>b970358c2b240f108a69f0dcce91bfec</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Error</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
@@ -2619,7 +2571,7 @@
         <sys_created_on>2026-04-24 17:55:03</sys_created_on>
         <sys_id>bd70758c2b240f108a69f0dcce91bf02</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Result</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
@@ -2642,7 +2594,7 @@
         <sys_created_on>2026-04-24 17:55:03</sys_created_on>
         <sys_id>f570758c2b240f108a69f0dcce91bf0a</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Don't Treat as Error</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy/>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>

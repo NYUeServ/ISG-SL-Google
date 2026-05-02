@@ -5,6 +5,7 @@
         <jwt_provider/>
         <name>Google Sheets Client default_profile</name>
         <oauth_entity display_value="Google Sheets Client">6056dd7c2bdc22108a69f0dcce91bf9d</oauth_entity>
+        <oauth_resources/>
         <saml2_assertion_producer/>
         <sys_class_name>oauth_entity_profile</sys_class_name>
         <sys_created_by>ab7289</sys_created_by>

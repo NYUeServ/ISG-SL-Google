@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters">
     <sys_rest_message_fn_parameters action="INSERT_OR_UPDATE">
         <name>userKey</name>
-        <rest_message_function display_value="GET Groups">8248dcf62b7f76908a69f0dcce91bf5d</rest_message_function>
+        <rest_message_function display_value="GET Groups List">8248dcf62b7f76908a69f0dcce91bf5d</rest_message_function>
         <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-03-26 17:48:38</sys_created_on>

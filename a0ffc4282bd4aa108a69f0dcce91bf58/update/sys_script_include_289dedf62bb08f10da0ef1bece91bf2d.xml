@@ -28,10 +28,21 @@ DriveFileAPI.CONSTANTS = {
                 "includePermissionsForView",
                 "includeLabels"
             ]
+        },
+        GET: {
+            path: "/drive/v3/files/${fileId}",
+            httpMethod: "GET",
+            pathParams: ["fileId"],
+            queryParams: [
+                "acknowledgeAbuse",
+                "supportsAllDrives",
+                "includePermissionsForView",
+                "includeLabels"
+            ]
         }
     }
 };
-DriveFileAPI.prototype = Object.extend(x_neyu_google_nyu.RestUtil, {
+DriveFileAPI.prototype = Object.extend(new x_neyu_google_nyu.RestUtil(), {
     initialize: function() {
         this.oauthProvider = "1b757d762bf08f10da0ef1bece91bfb2";
         this.providerProfile = "58c5bdb62bf08f10da0ef1bece91bf94";
@@ -154,19 +165,96 @@ DriveFileAPI.prototype = Object.extend(x_neyu_google_nyu.RestUtil, {
         };
     },
 
+    /**
+     * Gets a file's metadata by ID.
+     * * This method retrieves specific file details. To download the actual file content, 
+     * the 'alt=media' parameter is typically required, though this implementation 
+     * focuses on metadata retrieval based on the provided configuration.
+     * * @param {string} fileId - The ID of the file to retrieve.
+     * @param {Object} [options={}] - Query parameters to modify the request.
+     * @param {boolean} [options.acknowledgeAbuse=false] - Whether the user acknowledges the risk of downloading known malware or other abusive files. This is only applicable when retrieving file content.
+     * @param {boolean} [options.supportsAllDrives=false] - Whether the requesting application supports both My Drive and shared drives.
+     * @param {string} [options.includePermissionsForView=null] - Specifies which additional view's permissions to include (e.g., 'published').
+     * @param {string} [options.includeLabels=null] - A comma-separated list of IDs of label types to include in the file metadata.
+     * * @returns {Object} Standardized Response Object
+     * @returns {boolean} return.error - True if the file ID is invalid or access is denied.
+     * @returns {number} return.status - The HTTP status code (e.g., 200, 404).
+     * @returns {string} return.errorMessage - Description of the error.
+     * @returns {string} return.responseBody - Raw JSON string of the File resource metadata.
+     * **Note:** Must be parsed using `JSON.parse()` before use.
+     * * @example
+     * const result = utils.getFile('1abc1234567890QWERTY', { 
+     * supportsAllDrives: true 
+     * });
+     * * if (!result.error) {
+     * const fileMetadata = JSON.parse(result.responseBody);
+     * gs.info("File Name: " + fileMetadata.name);
+     * gs.info("Mime Type: " + fileMetadata.mimeType);
+     * }
+     */
+    getFile: function(fileId, {
+        acknowledgeAbuse = null,
+        supportsAllDrives = null,
+        includePermissionsForView = null,
+        includeLabels = null
+    } = {}) {
+        gs.info(`[getFile] fileId: ${fileId}` +
+            `\nQuery Parameters` +
+            `\nacknowledgeAbuse: ${acknowledgeAbuse}` +
+            `\nsupportsAllDrives: ${supportsAllDrives}` +
+            `\nincludePermissionsForView: ${includePermissionsForView}` +
+            `\nincludeLabels: ${includeLabels}`);
+
+        const pathParams = {
+            fileId: fileId
+        };
+        const queryParams = {};
+        if (!gs.nil(acknowledgeAbuse)) {
+            queryParams["acknowledgeAbuse"] = acknowledgeAbuse;
+        }
+        if (!gs.nil(supportsAllDrives)) {
+            queryParams["supportsAllDrives"] = supportsAllDrives;
+        }
+        if (!gs.nil(includePermissionsForView)) {
+            queryParams["includePermissionsForView"] = includePermissionsForView;
+        }
+        if (!gs.nil(includeLabels)) {
+            queryParams["includeLabels"] = includeLabels;
+        }
+
+        const config = DriveFileAPI.CONSTANTS.API_CONFIG.GET;
+        const requestConfig = {
+            ...config,
+            pathParams,
+            queryParams,
+            aliasId: this.aliasId
+        };
+
+        const response = this.execute(requestConfig, "getFile");
+
+        if (response.error) {
+            gs.error(`[getFile] There was an error returned from the ` +
+                `Google Drive File API.\nResponse: ${JSON.stringify(response)}`);
+        }
+
+        return {
+            ...response
+        };
+    },
+
     type: 'DriveFileAPI'
 });]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-05-15 17:02:37</sys_created_on>
         <sys_id>289dedf62bb08f10da0ef1bece91bf2d</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>DriveFileAPI</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_script_include_289dedf62bb08f10da0ef1bece91bf2d</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-05-15 18:04:41</sys_updated_on>
+        <sys_updated_on>2026-05-15 18:25:39</sys_updated_on>
     </sys_script_include>
 </record_update>

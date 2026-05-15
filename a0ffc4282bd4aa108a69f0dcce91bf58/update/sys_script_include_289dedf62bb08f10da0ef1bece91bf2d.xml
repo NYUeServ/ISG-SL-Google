@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_neyu_google_nyu.DriveFileAPI</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>https://developers.google.com/workspace/drive/api/reference/rest/v3/files</description>
+        <mobile_callable>false</mobile_callable>
+        <name>DriveFileAPI</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var DriveFileAPI = Class.create();
+DriveFileAPI.CONSTANTS = {
+    API_CONFIG: {
+        LIST: {
+            path: "/drive/v3/files",
+            httpMethod: "GET",
+            queryParams: [
+                "corpora",
+                "driveId",
+                "includeItemsFromAllDrives",
+                "orderBy",
+                "pageSize",
+                "pageToken",
+                "q",
+                "spaces",
+                "supportsAllDrives",
+                "includePermissionsForView",
+                "includeLabels"
+            ]
+        }
+    }
+};
+DriveFileAPI.prototype = Object.extend(x_neyu_google_nyu.RestUtil, {
+    initialize: function() {
+        this.oauthProvider = "1b757d762bf08f10da0ef1bece91bfb2";
+        this.providerProfile = "58c5bdb62bf08f10da0ef1bece91bf94";
+        this.credential = gs.getProperty("x_neyu_google_nyu.directory.api.credential.id");
+        this.aliasId = "ec8ea13e2bb08f10da0ef1bece91bfa9";
+    },
+
+    /**
+     * Lists or searches for files and folders in Google Drive.
+     * * This method authenticates via OAuth and constructs a query against the Google Drive 
+     * Files API. It supports pagination, searching via query strings, and shared drive access.
+     * * @param {Object} [options={}] - Search and filter options.
+     * @param {string} [options.corpora="user"] - Bodies of items (files/folders) to which the query applies. 
+     * Supported values are 'user', 'domain', 'drive', and 'allDrives'.
+     * @param {string} [options.driveId=null] - ID of the shared drive to query. Required if corpora is 'drive'.
+     * @param {boolean} [options.includeItemsFromAllDrives=false] - Whether both My Drive and shared drive items should be included in results.
+     * @param {string} [options.orderBy=null] - A comma-separated list of sort keys (e.g., 'name', 'modifiedTime', 'folder').
+     * @param {number} [options.pageSize=100] - The maximum number of files to return per page. (Max: 1000).
+     * @param {string} [options.pageToken=null] - The token for continuing a previous list request on the next page.
+     * @param {string} [options.q=null] - A query string for filtering the file results (e.g., "name contains 'Project'").
+     * @param {string} [options.spaces=null] - A comma-separated list of spaces to query of items to supported values are 'drive' and 'appDataFolder'.
+     * @param {boolean} [options.supportsAllDrives=null] - Whether the requesting application supports both My Drive and shared drives.
+     * @param {string} [options.includePermissionsForView=null] - Specifies which additional view's permissions to include (e.g., 'published').
+     * @param {string} [options.includeLabels=null] - A comma-separated list of IDs of label types to include in the file metadata.
+     * * @returns {Object} Standardized Response Object
+     * @returns {boolean} return.error - True if the request failed.
+     * @returns {number} return.status - The HTTP status code.
+     * @returns {string} return.errorMessage - Description of the error.
+     * @returns {string} return.responseBody - Raw JSON string. Contains `files` array and `nextPageToken`.
+     * **Note:** Must be parsed using `JSON.parse()` before use.
+     * * @example
+     * // Search for all PDFs in the user's drive
+     * const result = utils.listFiles({
+     * q: "mimeType = 'application/pdf'",
+     * pageSize: 10
+     * });
+     * * if (!result.error) {
+     * const data = JSON.parse(result.responseBody);
+     * data.files.forEach(file => gs.info(file.name));
+     * }
+     */
+    listFiles: function({
+        corpora = "user",
+        driveId = null,
+        includeItemsFromAllDrives = false,
+        orderBy = null,
+        pageSize = 100,
+        pageToken = null,
+        q = null,
+        spaces = null,
+        supportsAllDrives = null,
+        includePermissionsForView = null,
+        includeLabels = null
+    } = {}) {
+        gs.info(`[listFiles] corpora: ${corpora}` +
+            `\ndriveId: ${driveId}` +
+            `\nincludesItemsFromAllDrives: ${includeItemsFromAllDrives}` +
+            `\norderBy: ${orderBy}` +
+            `\npageSize: ${pageSize}` +
+            `\npageToken: ${pageToken}` +
+            `\nq: ${q}` +
+            `\nspaces: ${spaces}` +
+            `\nsupportsAllDrives: ${supportsAllDrives}` +
+            `\nincludePermissionsForView: ${includePermissionsForView}` +
+            `\nincludeLabels`);
+
+        this.ensureToken(this.credential, this.oauthProvider, this.providerProfile);
+
+        const queryParams = {};
+        if (!gs.nil(corpora)) {
+            queryParams["corpora"] = corpora;
+        }
+        if (!gs.nil(driveId)) {
+            queryParams["driveId"] = driveId;
+        }
+        if (!gs.nil(includeItemsFromAllDrives)) {
+            queryParams["includeItemsFromAllDrives"] = includeItemsFromAllDrives;
+        }
+        if (!gs.nil(orderBy)) {
+            queryParams["orderBy"] = orderBy;
+        }
+        if (!gs.nil(pageSize)) {
+            queryParams["pageSize"] = pageSize;
+        }
+        if (!gs.nil(pageToken)) {
+            queryParams["pageToken"] = pageToken;
+        }
+        if (!gs.nil(q)) {
+            queryParams["q"] = q;
+        }
+        if (!gs.nil(spaces)) {
+            queryParams["spaces"] = spaces;
+        }
+        if (!gs.nil(supportsAllDrives)) {
+            queryParams["supportsAllDrives"] = supportsAllDrives;
+        }
+        if (!gs.nil(includePermissionsForView)) {
+            queryParams["includePermissionsForView"] = includePermissionsForView;
+        }
+        if (!gs.nil(includeLabels)) {
+            queryParams["includeLabels"] = includeLabels;
+        }
+
+        const config = DriveFileAPI.CONSTANTS.API_CONFIG.LIST;
+        const requestConfig = {
+            ...config,
+            queryParams,
+            aliasId: this.aliasId
+        };
+
+        const response = this.execute(requestConfig, "listFiles");
+
+        if (response.error) {
+            gs.error("[listFiles] There was an error returned from " +
+                "the Google Drive File API.\nResponse: " + JSON.stringify(response));
+        }
+
+        return {
+            ...response
+        };
+    },
+
+    type: 'DriveFileAPI'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-05-15 17:02:37</sys_created_on>
+        <sys_id>289dedf62bb08f10da0ef1bece91bf2d</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>DriveFileAPI</sys_name>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name>sys_script_include_289dedf62bb08f10da0ef1bece91bf2d</sys_update_name>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-05-15 18:04:41</sys_updated_on>
+    </sys_script_include>
+</record_update>

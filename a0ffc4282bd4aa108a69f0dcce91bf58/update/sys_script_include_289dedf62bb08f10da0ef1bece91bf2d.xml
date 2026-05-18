@@ -27,7 +27,8 @@ DriveFileAPI.CONSTANTS = {
                 "supportsAllDrives",
                 "includePermissionsForView",
                 "includeLabels"
-            ]
+            ],
+            skipSystemAuth: true
         },
         GET: {
             path: "/drive/v3/files/${fileId}",
@@ -38,7 +39,8 @@ DriveFileAPI.CONSTANTS = {
                 "supportsAllDrives",
                 "includePermissionsForView",
                 "includeLabels"
-            ]
+            ],
+            skipSystemAuth: true
         }
     }
 };
@@ -46,8 +48,11 @@ DriveFileAPI.prototype = Object.extend(new x_neyu_google_nyu.RestUtil(), {
     initialize: function() {
         this.oauthProvider = "1b757d762bf08f10da0ef1bece91bfb2";
         this.providerProfile = "58c5bdb62bf08f10da0ef1bece91bf94";
+        this.jwtProviderSysId = "4ea4b1762bf08f10da0ef1bece91bff7";
         this.credential = gs.getProperty("x_neyu_google_nyu.directory.api.credential.id");
+        this.serviceAccount = gs.getProperty("x_neyu_google_nyu.drive.api.service.account");
         this.aliasId = "ec8ea13e2bb08f10da0ef1bece91bfa9";
+        this.scopes = "https://www.googleapis.com/auth/drive";
     },
 
     /**
@@ -84,7 +89,7 @@ DriveFileAPI.prototype = Object.extend(new x_neyu_google_nyu.RestUtil(), {
      * data.files.forEach(file => gs.info(file.name));
      * }
      */
-    listFiles: function({
+    listFiles: function(userEmail, {
         corpora = "user",
         driveId = null,
         includeItemsFromAllDrives = false,
@@ -109,7 +114,13 @@ DriveFileAPI.prototype = Object.extend(new x_neyu_google_nyu.RestUtil(), {
             `\nincludePermissionsForView: ${includePermissionsForView}` +
             `\nincludeLabels`);
 
-        this.ensureToken(this.credential, this.oauthProvider, this.providerProfile);
+        // this.ensureToken(this.credential, this.oauthProvider, this.providerProfile);
+        const access_token = this.generateUserToken(
+            userEmail,
+            this.jwtProviderSysId,
+            this.serviceAccount,
+            this.scopes
+        );
 
         const queryParams = {};
         if (!gs.nil(corpora)) {
@@ -146,10 +157,17 @@ DriveFileAPI.prototype = Object.extend(new x_neyu_google_nyu.RestUtil(), {
             queryParams["includeLabels"] = includeLabels;
         }
 
+        const headers = {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${access_token}`
+        };
+
         const config = DriveFileAPI.CONSTANTS.API_CONFIG.LIST;
         const requestConfig = {
             ...config,
             queryParams,
+            headers,
             aliasId: this.aliasId
         };
 
@@ -192,7 +210,7 @@ DriveFileAPI.prototype = Object.extend(new x_neyu_google_nyu.RestUtil(), {
      * gs.info("Mime Type: " + fileMetadata.mimeType);
      * }
      */
-    getFile: function(fileId, {
+    getFile: function(fileId, userEmail, {
         acknowledgeAbuse = null,
         supportsAllDrives = null,
         includePermissionsForView = null,
@@ -222,11 +240,26 @@ DriveFileAPI.prototype = Object.extend(new x_neyu_google_nyu.RestUtil(), {
             queryParams["includeLabels"] = includeLabels;
         }
 
+        // this.ensureToken(this.credential, this.oauthProvider, this.providerProfile);
+        const access_token = this.generateUserToken(
+            userEmail,
+            this.jwtProviderSysId,
+            this.serviceAccount,
+            this.scopes
+        );
+
+        const headers = {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${access_token}`
+        };
+
         const config = DriveFileAPI.CONSTANTS.API_CONFIG.GET;
         const requestConfig = {
             ...config,
             pathParams,
             queryParams,
+            headers,
             aliasId: this.aliasId
         };
 
@@ -248,13 +281,13 @@ DriveFileAPI.prototype = Object.extend(new x_neyu_google_nyu.RestUtil(), {
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-05-15 17:02:37</sys_created_on>
         <sys_id>289dedf62bb08f10da0ef1bece91bf2d</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>DriveFileAPI</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_script_include_289dedf62bb08f10da0ef1bece91bf2d</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-05-15 18:25:39</sys_updated_on>
+        <sys_updated_on>2026-05-18 20:47:23</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -221,14 +221,16 @@ DriveFileAPI.prototype = Object.extend(new x_neyu_google_nyu.RestUtil(), {
         acknowledgeAbuse = null,
         supportsAllDrives = null,
         includePermissionsForView = null,
-        includeLabels = null
+        includeLabels = null,
+		fields = null
     } = {}) {
         gs.info(`[getFile] fileId: ${fileId}` +
             `\nQuery Parameters` +
             `\nacknowledgeAbuse: ${acknowledgeAbuse}` +
             `\nsupportsAllDrives: ${supportsAllDrives}` +
             `\nincludePermissionsForView: ${includePermissionsForView}` +
-            `\nincludeLabels: ${includeLabels}`);
+            `\nincludeLabels: ${includeLabels}` +
+			`\nfields: ${fields}`);
 
         const pathParams = {
             fileId: fileId
@@ -246,6 +248,9 @@ DriveFileAPI.prototype = Object.extend(new x_neyu_google_nyu.RestUtil(), {
         if (!gs.nil(includeLabels)) {
             queryParams["includeLabels"] = includeLabels;
         }
+		if (!gs.nil(fields)) {
+			queryParams["fields"] = fields;
+		}
 
         // this.ensureToken(this.credential, this.oauthProvider, this.providerProfile);
         const access_token = this.generateUserToken(
@@ -288,13 +293,13 @@ DriveFileAPI.prototype = Object.extend(new x_neyu_google_nyu.RestUtil(), {
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-05-15 17:02:37</sys_created_on>
         <sys_id>289dedf62bb08f10da0ef1bece91bf2d</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_name>DriveFileAPI</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_script_include_289dedf62bb08f10da0ef1bece91bf2d</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-05-19 19:52:15</sys_updated_on>
+        <sys_updated_on>2026-05-19 20:40:04</sys_updated_on>
     </sys_script_include>
 </record_update>

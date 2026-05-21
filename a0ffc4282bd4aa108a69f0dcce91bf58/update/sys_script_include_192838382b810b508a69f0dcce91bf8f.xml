@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_neyu_google_nyu.DriveFileAJAX</api_name>
+        <caller_access>2</caller_access>
+        <client_callable>true</client_callable>
+        <description>AJAX interface for DriveFileAPI.</description>
+        <mobile_callable>false</mobile_callable>
+        <name>DriveFileAJAX</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var DriveFileAJAX = Class.create();
+DriveFileAJAX.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    getFile: function() {
+        const fileID = this.getParameter("sysparm_file_id");
+        const userEmail = !gs.nil(this.getParameter("sysparm_user_email")) ?
+            this.getParameter("sysparm_user_email") :
+            gs.getUser().getEmail();
+        const acknowledgeAbuse = this.getParameter("sysparm_acknowledge_abuse");
+        const supportsAllDrives = this.getParameter("sysparm_supports_all_drives");
+        const includePermissionsForView = this.getParameter("sysparm_include_permissions_for_view");
+        const includeLabels = this.getParameter("sysparm_include_labels");
+        const fields = this.getParameter("sysparm_fields");
+
+        const api = new x_neyu_google_nyu.DriveFileAPI();
+        const response = api.getFile(fileID, userEmail, {
+            acknowledgeAbuse: acknowledgeAbuse,
+            supportsAllDrives: supportsAllDrives,
+            includePermissionsForView: includePermissionsForView,
+            includeLabels: includeLabels,
+            fields: fields
+        });
+
+        if (!response.error && response.status == 200) {
+            const {
+                responseBody,
+                status
+            } = response;
+            return JSON.stringify({
+                error: false,
+                errorMessage: "",
+                result: JSON.parse(responseBody),
+                status: status
+            });
+        } else {
+            const {
+                status,
+                errorMessage,
+                responseBody
+            } = response;
+            return JSON.stringify({
+                error: true,
+                status: status,
+                errorMessage: (
+                    !gs.nil(errorMessage) ?
+                    errorMessage :
+                    JSON.parse(responseBody)
+                ),
+                result: null
+            });
+        }
+    },
+
+    type: 'DriveFileAJAX'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-05-21 18:17:03</sys_created_on>
+        <sys_id>192838382b810b508a69f0dcce91bf8f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>DriveFileAJAX</sys_name>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name>sys_script_include_192838382b810b508a69f0dcce91bf8f</sys_update_name>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-05-21 18:27:51</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_neyu_google_nyu.ProjectAPI</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>ProjectAPI</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var ProjectAPI = Class.create();
+ProjectAPI.CONSTANTS = {
+    API_CONFIG: {
+        DRIVE_TRANSFER: {
+            path: "/v2/projects/${projectId}/locations/${locationId}/jobs/${jobName}:run",
+            httpMethod: "POST",
+            pathParams: ["projectId", "locationId", "jobName"],
+            content: {
+                ticket_number: {
+                    required: true
+                },
+                owner_email: {
+                    required: true
+                },
+                new_owner_email: {
+                    required: true
+                },
+                target_file_ids: {
+                    required: true
+                },
+                dry_run: {
+                    required: true
+                },
+                preserve_permissions: {
+                    required: true
+                }
+            }
+        }
+    }
+};
+ProjectAPI.prototype = Object.extend(new x_neyu_google_nyu.RestUtil(), {
+    initialize: function() {
+        this.oauthProvider = "1b757d762bf08f10da0ef1bece91bfb2";
+        this.providerProfile = "58c5bdb62bf08f10da0ef1bece91bf94";
+        this.jwtProviderSysId = "4ea4b1762bf08f10da0ef1bece91bff7";
+        this.credential = gs.getProperty("x_neyu_google_nyu.directory.api.credential.id");
+        this.serviceAccount = gs.getProperty("x_neyu_google_nyu.drive.api.service.account");
+        this.aliasId = "ec8ea13e2bb08f10da0ef1bece91bfa9";
+    },
+
+    driveTransfer: function(
+        projectId,
+        locationId,
+        jobName,
+        ticketNumber,
+        ownerEmail,
+        newOwnerEmail,
+        fileIds,
+        dryRun = true,
+        preservePermssions = true) {
+        gs.info(`[driveTransfer] ticketNumber: ${ticketNumber}` +
+            `\nownerEmail: ${ownerEmail}` +
+            `\nnewOwnerEmail: ${newOwnerEmail}` +
+            `\nfielIds: ${fileIds}` +
+            `\ndryRun: ${dryRun}` +
+            `\npreserverPermissions: ${preservePermssions}`);
+
+        if (!ticketNumber || !ownerEmail || !newOwnerEmail || !fileIds ||
+            !projectId || !locationId || !jobName) {
+            gs.error("[driveTransfer] There were missing required fields.");
+            return {
+                error: true,
+                errorMessage: "There are empty required parameters",
+                status: 400
+            };
+        }
+
+        this.ensureToken(this.credential, this.oauthProvider, this.providerProfile);
+
+        const config = ProjectAPI.CONSTANTS.API_CONFIG.DRIVE_TRANSFER;
+        const {
+            content: spec
+        } = config;
+        const content = {
+            ticket_number: ticketNumber,
+            owner_email: ownerEmail,
+            new_owner_email: newOwnerEmail,
+            target_file_ids: fileIds,
+            dry_run: dryRun,
+            preserve_permissions: preservePermssions
+        };
+
+        // validate content specification
+        if ((errors = this.validateContent(spec, content))) {
+            const errorMessage = Object.entries(errors)
+                .map(([k, v]) => v?.error)
+                .join("\n");
+            return {
+                error: true,
+                status: 400,
+                errorMessage: errorMessage
+            };
+        }
+
+        const postBody = JSON.stringify({
+            overrides: {
+                containerOverrides: [{
+                    env: [{
+                        name: "SNOW_PAYLOAD",
+                        value: JSON.stringify(content)
+                    }]
+                }]
+            }
+        });
+
+        const pathParams = {
+            projectId: projectId,
+            locationId: locationId,
+            jobName: jobName
+        };
+
+        const requestConfig = {
+            ...config,
+            pathParams,
+            content: postBody,
+            aliasId: this.aliasId
+        };
+
+        const response = this.execute(requestConfig, "driveTransfer");
+
+        if (response.error && response?.status != 500) {
+            gs.error(`[driveTransfer] There was an error returned from the Project API` +
+                `\nResponse: ${JSON.stringify(response)}`);
+        }
+
+        return {
+            ...response
+        };
+    },
+
+    type: 'ProjectAPI'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-05-26 16:18:58</sys_created_on>
+        <sys_id>5f3d821a2b0183908a69f0dcce91bfb0</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>ProjectAPI</sys_name>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_update_name>sys_script_include_5f3d821a2b0183908a69f0dcce91bfb0</sys_update_name>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-05-26 16:54:37</sys_updated_on>
+    </sys_script_include>
+</record_update>

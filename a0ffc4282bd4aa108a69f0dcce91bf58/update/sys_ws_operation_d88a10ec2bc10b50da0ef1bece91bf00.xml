@@ -50,10 +50,25 @@
         return;
     }
 
-    const subflow = new GlideRecord("sys_hub_sub_flow_instance");
-    subflow.addQuery("context", ritmGR.getValue("sys_id"));
-    subflow.addQuery("state", "IN_PROGRESS");
-    subflow.query();
+	const flowContext = new GlideRecord("sys_flow_context");
+	flowContext.addQuery("source_table", ritmGR.getTableName());
+	flowContext.addQuery("source_record", ritmGR.getValue("sys_id"));
+	flowContext.query();
+
+	if (!flowContext.next()) {
+		response.setError(
+            new sn_ws_err.NotFoundError(
+                `Unable to find executing flow for ${ritmGR.getValue("number")}`
+            )
+        );
+        return;
+	}
+
+    const subflow = new GlideRecord("sys_flow_context");
+	subflow.addQuery("source_table", "sys_flow_context");
+	subflow.addQuery("source_record", flowContext.getValue("sys_id"));
+	subflow.addQuery("state", "WAITING");
+	subflow.query();
 
     if (!subflow.next()) {
         response.setError(
@@ -75,7 +90,7 @@
         gs.error("Drive Transfer Callback error: " + ex);
         const err = new sn_ws_err.ServiceError();
         err.setStatus(500);
-        err.setMessage(ex);
+        err.setMessage(ex + "");
         response.setError(err);
         return;
     }
@@ -98,14 +113,14 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-05-20 21:28:44</sys_created_on>
         <sys_id>d88a10ec2bc10b50da0ef1bece91bf00</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>Transfer Callback</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_ws_operation_d88a10ec2bc10b50da0ef1bece91bf00</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-06-11 22:02:33</sys_updated_on>
+        <sys_updated_on>2026-06-12 15:01:41</sys_updated_on>
         <web_service_definition display_value="Drive Transfer Callback">a299982c2bc10b50da0ef1bece91bf53</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>

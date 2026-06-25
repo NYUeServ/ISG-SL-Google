@@ -10,7 +10,7 @@
         <operation_script><![CDATA[(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
 
     const requestBody = request.body.nextEntry();
-    gs.info(`/api/x_neyu_google_nyu/drive_transfer_callback request recieved` +
+    gs.info(`x_neyu_google_nyu/drive_transfer_callback request recieved` +
         ` Parameters: ${JSON.stringify(requestBody, null, 2)}`);
 
     const fields = [
@@ -40,7 +40,7 @@
     }
 
     const ritmGR = new GlideRecord("sc_req_item");
-    if (!ritm.get("number", requestBody["sn_ticket_number"])) {
+    if (!ritmGR.get("number", requestBody["sn_ticket_number"])) {
         gs.error(`Unable to find requested item: ${requestBody["sn_ticket_number"]}`);
         response.setError(
             new sn_ws_err.NotFoundError(
@@ -113,14 +113,14 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-05-20 21:28:44</sys_created_on>
         <sys_id>d88a10ec2bc10b50da0ef1bece91bf00</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>Transfer Callback</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_ws_operation_d88a10ec2bc10b50da0ef1bece91bf00</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-06-12 15:01:41</sys_updated_on>
+        <sys_updated_on>2026-06-24 17:08:16</sys_updated_on>
         <web_service_definition display_value="Drive Transfer Callback">a299982c2bc10b50da0ef1bece91bf53</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>

@@ -21,7 +21,9 @@
         "sn_success_count",
         "sn_failure_count",
         "sn_success_list",
-        "sn_failure_list"
+        "sn_failure_list",
+        "sn_execution_id",
+		"callback_id"
     ];
 
     const missingParams = new global.ArrayUtil().diff(
@@ -50,27 +52,12 @@
         return;
     }
 
-	const flowContext = new GlideRecord("sys_flow_context");
-	flowContext.addQuery("source_table", ritmGR.getTableName());
-	flowContext.addQuery("source_record", ritmGR.getValue("sys_id"));
-	flowContext.query();
+    const flowContext = new GlideRecord("sys_flow_context");
+    flowContext.addQuery("source_table", ritmGR.getTableName());
+    flowContext.addQuery("source_record", ritmGR.getValue("sys_id"));
+    flowContext.query();
 
-	if (!flowContext.next()) {
-		response.setError(
-            new sn_ws_err.NotFoundError(
-                `Unable to find executing flow for ${ritmGR.getValue("number")}`
-            )
-        );
-        return;
-	}
-
-    const subflow = new GlideRecord("sys_flow_context");
-	subflow.addQuery("source_table", "sys_flow_context");
-	subflow.addQuery("source_record", flowContext.getValue("sys_id"));
-	subflow.addQuery("state", "WAITING");
-	subflow.query();
-
-    if (!subflow.next()) {
+    if (!flowContext.next()) {
         response.setError(
             new sn_ws_err.NotFoundError(
                 `Unable to find executing flow for ${ritmGR.getValue("number")}`
@@ -79,13 +66,27 @@
         return;
     }
 
+    const subflow = new GlideRecord("sys_flow_context");
+    subflow.addQuery("source_table", "sys_flow_context");
+    subflow.addQuery("sys_id", requestBody["callback_id"]);
+    subflow.addQuery("state", "WAITING");
+    subflow.query();
+
+    if (!subflow.next()) {
+        response.setError(
+            new sn_ws_err.NotFoundError(
+                `Unable to find executing flow for callback ID ${requestBody["callback_id"]}`
+            )
+        );
+        return;
+    }
+
     try {
-        var result = sn_fd.FlowAPI.sendMessage(
+        sn_fd.FlowAPI.sendMessage(
             subflow.getValue("sys_id"),
             "DRIVE_FILE_TRANSFER_CALLBACK",
             JSON.stringify(requestBody)
         );
-        gs.debug(`Result: ${result}`);
     } catch (ex) {
         gs.error("Drive Transfer Callback error: " + ex);
         const err = new sn_ws_err.ServiceError();
@@ -113,14 +114,14 @@
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-05-20 21:28:44</sys_created_on>
         <sys_id>d88a10ec2bc10b50da0ef1bece91bf00</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>Transfer Callback</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_ws_operation_d88a10ec2bc10b50da0ef1bece91bf00</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-06-24 17:08:16</sys_updated_on>
+        <sys_updated_on>2026-06-29 21:51:32</sys_updated_on>
         <web_service_definition display_value="Drive Transfer Callback">a299982c2bc10b50da0ef1bece91bf53</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>

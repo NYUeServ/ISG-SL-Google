@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>ab7289</sys_created_by>
+        <sys_created_on>2026-05-20 21:27:20</sys_created_on>
+        <sys_id>dc4a14ac2bc10b50da0ef1bece91bf6d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>.x_neyu_google_nyu.drive.transfer.execute</sys_name>
+        <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
+        <sys_security_acl display_value="Drive Transfer Callback Execute">333a58ac2bc10b50da0ef1bece91bf3c</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_dc4a14ac2bc10b50da0ef1bece91bf6d</sys_update_name>
+        <sys_updated_by>ab7289</sys_updated_by>
+        <sys_updated_on>2026-05-20 21:27:20</sys_updated_on>
+        <sys_user_role display_value="x_neyu_google_nyu.drive.transfer.execute" name="x_neyu_google_nyu.drive.transfer.execute">08d9186c2bc10b50da0ef1bece91bf9b</sys_user_role>
+    </sys_security_acl_role>
+</record_update>

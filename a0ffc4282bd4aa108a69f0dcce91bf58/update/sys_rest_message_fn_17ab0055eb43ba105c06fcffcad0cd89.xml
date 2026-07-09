@@ -34,6 +34,7 @@
         <sys_update_name>sys_rest_message_fn_17ab0055eb43ba105c06fcffcad0cd89</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
         <sys_updated_on>2026-02-12 18:14:49</sys_updated_on>
+        <use_auth_mid_server/>
         <use_basic_auth>false</use_basic_auth>
         <use_mid_server/>
         <use_mutual_auth>false</use_mutual_auth>

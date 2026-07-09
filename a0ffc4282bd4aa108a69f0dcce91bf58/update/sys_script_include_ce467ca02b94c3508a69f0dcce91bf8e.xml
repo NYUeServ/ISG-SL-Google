@@ -150,19 +150,66 @@ RestUtil.prototype = {
         return null;
     },
 
+    generateUserToken: function(email, jwtProviderSysId, serviceAccountEmail, scopes) {
+        if (!email || !jwtProviderSysId || !serviceAccountEmail || !scopes) {
+            throw new Error("email, jwtProviderSysId, serviceAccountEmail, and scopes are required.");
+        }
+
+        const header = JSON.stringify({
+            alg: "RS256",
+            typ: "JWT"
+        });
+
+        const gdt = new GlideDateTime();
+        const iat = Math.floor(gdt.getNumericValue() / 1000);
+        gdt.addSeconds(3600);
+        const exp = Math.floor(gdt.getNumericValue() / 1000);
+
+        const payload = JSON.stringify({
+            iss: serviceAccountEmail,
+            sub: email,
+            aud: "https://oauth2.googleapis.com/token",
+            scope: scopes,
+            iat: iat,
+            exp: exp
+        });
+
+        const jwtAPI = new sn_auth.GlideJWTAPI();
+        const signedJWT = jwtAPI.generateJWT(jwtProviderSysId, header, payload);
+
+        // gs.info("JWT: " + signedJWT);
+
+        const tokenRequest = new sn_ws.RESTMessageV2();
+        tokenRequest.setEndpoint("https://oauth2.googleapis.com/token");
+        tokenRequest.setHttpMethod("POST");
+        tokenRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        const body = "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer&assertion=" + signedJWT;
+        tokenRequest.setRequestBody(body);
+
+        const tokenResponse = tokenRequest.execute();
+
+        if (tokenResponse.getStatusCode() == 200) {
+            const responseBody = JSON.parse(tokenResponse.getBody());
+            return responseBody.access_token;
+        } else {
+            throw new Error(`${tokenResponse.getStatusCode()} ${tokenResponse.getBody()}`);
+        }
+    },
+
     type: 'RestUtil'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>ab7289</sys_created_by>
         <sys_created_on>2026-04-13 16:46:05</sys_created_on>
         <sys_id>ce467ca02b94c3508a69f0dcce91bf8e</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>RestUtil</sys_name>
         <sys_package display_value="Google NYU Spoke" source="x_neyu_google_nyu">a0ffc4282bd4aa108a69f0dcce91bf58</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Google NYU Spoke">a0ffc4282bd4aa108a69f0dcce91bf58</sys_scope>
         <sys_update_name>sys_script_include_ce467ca02b94c3508a69f0dcce91bf8e</sys_update_name>
         <sys_updated_by>ab7289</sys_updated_by>
-        <sys_updated_on>2026-04-16 21:01:34</sys_updated_on>
+        <sys_updated_on>2026-05-18 16:22:38</sys_updated_on>
     </sys_script_include>
 </record_update>
